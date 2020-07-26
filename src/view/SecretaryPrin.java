@@ -34,9 +34,15 @@ public class SecretaryPrin extends JFrame {
 		contentPane.add(apo);
 		apo.setVisible(false);
 		
+		Search search = new Search();
+		search.setBounds(143, 0, 524, 407);
+		contentPane.add(search);
+		search.setVisible(false);
+		
 		JButton btnApointmen = new JButton("");
 		btnApointmen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				search.setVisible(false);
 				apo.setVisible(true);
 			}
 		});
@@ -48,6 +54,12 @@ public class SecretaryPrin extends JFrame {
 		contentPane.add(btnApointmen);
 		
 		JButton btnPacients = new JButton("");
+		btnPacients.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				apo.setVisible(false);
+				search.setVisible(true);
+			}
+		});
 		btnPacients.setIcon(new ImageIcon(SecretaryPrin.class.getResource("/Icons/Search.jpg")));
 		btnPacients.setForeground(new Color(176, 224, 230));
 		btnPacients.setBorder(new IconHelper(260));
