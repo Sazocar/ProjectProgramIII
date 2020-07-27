@@ -85,6 +85,7 @@ public class SecretaryPrin extends JFrame {
         });
         btnClose.setIcon(new ImageIcon(SecretaryPrin.class.getResource("/icons/salir32.png")));
         btnClose.setBounds(23, 346, 36, 35);
+        btnClose.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         contentPane.add(btnClose);
         
         JButton btnLogOut = new JButton("");
@@ -100,6 +101,7 @@ public class SecretaryPrin extends JFrame {
         btnLogOut.setBorder(new IconHelper(260));
         btnLogOut.setIcon(new ImageIcon(SecretaryPrin.class.getResource("/icons/logOut32.png")));
         btnLogOut.setBounds(80, 346, 36, 36);
+        btnLogOut.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         contentPane.add(btnLogOut);
     }
 }

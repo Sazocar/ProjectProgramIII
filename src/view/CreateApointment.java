@@ -127,8 +127,8 @@ public class CreateApointment extends JPanel {
         	}
         ));
         scrollPane.setViewportView(dentistTable);
-        dentistTable.setDragEnabled(false);
-
+        dentistTable.getTableHeader().setReorderingAllowed(false);
+        
         JLabel lblAviliable = new JLabel("Odontologos Disponibles");
         lblAviliable.setFont(new Font("Tahoma", Font.PLAIN, 15));
         lblAviliable.setHorizontalAlignment(SwingConstants.CENTER);

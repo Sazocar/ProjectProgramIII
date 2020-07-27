@@ -1,4 +1,4 @@
-package main;
+/*package main;
 
 public class Main {
 
@@ -8,3 +8,4 @@ public class Main {
 	}
 
 }
+*/
