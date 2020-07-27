@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -25,7 +26,7 @@ public class MoreInfoSecre extends JFrame {
             
 	public MoreInfoSecre(Patient patient ) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 485, 374);
+		setBounds(100, 100, 485, 382);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(176, 224, 230));
 		contentPane.setBackground(new Color(176, 224, 230));
@@ -93,13 +94,13 @@ public class MoreInfoSecre extends JFrame {
 		done.setForeground(new Color(176, 224, 230));
 		done.setBackground(new Color(176, 224, 230));
 		done.setIcon(new ImageIcon(MoreInfoSecre.class.getResource("/Icons/check2.jpg")));
-		done.setBounds(210, 257, 55, 55);
+		done.setBounds(147, 257, 55, 55);
 		done.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		contentPane.add(done);
 		
 		JLabel lbldone = new JLabel("Listo");
 		lbldone.setHorizontalAlignment(SwingConstants.CENTER);
-		lbldone.setBounds(215, 316, 50, 14);
+		lbldone.setBounds(152, 316, 50, 14);
 		contentPane.add(lbldone);
 		
 		JLabel displayPhone = new JLabel(String.valueOf(patient.getPhoneNumber()));
@@ -157,5 +158,29 @@ public class MoreInfoSecre extends JFrame {
 		lblPic.setIcon(new ImageIcon(MoreInfoSecre.class.getResource("/icons/imgAgregar.jpg")));
 		lblPic.setBounds(281, 11, 160, 138);
 		contentPane.add(lblPic);
+		
+		JButton cancelAppoitment = new JButton("");
+		cancelAppoitment.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				patient.getAppointment().setDate("");
+				patient.getAppointment().setHour("0");
+				patient.getAppointment().setNotes("");
+				displayDate.setText(patient.getAppointment().getDate());
+				displayHour.setText(patient.getAppointment().getHour());
+				displayNotes.setText(patient.getAppointment().getNotes());
+				JOptionPane.showMessageDialog(null, "Cita Eliminada");
+			}
+		});
+		cancelAppoitment.setIcon(new ImageIcon(MoreInfoSecre.class.getResource("/icons/recyclebin-icon.jpg")));
+		cancelAppoitment.setForeground(new Color(176, 224, 230));
+		cancelAppoitment.setBorder(new IconHelper(10));
+		cancelAppoitment.setBackground(new Color(176, 224, 230));
+		cancelAppoitment.setBounds(234, 257, 55, 55);
+		contentPane.add(cancelAppoitment);
+		
+		JLabel lblEliminarCita = new JLabel("Eliminar Cita");
+		lblEliminarCita.setHorizontalAlignment(SwingConstants.CENTER);
+		lblEliminarCita.setBounds(217, 316, 97, 14);
+		contentPane.add(lblEliminarCita);
 	}
 }

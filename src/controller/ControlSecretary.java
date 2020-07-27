@@ -5,6 +5,8 @@ import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
+import org.w3c.dom.ls.LSInput;
+
 import model.*;
 
 public final class ControlSecretary {

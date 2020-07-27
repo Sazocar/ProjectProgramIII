@@ -24,6 +24,7 @@ import controller.ControlFields;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.ResourceBundle.Control;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -74,6 +75,12 @@ public class Search extends JPanel {
 		add(more);
 		
 		JButton delete = new JButton("");
+		delete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ControlFields.deletePatient(clinic, table);
+				ControlFields.fillTablePatient(table, clinic.getListOfPatients());
+		}
+		});
 		delete.setForeground(new Color(176, 224, 230));
 		delete.setBackground(new Color(176, 224, 230));
 		delete.setIcon(new ImageIcon(Search.class.getResource("/Icons/eliminar.jpg")));
@@ -165,7 +172,7 @@ public class Search extends JPanel {
 		JButton modif = new JButton("");
 		modif.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ModifPatient modifPatient = new ModifPatient(clinic, clinic.getListOfPatients().get(table.getSelectedRow()));
+				ModifPatient modifPatient = new ModifPatient(clinic, clinic.getListOfPatients().get(table.getSelectedRow()), table);
 				ControlFields.fillTableDentist(modifPatient.getDentistTable(), clinic);
 				modifPatient.setVisible(true);
 				modifPatient.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()),clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));

@@ -61,4 +61,10 @@ public final class ControlFields {
         tableDentist.getColumnModel().getColumn(5).setPreferredWidth(80);
     }
     
+    public static void deletePatient(Clinic clinic, JTable table) {
+        clinic.getListOfPatients().remove(table.getSelectedRow());
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        model.removeRow(table.getSelectedRow());
+    }
+    
 }

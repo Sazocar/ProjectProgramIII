@@ -44,7 +44,7 @@ public class ModifPatient extends JFrame {
     PlaceHolder placeholder;
     
   
-    public ModifPatient(Clinic clinic, Patient patient) {
+    public ModifPatient(Clinic clinic, Patient patient, JTable table) {
     	getContentPane().setBackground(new Color(176, 224, 230));   
     	setBounds(100, 100, 543, 452);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -205,10 +205,43 @@ public class ModifPatient extends JFrame {
                         && (Validations.validateAddress(addressTxt)) && (Validations.validatePhoneNumber(phoneNumberTxt))
                         && (Validations.validateDate(dateTxt)) && (Validations.validateHour(hourBox))
                         && (Validations.validateNotes(notesTxt))) {
-                    ControlSecretary.createAppointment(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dentistTable, dateTxt, hourBox, notesTxt, clinic.getListOfStaff(), clinic.getListOfAppointments(), clinic.getListOfPatients());
-                    JOptionPane.showMessageDialog(null, "Cita creada exitosamente");
-                    System.out.println("Cantidad de appointments: " + clinic.getListOfAppointments().size());
+                   // ControlSecretary.createAppointment(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dentistTable, dateTxt, hourBox, notesTxt, clinic.getListOfStaff(), clinic.getListOfAppointments(), clinic.getListOfPatients());
+                    patient.setName(nameTxt.getText());
+                    patient.setId(Integer.parseInt(idTxt.getText()));
+                    patient.setAddress(addressTxt.getText());
+                    patient.setAge(Integer.parseInt(ageTxt.getText()));
+                    if (sexBox.getSelectedIndex() == 0)
+                    	patient.setSex("M");
+                    else 
+                    	patient.setSex("F");
+                    patient.setPhoneNumber(Integer.parseInt(phoneNumberTxt.getText()));
+                    patient.setDentist( (Dentist) clinic.getListOfStaff().get(dentistTable.getSelectedRow()));
+                    patient.getAppointment().setDentist((Dentist) clinic.getListOfStaff().get(dentistTable.getSelectedRow()));
+                    patient.getAppointment().setDate(dateTxt.getText());
+                    if (hourBox.getSelectedIndex() == 1)
+                    	patient.getAppointment().setHour("9 AM");
+                    else
+                    	if (hourBox.getSelectedIndex() == 2)
+                        	patient.getAppointment().setHour("10 AM");
+                    	else
+                    		if (hourBox.getSelectedIndex() == 3)
+                            	patient.getAppointment().setHour("11 AM");
+                    		else
+                    			if (hourBox.getSelectedIndex() == 4)
+                                	patient.getAppointment().setHour("2 PM");
+                    			else 
+                    				if (hourBox.getSelectedIndex() == 5)
+                                    	patient.getAppointment().setHour("3 PM");
+                    				else
+                    					if (hourBox.getSelectedIndex() == 6)
+                                        	patient.getAppointment().setHour("4 PM");
+                    					else
+                    						if (hourBox.getSelectedIndex() == 7)
+                                            	patient.getAppointment().setHour("5 PM");
+                    patient.getAppointment().setNotes(notesTxt.getText());
+                	JOptionPane.showMessageDialog(null, "Datos actualizados exitosamente");
                     ControlFields.clearFieldsSecretary(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dateTxt, hourBox, notesTxt);
+                    ControlFields.fillTablePatient(table, clinic.getListOfPatients());
                     setVisible(false);
                 }
             }

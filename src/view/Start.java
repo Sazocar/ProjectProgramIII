@@ -56,11 +56,13 @@ public class Start extends JFrame {
         Appointment apo = new Appointment( (Dentist) clinic.getListOfStaff().get(0),"22/12/2000", "9 AM", "Murision",0);
         Patient test = new Patient("Gral Kenobi", 234, 30, "M", "Hello There", 2345, (Dentist) clinic.getListOfStaff().get(0), apo, null, null);
         Patient test2 = new Patient("Anakin", 235, 30, "M", "Hello There", 2345, (Dentist) clinic.getListOfStaff().get(0), apo, null, null);
+        Patient test3 = new Patient("Gral Greivous", 237, 30, "M", "Hello There", 2345, (Dentist) clinic.getListOfStaff().get(0), apo, null, null);
         test.getAppointment().setPatientId(test.getId());
         test2.getAppointment().setPatientId(test2.getId());
+        test3.getAppointment().setPatientId(test3.getId());
         clinic.getListOfPatients().add(test);
         clinic.getListOfPatients().add(test2);
-        clinic.getListOfPatients().add(test2);
+        clinic.getListOfPatients().add(test3);
         //end of test
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
