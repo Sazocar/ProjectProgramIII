@@ -1,5 +1,6 @@
 package view;
 
+import com.placeholder.PlaceHolder;
 import controller.ControlFields;
 import javax.swing.JPanel;
 import java.awt.Color;
@@ -24,6 +25,9 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.PlainDocument;
 
 public class CreateApointment extends JPanel {
 
@@ -35,9 +39,13 @@ public class CreateApointment extends JPanel {
     private JTable dentistTable;
     private JTextField dateTxt;
     private JTextField notesTxt;
-
-    public CreateApointment(Clinic clinic) {                                                            // Aqui se le pasa el array de Dentista
-        setBackground(new Color(176, 224, 230));			  // para poder usarse en createAppointment
+    
+    PlaceHolder placeholder;
+    
+  
+    public CreateApointment(Clinic clinic) {    
+        
+        setBackground(new Color(176, 224, 230));			
         setLayout(null);
 
         JLabel lblName = new JLabel("Nombre: ");
@@ -193,6 +201,8 @@ public class CreateApointment extends JPanel {
         btnCancel.setBounds(39, 328, 72, 72);
         btnCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(btnCancel);
+        
+        placeholder = new PlaceHolder(dateTxt, "dd/mm/aaaa");
     }
 
     public JTable getDentistTable() {
