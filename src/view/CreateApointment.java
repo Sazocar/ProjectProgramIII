@@ -164,9 +164,8 @@ public class CreateApointment extends JPanel {
         add(lblNotes);
 
         notesTxt = new JTextField();
-        notesTxt.setHorizontalAlignment(SwingConstants.LEFT);
         notesTxt.setColumns(10);
-        notesTxt.setBounds(344, 314, 153, 86);
+        notesTxt.setBounds(344, 314, 153, 20);
         add(notesTxt);
 
         JButton btnConfirm = new JButton("");
