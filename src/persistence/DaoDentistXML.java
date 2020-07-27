@@ -64,6 +64,7 @@ public class DaoDentistXML {
 		phoneNumber.setText(Double.toString(nDentist.getPhoneNumber()));
 		Element speciality = new Element("speciality");
 		speciality.setText(nDentist.getSpecialty());
+		// Aqui va el arrayList de appointments
 		Dentist.addContent(name);
 		Dentist.addContent(id);
 		Dentist.addContent(sex);

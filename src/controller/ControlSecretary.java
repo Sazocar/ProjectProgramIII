@@ -36,8 +36,8 @@ public final class ControlSecretary {
         patient.setAddress(address.getText());
         patient.setPhoneNumber(Integer.parseInt(phoneNumber.getText()));
         
-        if (listOfStaff.get(listDentist.getSelectedRow()) instanceof Dentist) {     // No estoy seguro que esto así funcione
-            appointment.setDentist((Dentist) listOfStaff.get(listDentist.getSelectedRow()));  // para asignarle un dentista a la cita
+        if (listOfStaff.get(listDentist.getSelectedRow()) instanceof Dentist) { 
+            appointment.setDentist((Dentist) listOfStaff.get(listDentist.getSelectedRow())); 
         }
         appointment.setDate(date.getText());
         appointment.setHour(hour.getSelectedItem().toString());

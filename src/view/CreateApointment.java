@@ -40,68 +40,68 @@ public class CreateApointment extends JPanel {
 		JLabel lblName = new JLabel("Nombre: ");
 		lblName.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblName.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblName.setBounds(44, 34, 67, 20);
+		lblName.setBounds(0, 34, 111, 20);
 		add(lblName);
 		
 		nameTxt = new JTextField();
-		nameTxt.setBounds(121, 34, 114, 20);
+		nameTxt.setBounds(121, 34, 152, 20);
 		add(nameTxt);
 		nameTxt.setColumns(10);
 		
 		JLabel lblID = new JLabel("Cedula:");
 		lblID.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblID.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblID.setBounds(44, 89, 67, 20);
+		lblID.setBounds(0, 89, 111, 20);
 		add(lblID);
 		
 		idTxt = new JTextField();
 		idTxt.setColumns(10);
-		idTxt.setBounds(121, 89, 114, 20);
+		idTxt.setBounds(121, 89, 137, 20);
 		add(idTxt);
 		
 		JLabel lblAge = new JLabel("Edad:");
 		lblAge.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblAge.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblAge.setBounds(44, 137, 67, 20);
+		lblAge.setBounds(0, 137, 111, 20);
 		add(lblAge);
 		
 		ageTxt = new JTextField();
-		ageTxt.setBounds(121, 139, 37, 20);
+		ageTxt.setBounds(121, 139, 46, 20);
 		add(ageTxt);
 		ageTxt.setColumns(10);
 		
 		JLabel lblSex = new JLabel("Sexo:");
 		lblSex.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblSex.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblSex.setBounds(44, 184, 67, 20);
+		lblSex.setBounds(0, 184, 111, 20);
 		add(lblSex);
 		
 		JComboBox sexBox = new JComboBox();
 		sexBox.setMaximumRowCount(2);
 		sexBox.setModel(new DefaultComboBoxModel(new String[] {"M", "F"}));
-		sexBox.setBounds(121, 186, 37, 20);
+		sexBox.setBounds(121, 186, 72, 20);
 		add(sexBox);
 		
 		JLabel lblAddress = new JLabel("Direccion:");
 		lblAddress.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblAddress.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblAddress.setBounds(22, 225, 89, 20);
+		lblAddress.setBounds(0, 225, 111, 20);
 		add(lblAddress);
 		
 		addressTxt = new JTextField();
 		addressTxt.setColumns(10);
-		addressTxt.setBounds(121, 227, 114, 20);
+		addressTxt.setBounds(121, 227, 152, 20);
 		add(addressTxt);
 		
 		JLabel lblPhoneNumber = new JLabel("Numero de tlfn:");
 		lblPhoneNumber.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblPhoneNumber.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblPhoneNumber.setBounds(0, 269, 114, 20);
+		lblPhoneNumber.setBounds(0, 269, 111, 20);
 		add(lblPhoneNumber);
 		
 		phoneNumberTxt = new JTextField();
 		phoneNumberTxt.setColumns(10);
-		phoneNumberTxt.setBounds(121, 271, 114, 20);
+		phoneNumberTxt.setBounds(121, 270, 130, 20);
 		add(phoneNumberTxt);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -124,19 +124,19 @@ public class CreateApointment extends JPanel {
 		add(lblDate);
 		
 		dateTxt = new JTextField();
-		dateTxt.setBounds(344, 232, 89, 20);
+		dateTxt.setBounds(344, 232, 114, 20);
 		add(dateTxt);
 		dateTxt.setColumns(10);
 		
 		JLabel lblHour = new JLabel("Hora:");
 		lblHour.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblHour.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblHour.setBounds(245, 269, 89, 20);
+		lblHour.setBounds(275, 269, 59, 20);
 		add(lblHour);
 		
 		JComboBox hourBox = new JComboBox();
 		hourBox.setModel(new DefaultComboBoxModel(new String[] {"", "9 AM", "10 AM", "11 AM", "2 PM", "3 PM", "4 PM", "5 PM"}));
-		hourBox.setBounds(354, 271, 49, 20);
+		hourBox.setBounds(344, 271, 104, 20);
 		add(hourBox);
 		
 		JLabel lblNotes = new JLabel("Motivo:");

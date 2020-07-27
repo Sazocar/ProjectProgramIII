@@ -10,6 +10,12 @@
 	<phoneNumber>9128312</phoneNumber>
 	<speciality>Odontologo pro</speciality>
 	<shift>manana</shift>
+	<listOfAppointmets>
+		<Dentist>Carlitos PRO</Dentist>
+		<date>cualquiercosa</date>
+		<hour>horas</hour>
+		<notes>cualquierotracosa</notes>
+	</listOfAppointmets>
 	</Dentist>
 
 </dentists>
