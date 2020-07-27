@@ -37,8 +37,8 @@ public final class ControlFields {
             }
         }
         tableDentist.setModel(dtm);
-        tableDentist.getColumnModel().getColumn(0).setPreferredWidth(100);
-        tableDentist.getColumnModel().getColumn(1).setPreferredWidth(120);
+        tableDentist.getColumnModel().getColumn(0).setPreferredWidth(80);
+        tableDentist.getColumnModel().getColumn(1).setPreferredWidth(80);
     }
     
 }
