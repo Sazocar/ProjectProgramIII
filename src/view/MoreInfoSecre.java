@@ -19,13 +19,13 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class MoreInfo extends JFrame {
+public class MoreInfoSecre extends JFrame {
 
 	private JPanel contentPane;
             
-	public MoreInfo(Patient patient ) {
+	public MoreInfoSecre(Patient patient ) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 485, 412);
+		setBounds(100, 100, 485, 374);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(176, 224, 230));
 		contentPane.setBackground(new Color(176, 224, 230));
@@ -55,7 +55,7 @@ public class MoreInfo extends JFrame {
 		
 		JLabel lblAge = new JLabel("Edad:");
 		lblAge.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblAge.setBounds(48, 183, 59, 14);
+		lblAge.setBounds(48, 168, 59, 14);
 		contentPane.add(lblAge);
 		
 		JLabel displayName = new JLabel(patient.getName());
@@ -81,7 +81,7 @@ public class MoreInfo extends JFrame {
 		
 		JLabel displayAge = new JLabel(String.valueOf(patient.getAge()));
 		displayAge.setHorizontalAlignment(SwingConstants.LEFT);
-		displayAge.setBounds(119, 183, 33, 14);
+		displayAge.setBounds(119, 168, 33, 14);
 		contentPane.add(displayAge);
 		JButton done = new JButton("");
 		done.addActionListener(new ActionListener() {
@@ -92,106 +92,70 @@ public class MoreInfo extends JFrame {
 		done.setBorder(new IconHelper(10));
 		done.setForeground(new Color(176, 224, 230));
 		done.setBackground(new Color(176, 224, 230));
-		done.setIcon(new ImageIcon(MoreInfo.class.getResource("/Icons/check2.jpg")));
-		done.setBounds(245, 289, 55, 55);
+		done.setIcon(new ImageIcon(MoreInfoSecre.class.getResource("/Icons/check2.jpg")));
+		done.setBounds(210, 257, 55, 55);
 		done.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		contentPane.add(done);
 		
 		JLabel lbldone = new JLabel("Listo");
 		lbldone.setHorizontalAlignment(SwingConstants.CENTER);
-		lbldone.setBounds(250, 348, 50, 14);
+		lbldone.setBounds(215, 316, 50, 14);
 		contentPane.add(lbldone);
 		
 		JLabel displayPhone = new JLabel(String.valueOf(patient.getPhoneNumber()));
 		displayPhone.setHorizontalAlignment(SwingConstants.LEFT);
-		displayPhone.setBounds(119, 219, 33, 14);
+		displayPhone.setBounds(119, 198, 33, 14);
 		contentPane.add(displayPhone);
 		
 		JLabel lblNumeroDeTlfn = new JLabel("Numero de Tlfn:");
 		lblNumeroDeTlfn.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNumeroDeTlfn.setBounds(10, 219, 97, 14);
+		lblNumeroDeTlfn.setBounds(10, 198, 97, 14);
 		contentPane.add(lblNumeroDeTlfn);
 		
 		JLabel lblDentist = new JLabel("Odontologo:");
 		lblDentist.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblDentist.setBounds(10, 253, 97, 14);
+		lblDentist.setBounds(10, 232, 97, 14);
 		contentPane.add(lblDentist);
 		
 		JLabel displayDentist = new JLabel(patient.getDentist().getName());
 		displayDentist.setHorizontalAlignment(SwingConstants.LEFT);
-		displayDentist.setBounds(119, 253, 110, 14);
+		displayDentist.setBounds(119, 232, 110, 14);
 		contentPane.add(displayDentist);
 		
 		JLabel lblDate = new JLabel("Fecha de la cita:");
 		lblDate.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblDate.setBounds(10, 284, 97, 14);
+		lblDate.setBounds(250, 176, 97, 14);
 		contentPane.add(lblDate);
 		
-		JLabel displayDate = new JLabel((String) null);
+		JLabel displayDate = new JLabel(patient.getAppointment().getDate());
 		displayDate.setHorizontalAlignment(SwingConstants.LEFT);
-		displayDate.setBounds(119, 284, 68, 14);
+		displayDate.setBounds(359, 176, 68, 14);
 		contentPane.add(displayDate);
 		
 		JLabel lblHour = new JLabel("Hora de la cita:");
 		lblHour.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblHour.setBounds(10, 315, 97, 14);
+		lblHour.setBounds(250, 207, 97, 14);
 		contentPane.add(lblHour); 
 		
-		JLabel displayHour = new JLabel((String) null);
+		JLabel displayHour = new JLabel(patient.getAppointment().getHour());
 		displayHour.setHorizontalAlignment(SwingConstants.LEFT);
-		displayHour.setBounds(119, 315, 49, 14);
+		displayHour.setBounds(359, 207, 49, 14);
 		contentPane.add(displayHour);
 		
-		JButton done_1 = new JButton("");
-		done_1.setIcon(new ImageIcon(MoreInfo.class.getResource("/Icons/recyclebin-icon.jpg")));
-		done_1.setForeground(new Color(176, 224, 230));
-		done_1.setBorder(new IconHelper(10));
-		done_1.setBackground(new Color(176, 224, 230));
-		done_1.setBounds(399, 289, 55, 55);
-		contentPane.add(done_1);
+		JLabel lblNotes = new JLabel("Motivo de la cita:");
+		lblNotes.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNotes.setBounds(250, 232, 97, 14);
+		contentPane.add(lblNotes);
 		
-		JLabel lblDelete = new JLabel("Borrar");
-		lblDelete.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDelete.setBounds(404, 348, 50, 14);
-		contentPane.add(lblDelete);
+		JLabel displayNotes = new JLabel(patient.getAppointment().getNotes());
+		displayNotes.setHorizontalAlignment(SwingConstants.LEFT);
+		displayNotes.setBounds(357, 232, 87, 14);
+		contentPane.add(displayNotes);
 		
-		JButton hist = new JButton("");
-		hist.setIcon(new ImageIcon(MoreInfo.class.getResource("/Icons/Play-Books-icon.jpg")));
-		hist.setForeground(new Color(176, 224, 230));
-		hist.setBorder(new IconHelper(10));
-		hist.setBackground(new Color(176, 224, 230));
-		hist.setBounds(282, 196, 55, 55);
-		contentPane.add(hist);
-		
-		JButton recipe = new JButton("");
-		recipe.setIcon(new ImageIcon(MoreInfo.class.getResource("/Icons/documents-icon.png")));
-		recipe.setForeground(new Color(176, 224, 230));
-		recipe.setBorder(new IconHelper(10));
-		recipe.setBackground(new Color(176, 224, 230));
-		recipe.setBounds(363, 196, 47, 47);
-		contentPane.add(recipe);
-		
-		JLabel lblHist = new JLabel("Historia");
-		lblHist.setHorizontalAlignment(SwingConstants.CENTER);
-		lblHist.setBounds(287, 253, 50, 14);
-		contentPane.add(lblHist);
-		
-		JLabel lblRecipe = new JLabel("Recipe");
-		lblRecipe.setHorizontalAlignment(SwingConstants.CENTER);
-		lblRecipe.setBounds(363, 253, 50, 14);
-		contentPane.add(lblRecipe);
-		
-		JButton modif = new JButton("");
-		modif.setIcon(new ImageIcon(MoreInfo.class.getResource("/Icons/Pencil-icon.jpg")));
-		modif.setForeground(new Color(176, 224, 230));
-		modif.setBorder(new IconHelper(10));
-		modif.setBackground(new Color(176, 224, 230));
-		modif.setBounds(322, 289, 55, 55);
-		contentPane.add(modif);
-		
-		JLabel lblModif = new JLabel("Modificar");
-		lblModif.setHorizontalAlignment(SwingConstants.CENTER);
-		lblModif.setBounds(322, 348, 59, 14);
-		contentPane.add(lblModif);
+		JLabel lblPic = new JLabel("");
+		lblPic.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPic.setIcon(new ImageIcon(MoreInfoSecre.class.getResource("/icons/imgAgregar.jpg")));
+		lblPic.setBounds(281, 11, 160, 138);
+		contentPane.add(lblPic);
 	}
 }

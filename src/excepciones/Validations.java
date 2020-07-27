@@ -31,6 +31,10 @@ public final class Validations {
         if (phoneNumber < 0) 
             throw new PhoneNumberRangeException("Indique un numero entero positivo. \n ");
     }
+    
+    public static void errorMessage(String message) {
+    	JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
+    }
 
     public static void errorMessage(JTextField nombreTxt, String message) {
         JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
@@ -44,7 +48,7 @@ public final class Validations {
     }
 
     public static boolean validateName(JTextField name) {
-        Pattern pat = Pattern.compile("^[a-zA-ZáÁéÉíÍóÓúÚñ ]+${1,40}");
+        Pattern pat = Pattern.compile("^[a-zA-ZÃ¡Ã�Ã©Ã‰Ã­Ã�Ã³Ã“ÃºÃšÃ± ]+${1,40}");
         Matcher mat = pat.matcher(name.getText());
         if (name.getText().isEmpty()) {
             errorMessage(name, "Error en: Nombre\nEl campo no puede estar vacio.");
@@ -94,7 +98,7 @@ public final class Validations {
     }
     
     public static boolean validateAddress(JTextField address) {
-        Pattern pat = Pattern.compile("^[a-zA-Z0-9áÁéÉíÍóÓúÚñ.# ]+${1,60}");
+        Pattern pat = Pattern.compile("^[a-zA-Z0-9Ã¡Ã�Ã©Ã‰Ã­Ã�Ã³Ã“ÃºÃšÃ±.# ]+${1,60}");
         Matcher mat = pat.matcher(address.getText());
         if (mat.matches() == false) {
             errorMessage(address, "Error en: Direccion\nIngrese numeros, letras y caracteres especiales tales como: \n .\n #");
@@ -154,7 +158,7 @@ public final class Validations {
     }
     
     public static boolean validateNotes(JTextField notes) {
-        Pattern pat = Pattern.compile("^[a-zA-ZáÁéÉíÍóÓúÚñ ]+${1,40}");
+        Pattern pat = Pattern.compile("^[a-zA-ZÃ¡Ã�Ã©Ã‰Ã­Ã�Ã³Ã“ÃºÃšÃ± ]+${1,40}");
         Matcher mat = pat.matcher(notes.getText());
         if (notes.getText().isEmpty()) {
             errorMessage(notes, "Error en: Motivo\nEl campo no puede estar vacio.");

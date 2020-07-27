@@ -9,8 +9,8 @@ public class History extends Document {
         this.treatment = "";
     }
 
-    public History(String name, int age, String sex, String notes, String treatment) {
-        super(name, age, sex, notes);
+    public History(String name, int age, String sex, String notes, String treatment, int patientId) {
+        super(name, age, sex, notes, patientId);
         this.treatment = treatment;
     }
     

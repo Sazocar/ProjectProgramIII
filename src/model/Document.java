@@ -6,19 +6,22 @@ public abstract class Document {
     protected int age;
     protected String sex;
     protected String notes;
+    protected int patientId;
     
     public Document() {
         this.name = "";
         this.age = 0;
         this.sex = "";
         this.notes = "";
+        this.patientId=0;
     }
 
-    public Document (String name, int age, String sex, String notes) {
+    public Document (String name, int age, String sex, String notes, int patientId) {
         this.name = name;
         this.age = age;
         this.sex = sex;
         this.notes = notes;
+        this.patientId = patientId;
     }
     
     public String getName() {
@@ -52,5 +55,15 @@ public abstract class Document {
     public void setNotes(String notes) {
         this.notes = notes;
     }
+
+	public int getPatientId() {
+		return patientId;
+	}
+
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
+	}
+    
+    
 
 }

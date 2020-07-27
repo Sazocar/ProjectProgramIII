@@ -36,18 +36,21 @@ public final class ControlSecretary {
         patient.setAddress(address.getText());
         patient.setPhoneNumber(Integer.parseInt(phoneNumber.getText()));
         
-        if (listOfStaff.get(listDentist.getSelectedRow()) instanceof Dentist) { 
-            appointment.setDentist((Dentist) listOfStaff.get(listDentist.getSelectedRow())); 
-        }
+	        if (listOfStaff.get(listDentist.getSelectedRow()) instanceof Dentist) { 
+	            appointment.setDentist((Dentist) listOfStaff.get(listDentist.getSelectedRow())); 
+	            patient.setDentist((Dentist) listOfStaff.get(listDentist.getSelectedRow()));
+	        }
         appointment.setDate(date.getText());
         appointment.setHour(hour.getSelectedItem().toString());
         appointment.setNotes(notes.getText());
         
+        patient.setAppointment(appointment);
+        patient.getAppointment().setPatientId(patient.getId());
+        patient.setRecipe(null);
+        patient.setHistory(null);
+        
         listOfPatients.add(patient);
         listOfAppointments.add(appointment);
-        
-        System.out.println(patient.getName() + "\n" + patient.getId());
-        System.out.println("Dentista asociado: " + appointment.getDentist().getName());
     }
 
 }
