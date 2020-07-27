@@ -80,6 +80,7 @@ public class SecretaryPrin extends JFrame {
         btnClose.setBorder(new IconHelper(260));
         btnClose.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
+        		setVisible(false);
         	}
         });
         btnClose.setIcon(new ImageIcon(SecretaryPrin.class.getResource("/icons/salir32.png")));
@@ -87,6 +88,13 @@ public class SecretaryPrin extends JFrame {
         contentPane.add(btnClose);
         
         JButton btnLogOut = new JButton("");
+        btnLogOut.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		setVisible(false);
+        		Start reset = new Start();
+        		reset.setVisible(true);
+        	}
+        });
         btnLogOut.setForeground(new Color(176, 224, 230));
         btnLogOut.setBackground(new Color(176, 224, 230));
         btnLogOut.setBorder(new IconHelper(260));
