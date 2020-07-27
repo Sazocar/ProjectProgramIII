@@ -3,6 +3,7 @@ package view;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JComboBox;
@@ -31,7 +32,7 @@ public class CreateApointment extends JPanel {
 	private JTextField dateTxt;
 	private JTextField notesTxt;
 
-	
+
 	public CreateApointment(Clinic clinic) {  // Aqui se le pasa el array de Dentista
 		setBackground(new Color(176, 224, 230));			  // para poder usarse en createAppointment
 		setLayout(null);
@@ -77,7 +78,7 @@ public class CreateApointment extends JPanel {
 		
 		JComboBox sexBox = new JComboBox();
 		sexBox.setMaximumRowCount(2);
-		sexBox.setModel(new DefaultComboBoxModel(new String[] {"", "M", "F"}));
+		sexBox.setModel(new DefaultComboBoxModel(new String[] {"M", "F"}));
 		sexBox.setBounds(121, 186, 37, 20);
 		add(sexBox);
 		
@@ -154,6 +155,7 @@ public class CreateApointment extends JPanel {
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ControlSecretary.createAppointment(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dentistTable, dateTxt, hourBox, notesTxt, clinic.getListOfStaff(), clinic.getListOfAppointments(), clinic.getListOfPatients());
+				JOptionPane.showMessageDialog(null, "Cita creada exitosamente");
 				System.out.println("Cantidad de appointments: " + clinic.getListOfAppointments().size());
 			}
 		});
@@ -172,5 +174,15 @@ public class CreateApointment extends JPanel {
 		btnCancel.setBackground(new Color(176, 224, 230));
 		btnCancel.setBounds(39, 328, 72, 72);
 		add(btnCancel);
+	}
+	
+
+	public JTable getDentistTable() {
+		return dentistTable;
+	}
+
+
+	public void setDentistTable(JTable dentistTable) {
+		this.dentistTable = dentistTable;
 	}
 }

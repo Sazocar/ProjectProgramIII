@@ -4,12 +4,15 @@ import java.util.ArrayList;
 
 public class Clinic {
     
-    private ArrayList<Person> listOfStaff;
-    private ArrayList<Patient> listOfPatients;
-    private ArrayList<Appointment> listOfAppointments;
-    private ArrayList<Inventory> inventory;
+    private ArrayList<Person> listOfStaff = new ArrayList<Person>();
+    private ArrayList<Patient> listOfPatients = new ArrayList<Patient>();
+    private ArrayList<Appointment> listOfAppointments =new ArrayList<Appointment>();
+    private ArrayList<Inventory> inventory = new ArrayList<Inventory>();
     
     public Clinic () {
+    	Dentist dummie = new Dentist("Simon", 4123, 22, "M", "Mi casa", 9123, "Odontologo pro", "tarde"); // el ulitmo parametero es un arrayList
+    	listOfStaff = new ArrayList<Person>();
+    	listOfStaff.add(dummie);
         
     }
 

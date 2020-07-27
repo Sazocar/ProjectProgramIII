@@ -45,6 +45,9 @@ public final class ControlSecretary {
         
         listOfPatients.add(patient);
         listOfAppointments.add(appointment);
+        
+        System.out.println(patient.getName() + "\n" + patient.getId());
+        System.out.println("Dentista asociado: " + appointment.getDentist().getName());
     }
 
 }

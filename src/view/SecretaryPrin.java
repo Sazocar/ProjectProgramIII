@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import controller.ControlFields;
+import controller.ControlSecretary;
 import model.*;
 
 import java.awt.Color;
@@ -39,19 +41,20 @@ public class SecretaryPrin extends JFrame {
 		contentPane.add(searchPanel);
 		searchPanel.setVisible(false);
 		
-		JButton btnApointmen = new JButton("");
-		btnApointmen.addActionListener(new ActionListener() {
+		JButton btnAppointment = new JButton("");
+		btnAppointment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				searchPanel.setVisible(false);
 				appointmentPanel.setVisible(true);
+				ControlFields.fillTableDentist(appointmentPanel.getDentistTable(), clinic);
 			}
 		});
-		btnApointmen.setIcon(new ImageIcon(SecretaryPrin.class.getResource("/Icons/Calendar-icon.jpg")));
-		btnApointmen.setForeground(new Color(176, 224, 230));
-		btnApointmen.setBackground(new Color(176, 224, 230));
-		btnApointmen.setBounds(0, 40, 144, 123);
-		btnApointmen.setBorder(new IconHelper(260));
-		contentPane.add(btnApointmen);
+		btnAppointment.setIcon(new ImageIcon(SecretaryPrin.class.getResource("/Icons/Calendar-icon.jpg")));
+		btnAppointment.setForeground(new Color(176, 224, 230));
+		btnAppointment.setBackground(new Color(176, 224, 230));
+		btnAppointment.setBounds(0, 40, 144, 123);
+		btnAppointment.setBorder(new IconHelper(260));
+		contentPane.add(btnAppointment);
 		
 		JButton btnPacients = new JButton("");
 		btnPacients.addActionListener(new ActionListener() {

@@ -2,6 +2,8 @@ package view;
 
 import java.awt.BorderLayout;
 import model.*;
+import persistence.DaoDentistXML;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -24,6 +26,7 @@ public class Start extends JFrame {
 	
 	Clinic clinic = new Clinic();
 	Inventory inventory = new Inventory();
+	DaoDentistXML dataDentist = new DaoDentistXML();
 
 	/**
 	 * Launch the application.
@@ -45,6 +48,9 @@ public class Start extends JFrame {
 	 * Create the frame.
 	 */
 	public Start() {
+		
+		DaoDentistXML.allDentist(clinic.getListOfStaff());
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 344);
 		contentPane = new JPanel();
