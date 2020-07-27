@@ -21,6 +21,9 @@ import java.awt.event.ActionEvent;
 public class Start extends JFrame {
 
 	private JPanel contentPane;
+	
+	Clinic clinic = new Clinic();
+	Inventory inventory = new Inventory();
 
 	/**
 	 * Launch the application.
@@ -61,9 +64,9 @@ public class Start extends JFrame {
 		JButton btnSecretary = new JButton("");
 		btnSecretary.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				SecretaryPrin secre = new SecretaryPrin();
+				SecretaryPrin secretaryFrame = new SecretaryPrin(clinic);
 				setVisible(false);
-				secre.setVisible(true);
+				secretaryFrame.setVisible(true);
 			}
 		});
 		btnSecretary.setIcon(new ImageIcon(Start.class.getResource("/Icons/Secretaris.jpg")));

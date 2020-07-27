@@ -11,25 +11,29 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import model.IconHelper;
+import controller.ControlSecretary;
+import model.*;
 
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
 
 public class CreateApointment extends JPanel {
 	private JTextField nameTxt;
 	private JTextField idTxt;
 	private JTextField ageTxt;
-	private JTextField adressTxt;
-	private JTextField numberTxt;
-	private JTable table;
+	private JTextField addressTxt;
+	private JTextField phoneNumberTxt;
+	private JTable dentistTable;
 	private JTextField dateTxt;
-	private JTextField textField;
+	private JTextField notesTxt;
 
 	
-	public CreateApointment() {
-		setBackground(new Color(176, 224, 230));
+	public CreateApointment(Clinic clinic) {  // Aqui se le pasa el array de Dentista
+		setBackground(new Color(176, 224, 230));			  // para poder usarse en createAppointment
 		setLayout(null);
 		
 		JLabel lblName = new JLabel("Nombre: ");
@@ -71,62 +75,46 @@ public class CreateApointment extends JPanel {
 		lblSex.setBounds(44, 184, 67, 20);
 		add(lblSex);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setMaximumRowCount(2);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"M", "F"}));
-		comboBox.setBounds(121, 186, 37, 20);
-		add(comboBox);
+		JComboBox sexBox = new JComboBox();
+		sexBox.setMaximumRowCount(2);
+		sexBox.setModel(new DefaultComboBoxModel(new String[] {"", "M", "F"}));
+		sexBox.setBounds(121, 186, 37, 20);
+		add(sexBox);
 		
-		JLabel lblAdress = new JLabel("Direccion:");
-		lblAdress.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblAdress.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblAdress.setBounds(22, 225, 89, 20);
-		add(lblAdress);
+		JLabel lblAddress = new JLabel("Direccion:");
+		lblAddress.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblAddress.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblAddress.setBounds(22, 225, 89, 20);
+		add(lblAddress);
 		
-		adressTxt = new JTextField();
-		adressTxt.setColumns(10);
-		adressTxt.setBounds(121, 227, 114, 20);
-		add(adressTxt);
+		addressTxt = new JTextField();
+		addressTxt.setColumns(10);
+		addressTxt.setBounds(121, 227, 114, 20);
+		add(addressTxt);
 		
-		JLabel lblNumeroDeTelefono = new JLabel("Numero de tlfn:");
-		lblNumeroDeTelefono.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNumeroDeTelefono.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNumeroDeTelefono.setBounds(0, 269, 114, 20);
-		add(lblNumeroDeTelefono);
+		JLabel lblPhoneNumber = new JLabel("Numero de tlfn:");
+		lblPhoneNumber.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPhoneNumber.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblPhoneNumber.setBounds(0, 269, 114, 20);
+		add(lblPhoneNumber);
 		
-		numberTxt = new JTextField();
-		numberTxt.setColumns(10);
-		numberTxt.setBounds(121, 271, 114, 20);
-		add(numberTxt);
+		phoneNumberTxt = new JTextField();
+		phoneNumberTxt.setColumns(10);
+		phoneNumberTxt.setBounds(121, 271, 114, 20);
+		add(phoneNumberTxt);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(285, 22, 212, 145);
 		add(scrollPane);
 		
-		table = new JTable();
-		scrollPane.setColumnHeaderView(table);
+		dentistTable = new JTable();
+		scrollPane.setColumnHeaderView(dentistTable);
 		
 		JLabel lblAviliable = new JLabel("Odontologos Disponibles");
 		lblAviliable.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblAviliable.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAviliable.setBounds(285, 177, 202, 35);
 		add(lblAviliable);
-		
-		JButton btnConfirm = new JButton("");
-		btnConfirm.setForeground(new Color(176, 224, 230));
-		btnConfirm.setBackground(new Color(176, 224, 230));
-		btnConfirm.setBorder(new IconHelper(260));
-		btnConfirm.setIcon(new ImageIcon(CreateApointment.class.getResource("/Icons/check.jpg")));
-		btnConfirm.setBounds(44, 325, 72, 72);
-		add(btnConfirm);
-		
-		JButton btnCancel = new JButton("");
-		btnCancel.setIcon(new ImageIcon(CreateApointment.class.getResource("/Icons/back.jpg")));
-		btnCancel.setForeground(new Color(176, 224, 230));
-		btnCancel.setBorder(new IconHelper(260));
-		btnCancel.setBackground(new Color(176, 224, 230));
-		btnCancel.setBounds(163, 325, 72, 72);
-		add(btnCancel);
 		
 		JLabel lblDate = new JLabel("Fecha:");
 		lblDate.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -145,21 +133,44 @@ public class CreateApointment extends JPanel {
 		lblHour.setBounds(245, 269, 89, 20);
 		add(lblHour);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"", "9 AM", "10 AM", "11 AM", "2 PM", "3 PM", "4 PM", "5 PM"}));
-		comboBox_1.setBounds(354, 271, 49, 20);
-		add(comboBox_1);
+		JComboBox hourBox = new JComboBox();
+		hourBox.setModel(new DefaultComboBoxModel(new String[] {"", "9 AM", "10 AM", "11 AM", "2 PM", "3 PM", "4 PM", "5 PM"}));
+		hourBox.setBounds(354, 271, 49, 20);
+		add(hourBox);
 		
-		JLabel lblMotivo = new JLabel("Motivo:");
-		lblMotivo.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblMotivo.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblMotivo.setBounds(245, 312, 89, 20);
-		add(lblMotivo);
+		JLabel lblNotes = new JLabel("Motivo:");
+		lblNotes.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNotes.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNotes.setBounds(245, 312, 89, 20);
+		add(lblNotes);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(344, 314, 153, 20);
-		add(textField);
+		notesTxt = new JTextField();
+		notesTxt.setColumns(10);
+		notesTxt.setBounds(344, 314, 153, 20);
+		add(notesTxt);
+		
+		
+		JButton btnConfirm = new JButton("");
+		btnConfirm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ControlSecretary.createAppointment(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dentistTable, dateTxt, hourBox, notesTxt, clinic.getListOfStaff(), clinic.getListOfAppointments(), clinic.getListOfPatients());
+				System.out.println("Cantidad de appointments: " + clinic.getListOfAppointments().size());
+			}
+		});
+		btnConfirm.setForeground(new Color(176, 224, 230));
+		btnConfirm.setBackground(new Color(176, 224, 230));
+		btnConfirm.setBorder(new IconHelper(260));
+		btnConfirm.setIcon(new ImageIcon(CreateApointment.class.getResource("/Icons/check.jpg")));
+		btnConfirm.setBounds(153, 328, 72, 72);
+		add(btnConfirm);
 
+
+		JButton btnCancel = new JButton("");
+		btnCancel.setIcon(new ImageIcon(CreateApointment.class.getResource("/Icons/back.jpg")));
+		btnCancel.setForeground(new Color(176, 224, 230));
+		btnCancel.setBorder(new IconHelper(260));
+		btnCancel.setBackground(new Color(176, 224, 230));
+		btnCancel.setBounds(39, 328, 72, 72);
+		add(btnCancel);
 	}
 }
