@@ -4,15 +4,15 @@ public class Appointment {
     
     private Dentist dentist;
     private String date;
-    private int hours;
+    private String hour;
     private String notes;    
 
     public Dentist getDentist() {
         return dentist;
     }
 
-    public void setDentist (Dentist odontolo) {
-        this.dentist = odontolo;
+    public void setDentist (Dentist dentist) {
+        this.dentist = dentist;
     }
 
     public String getDate() {
@@ -23,12 +23,12 @@ public class Appointment {
         this.date = date;
     }
 
-    public int getHours() {
-        return hours;
+    public String getHour() {
+        return hour;
     }
 
-    public void setHours(int hours) {
-        this.hours = hours;
+    public void setHour(String hour) {
+        this.hour = hour;
     }
 
     public String getNotes() {
