@@ -76,7 +76,7 @@ public class Start extends JFrame {
         JButton btnDentist = new JButton("");
         btnDentist.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		DentistPrin dentistFrame = new DentistPrin();
+        		DentistPrin dentistFrame = new DentistPrin(clinic);
         		dentistFrame.setVisible(true);
         	}
         });

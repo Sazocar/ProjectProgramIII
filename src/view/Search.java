@@ -38,7 +38,7 @@ public class Search extends JPanel {
     private JTable table;
     private JTextField searchTxt;
 
-    public Search(Clinic clinic) {
+    public Search(Clinic clinic, boolean SorD) {
         setBackground(new Color(176, 224, 230));
         setLayout(null);
 
@@ -69,8 +69,14 @@ public class Search extends JPanel {
                 if (table.getSelectedRow() == -1) {
                     Validations.errorMessage("Seleccione un paciente\npara mostrar mas informacion");
                 } else {
-                    MoreInfoSecre more = new MoreInfoSecre(clinic.getListOfPatients().get(table.getSelectedRow()));
-                    more.setVisible(true);
+                	if (!SorD) {
+	                    MoreInfoSecre more = new MoreInfoSecre(clinic.getListOfPatients().get(table.getSelectedRow()));
+	                    more.setVisible(true);
+                	}
+                	else {
+                		MoreInfoDent more = new MoreInfoDent(clinic.getListOfPatients().get(table.getSelectedRow()));
+	                    more.setVisible(true);
+                	}
                 }
             }
         });

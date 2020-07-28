@@ -39,7 +39,7 @@ public class SecretaryPrin extends JFrame {
         contentPane.add(appointmentPanel);
         appointmentPanel.setVisible(true);
 
-        Search searchPanel = new Search(clinic);
+        Search searchPanel = new Search(clinic, false);
         searchPanel.setBounds(143, 0, 540, 424);
         contentPane.add(searchPanel);
         searchPanel.setVisible(false);
@@ -68,7 +68,7 @@ public class SecretaryPrin extends JFrame {
                 searchPanel.setVisible(true);
             }
         });
-        btnPatients.setIcon(new ImageIcon(SecretaryPrin.class.getResource("/Icons/Search.jpg")));
+        btnPatients.setIcon(new ImageIcon(SecretaryPrin.class.getResource("/icons/Addressbook-4-icon (128).png")));
         btnPatients.setForeground(new Color(176, 224, 230));
         btnPatients.setBorder(new IconHelper(260));
         btnPatients.setBackground(new Color(176, 224, 230));
@@ -87,7 +87,7 @@ public class SecretaryPrin extends JFrame {
         btnLogOut.setForeground(new Color(176, 224, 230));
         btnLogOut.setBackground(new Color(176, 224, 230));
         btnLogOut.setBorder(new IconHelper(260));
-        btnLogOut.setIcon(new ImageIcon(SecretaryPrin.class.getResource("/icons/logOut32.png")));
+        btnLogOut.setIcon(new ImageIcon(SecretaryPrin.class.getResource("/icons/Arrow-inside-icon.png")));
         btnLogOut.setBounds(56, 309, 36, 36);
         btnLogOut.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         contentPane.add(btnLogOut);
