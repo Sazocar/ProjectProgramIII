@@ -257,11 +257,8 @@ public class ModifPatient extends JFrame {
         btnCancel.setBounds(39, 328, 72, 72);
         btnCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                int option = JOptionPane.showConfirmDialog(null, "Seguro que desea volver a la pagina inicial?", "Cancelar", JOptionPane.YES_NO_OPTION);
-                if (option != 1) {
                     ControlFields.clearFieldsSecretary(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dateTxt, hourBox, notesTxt);
                     setVisible(false);
-                }
             }
         });
         btnCancel.setIcon(new ImageIcon(CreateApointment.class.getResource("/Icons/back.jpg")));

@@ -101,7 +101,7 @@ public class CreateApointment extends JPanel {
 
         addressTxt = new JTextField();
         addressTxt.setColumns(10);
-        addressTxt.setBounds(121, 227, 152, 20);
+        addressTxt.setBounds(114, 226, 172, 20);
         add(addressTxt);
 
         JLabel lblPhoneNumber = new JLabel("Numero de tlfn:");
@@ -127,7 +127,9 @@ public class CreateApointment extends JPanel {
         	}
         ));
         scrollPane.setViewportView(dentistTable);
-        dentistTable.getTableHeader().setReorderingAllowed(false);
+        dentistTable.getTableHeader().setReorderingAllowed(false); // prevent user to drag column
+        dentistTable.getTableHeader().setEnabled(false);		  // tableHeader not resizable
+        dentistTable.setDefaultEditor(Object.class, null);		  // column not editable
         
         JLabel lblAviliable = new JLabel("Odontologos Disponibles");
         lblAviliable.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -138,11 +140,11 @@ public class CreateApointment extends JPanel {
         JLabel lblDate = new JLabel("Fecha:");
         lblDate.setHorizontalAlignment(SwingConstants.RIGHT);
         lblDate.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        lblDate.setBounds(245, 230, 89, 20);
+        lblDate.setBounds(285, 230, 49, 20);
         add(lblDate);
 
         dateTxt = new JTextField();
-        dateTxt.setBounds(344, 232, 114, 20);
+        dateTxt.setBounds(344, 232, 89, 20);
         add(dateTxt);
         dateTxt.setColumns(10);
 

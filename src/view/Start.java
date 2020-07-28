@@ -77,7 +77,7 @@ public class Start extends JFrame {
         btnDentist.setIcon(new ImageIcon(Start.class.getResource("/Icons/Odon.jpg")));
         btnDentist.setForeground(new Color(176, 224, 230));
         btnDentist.setBackground(new Color(176, 224, 230));
-        btnDentist.setBounds(10, 60, 190, 183);
+        btnDentist.setBounds(72, 99, 124, 144);
         btnDentist.setBorder(new IconHelper(260));
         btnDentist.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         contentPane.add(btnDentist);
@@ -93,7 +93,7 @@ public class Start extends JFrame {
         btnSecretary.setIcon(new ImageIcon(Start.class.getResource("/Icons/Secretaris.jpg")));
         btnSecretary.setBackground(new Color(176, 224, 230));
         btnSecretary.setForeground(new Color(176, 224, 230));
-        btnSecretary.setBounds(244, 60, 190, 183);
+        btnSecretary.setBounds(263, 99, 133, 144);
         btnSecretary.setBorder(new IconHelper(260));
         btnSecretary.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         contentPane.add(btnSecretary);
@@ -101,19 +101,19 @@ public class Start extends JFrame {
         JLabel lblNewLabel = new JLabel("Odontologo");
         lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
         lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel.setBounds(10, 264, 170, 30);
+        lblNewLabel.setBounds(42, 255, 170, 30);
         contentPane.add(lblNewLabel);
 
         JLabel lblSecretaria = new JLabel("Secretaria");
         lblSecretaria.setHorizontalAlignment(SwingConstants.CENTER);
         lblSecretaria.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        lblSecretaria.setBounds(244, 266, 190, 28);
+        lblSecretaria.setBounds(230, 255, 190, 28);
         contentPane.add(lblSecretaria);
 
         JLabel lblNewLabel_1 = new JLabel("Seleccione un Usuario");
         lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
         lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_1.setBounds(10, 11, 414, 33);
+        lblNewLabel_1.setBounds(0, 24, 450, 33);
         contentPane.add(lblNewLabel_1);
     }
 }

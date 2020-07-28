@@ -45,11 +45,13 @@ public class Search extends JPanel {
         scrollPane.setBounds(37, 22, 460, 203);
         add(scrollPane);
 
-        table = new JTable();
+        table = new JTable();	
         table.setFont(new Font("Tahoma", Font.PLAIN, 13));
         table.setBackground(new Color(255, 255, 255));
         scrollPane.setViewportView(table);
-        table.getTableHeader().setReorderingAllowed(false);
+        table.getTableHeader().setReorderingAllowed(false); // prevent user to drag column
+        table.getTableHeader().setEnabled(false);		  // tableHeader not resizable
+        table.setDefaultEditor(Object.class, null);		  // column not editable
 
         JButton btnHome = new JButton("");
         btnHome.setBackground(new Color(176, 224, 230));
