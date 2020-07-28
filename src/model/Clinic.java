@@ -4,19 +4,19 @@ import java.util.ArrayList;
 
 public class Clinic {
     
-    private ArrayList<Person> listOfStaff = new ArrayList<Person>();
+    private ArrayList<Dentist> listOfStaff = new ArrayList<Dentist>();
     private ArrayList<Patient> listOfPatients = new ArrayList<Patient>();
     private ArrayList<Appointment> listOfAppointments =new ArrayList<Appointment>();
     private ArrayList<Inventory> inventory = new ArrayList<Inventory>();
     
     public Clinic () {
-    	Dentist dummie = new Dentist("Simon", 4123, 22, "M", "Mi casa", 9123, "Odontologo pro", "tarde"); // el ulitmo parametero es un arrayList
-    	listOfStaff = new ArrayList<Person>();
+    	Dentist dummie = new Dentist("Simon", 4123, 22, "M", "Mi casa", 9123, "Odontologo pro", "tarde", null); // el ulitmo parametero es un arrayList
+    	listOfStaff = new ArrayList<Dentist>();
     	listOfStaff.add(dummie);
         
     }
 
-    public Clinic(ArrayList<Person> listOfStaff, ArrayList<Patient> listOfPatients, ArrayList<Appointment> listOfAppointments, 
+    public Clinic(ArrayList<Dentist> listOfStaff, ArrayList<Patient> listOfPatients, ArrayList<Appointment> listOfAppointments, 
             ArrayList<Inventory> inventory) {
         this.listOfStaff = listOfStaff;
         this.listOfPatients = listOfPatients;
@@ -24,11 +24,11 @@ public class Clinic {
         this.inventory = inventory;
     }
 
-    public ArrayList<Person> getListOfStaff() {
+    public ArrayList<Dentist> getListOfStaff() {
         return listOfStaff;
     }
 
-    public void setListOfStaff(ArrayList<Person> listOfStaff) {
+    public void setListOfStaff(ArrayList<Dentist> listOfStaff) {
         this.listOfStaff = listOfStaff;
     }
 

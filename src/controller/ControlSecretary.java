@@ -17,7 +17,7 @@ public final class ControlSecretary {
 
     public static void createAppointment(JTextField name, JTextField id, JTextField age, JComboBox sex,
             JTextField address, JTextField phoneNumber, JTable listDentist, JTextField date, JComboBox hour, JTextField notes,
-            ArrayList<Person> listOfStaff, ArrayList<Appointment> listOfAppointments, ArrayList<Patient> listOfPatients) {
+            ArrayList<Dentist> listOfStaff, ArrayList<Appointment> listOfAppointments, ArrayList<Patient> listOfPatients) {
 
         Patient patient = new Patient();
         Appointment appointment = new Appointment();

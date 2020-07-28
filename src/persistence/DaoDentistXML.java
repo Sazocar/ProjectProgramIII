@@ -38,7 +38,7 @@ public class DaoDentistXML {
         }
     }
 
-    private static Element DentistXmlElement(Dentist nDentist) {
+    public static Element DentistXmlElement(Dentist nDentist) {
         /*
 		 * Aqui lleno todo el contexto que le voy a insertar al archivo, es decir el
 		 * nodo proncipal que es Estudiante con los atributos que le corresponden, los
@@ -48,7 +48,7 @@ public class DaoDentistXML {
 		 * produzca ningún error que te advierta que falta un acento, un espacio u otro
 		 * símbolo
          */
-        Element Dentist = new Element("Deportista");// nombre de la Clase
+        Element Dentist = new Element("Dentist");// nombre de la Clase
 
         Element name = new Element("name");
         name.setText(nDentist.getName());
@@ -61,10 +61,9 @@ public class DaoDentistXML {
         Element address = new Element("address");
         address.setText(nDentist.getAddress());
         Element phoneNumber = new Element("phoneNumber");
-        phoneNumber.setText(Double.toString(nDentist.getPhoneNumber()));
+        phoneNumber.setText(Integer.toString(nDentist.getPhoneNumber()));
         Element speciality = new Element("speciality");
         speciality.setText(nDentist.getSpecialty());
-        // Aqui va el arrayList de appointments
         Dentist.addContent(name);
         Dentist.addContent(id);
         Dentist.addContent(sex);
@@ -76,11 +75,11 @@ public class DaoDentistXML {
     }
 
     public static Dentist DentistToObject(Element element) throws ParseException {
-        Dentist nDeportista = new Dentist(element.getChildText("name"), Integer.parseInt(element.getChildText("id")),
+        Dentist nDentist = new Dentist(element.getChildText("name"), Integer.parseInt(element.getChildText("id")),
                 Integer.parseInt(element.getChildText("age")), element.getChildText("sex"),
                 element.getChildText("address"), Integer.parseInt(element.getChildText("phoneNumber")),
-                element.getChildText("speciality"), element.getChildText("shift"));
-        return nDeportista;
+                element.getChildText("speciality"), element.getChildText("shift"), null);
+        return nDentist;
 
     }
 
@@ -147,7 +146,7 @@ public class DaoDentistXML {
         return null;
     }
 
-    public static void allDentist(ArrayList<Person> listOfStaff) {
+    public static void allDentist(ArrayList<Dentist> listOfStaff) {
         /*
 		 * Para obtener todas las Personas registradas
 		 * 

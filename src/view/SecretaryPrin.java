@@ -24,6 +24,7 @@ import javax.swing.JOptionPane;
 public class SecretaryPrin extends JFrame {
 
     private JPanel contentPane;
+    private CreateApointment appointmentPanel;
 
     public SecretaryPrin(Clinic clinic) {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,7 +35,7 @@ public class SecretaryPrin extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        CreateApointment appointmentPanel = new CreateApointment(clinic);
+        appointmentPanel = new CreateApointment(clinic);
         appointmentPanel.setBounds(143, 0, 540, 440);
         contentPane.add(appointmentPanel);
         appointmentPanel.setVisible(true);
@@ -129,4 +130,14 @@ public class SecretaryPrin extends JFrame {
         contentPane.add(lblSalir);
         lblSalir.setHorizontalAlignment(SwingConstants.CENTER);
     }
+
+	public CreateApointment getAppointmentPanel() {
+		return appointmentPanel;
+	}
+
+	public void setAppointmentPanel(CreateApointment appointmentPanel) {
+		this.appointmentPanel = appointmentPanel;
+	}
+    
+    
 }

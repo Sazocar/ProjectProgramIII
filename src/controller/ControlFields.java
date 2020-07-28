@@ -67,4 +67,39 @@ public final class ControlFields {
         model.removeRow(table.getSelectedRow());
     }
     
+    public static void crateAppointmentLists(Clinic clinic) {
+    	for (Dentist dentist : clinic.getListOfStaff()) {
+    		ArrayList<Appointment> listOfAppointments = new ArrayList<Appointment>();
+    		dentist.setListOfAppointments(listOfAppointments);
+    	}
+    }
+    
+    public static void assingAppointmentsDentist(Clinic clinic) {
+    	for (Appointment appointments : clinic.getListOfAppointments()) {
+    		for (Dentist dentist : clinic.getListOfStaff()) {
+    			if (appointments.getDentist().getId() == dentist.getId()){
+    				dentist.getListOfAppointments().add(appointments);	
+    			}
+    		}
+    	}
+    }
+    
+    public static void fillTableAppointments(JTable tableDentist, ArrayList<Patient> patients, Dentist dentist) {
+        String[] column = {"Nombre", "Cedula", "Fecha", "Hora", "Motivo"};
+        DefaultTableModel dtm = new DefaultTableModel(null, column);
+        for (Appointment appointments : dentist.getListOfAppointments()) {
+        	for (Patient patient : patients) 
+            	if (appointments.getPatientId() == patient.getId()) {
+            		String[] fila = {patient.getName(), String.valueOf(patient.getId()), appointments.getDate(), appointments.getHour(), appointments.getNotes() };
+            		dtm.addRow(fila);
+            	}
+        }
+        tableDentist.setModel(dtm);
+        tableDentist.getColumnModel().getColumn(0).setPreferredWidth(60);
+        tableDentist.getColumnModel().getColumn(1).setPreferredWidth(60);
+        tableDentist.getColumnModel().getColumn(2).setPreferredWidth(60);
+        tableDentist.getColumnModel().getColumn(3).setPreferredWidth(40);
+        tableDentist.getColumnModel().getColumn(4).setPreferredWidth(80);
+    }
+    
 }

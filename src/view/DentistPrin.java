@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 
 import controller.ControlFields;
 import model.Clinic;
+import model.Dentist;
 import model.IconHelper;
 
 import javax.swing.JButton;
@@ -25,8 +26,10 @@ import java.awt.event.ActionEvent;
 public class DentistPrin extends JFrame {
 
 	private JPanel contentPane;
+	private ViewAppointments appointments;
+	private Search PatientsList;
 
-	public DentistPrin(Clinic clinic) {
+	public DentistPrin(Clinic clinic, Dentist dentist) {
 		    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setBounds(100, 100, 683, 452);
 	        contentPane = new JPanel();
@@ -35,7 +38,30 @@ public class DentistPrin extends JFrame {
 	        setContentPane(contentPane);
 	        contentPane.setLayout(null);
 	        
+	       
+	        
+	        appointments = new ViewAppointments(clinic);
+	        appointments.setBackground(new Color(176, 224, 230));
+	        appointments.setBounds(131, 0, 552, 413);
+	        contentPane.add(appointments);
+	        appointments.setLayout(null);
+	        appointments.setVisible(true);
+	        
+	        PatientsList = new Search(clinic, true);		  // Perro explicame que este search
+	        PatientsList.setBackground(new Color(176, 224, 230)); // y xq no es un JTable
+	        PatientsList.setBounds(131, 0, 552, 413);
+	        contentPane.add(PatientsList);
+	        PatientsList.setLayout(null);
+	        PatientsList.setVisible(false);
+	        
 	        JButton btnAppointments = new JButton("");
+	        btnAppointments.addActionListener(new ActionListener() {
+	        	public void actionPerformed(ActionEvent e) {
+	        		PatientsList.setVisible(false);
+	        		appointments.setVisible(true);
+	        		ControlFields.fillTableAppointments(appointments.getTable(), clinic.getListOfPatients(), dentist);
+	        	}
+	        });
 	        btnAppointments.setIcon(new ImageIcon(DentistPrin.class.getResource("/icons/Files-2-icon.png")));
 	        btnAppointments.setForeground(new Color(176, 224, 230));
 	        btnAppointments.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -44,20 +70,6 @@ public class DentistPrin extends JFrame {
 	        btnAppointments.setBorder(new IconHelper(260));
 	        btnAppointments.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 	        contentPane.add(btnAppointments);
-	        
-	        JPanel appointments = new JPanel();
-	        appointments.setBackground(new Color(176, 224, 230));
-	        appointments.setBounds(131, 0, 552, 430);
-	        contentPane.add(appointments);
-	        appointments.setLayout(null);
-	        appointments.setVisible(true);
-	        
-	        Search PatientsList = new Search(clinic, true);		  // Perro explicame que este search
-	        PatientsList.setBackground(new Color(176, 224, 230)); // y xq no es un JTable
-	        PatientsList.setBounds(131, 0, 552, 430);
-	        contentPane.add(PatientsList);
-	        PatientsList.setLayout(null);
-	        PatientsList.setVisible(false);
 	        
 	        JButton btnPatients = new JButton("");
 	        btnPatients.addActionListener(new ActionListener() {
@@ -146,4 +158,22 @@ public class DentistPrin extends JFrame {
 	        lblSalir.setBounds(0, 411, 130, 16);
 	        contentPane.add(lblSalir);
 	}
+
+	public ViewAppointments getAppointments() {
+		return appointments;
+	}
+
+	public void setAppointments(ViewAppointments appointments) {
+		this.appointments = appointments;
+	}
+
+	public Search getPatientsList() {
+		return PatientsList;
+	}
+
+	public void setPatientsList(Search patientsList) {
+		PatientsList = patientsList;
+	}
+	
+	
 }

@@ -53,9 +53,9 @@ public class DaoAppointmentsXML {
         Element Appointment = new Element("Appointment");// nombre de la Clase
 
         
-        Element dentist =new Element("dentist");
-        dentist.setText(nAppointment.getDentist().getName());
-        Element date =new Element("date");
+        Element dentist = DaoDentistXML.DentistXmlElement(nAppointment.getDentist());
+     //   dentist.setContent(DaoDentistXML.DentistXmlElement(nAppointment.getDentist())); 
+        Element date = new Element("date");
         date.setText(nAppointment.getDate());
         Element hour =new Element("hour");
         hour.setText(nAppointment.getHour());
@@ -63,6 +63,9 @@ public class DaoAppointmentsXML {
         notes.setText(nAppointment.getNotes());
         Element patientId = new Element("patientId");
         patientId.setText(Integer.toString(nAppointment.getPatientId()));
+        Appointment.addContent(dentist);
+        Appointment.addContent(hour);
+        Appointment.addContent(notes);
         Appointment.addContent(patientId);
         return Appointment;
     }
@@ -80,9 +83,12 @@ public class DaoAppointmentsXML {
     
             Que la fuerza te acompane... 
             (Mucho texto)
+            
+            La fuerza es intensa en ti joven padawan pero aun te falta mucho por entender xd
+            (Hello there)
     */
     public static Appointment AppointmentToObject(Element element) throws ParseException {
-        Appointment nAppointment = new Appointment((Dentist) (Object) element.getChildText("dentist"), element.getChildText("date"), element.getChildText("hours"), 
+        Appointment nAppointment = new Appointment(DaoDentistXML.DentistToObject(element.getChild("Dentist")), element.getChildText("date"), element.getChildText("hour"), 
                 element.getChildText("notes"), Integer.parseInt(element.getChildText("patientId")));
         return nAppointment;
 

@@ -72,11 +72,11 @@ public class Search extends JPanel {
                 	if (!SorD) {
 	                    MoreInfoSecre more = new MoreInfoSecre(clinic.getListOfPatients().get(table.getSelectedRow()));
 	                    more.setVisible(true);
-	                    more.setLocation(206, 200);
+	                    more.setLocationRelativeTo(null);
                 	}
                 	else {
                 		MoreInfoDent more = new MoreInfoDent(clinic.getListOfPatients().get(table.getSelectedRow()));
-	                    more.setLocation(790, 220);
+	                    more.setLocationRelativeTo(null);
                 		more.setVisible(true);
                 	}
                 }
@@ -185,14 +185,14 @@ public class Search extends JPanel {
                 		ModifPatient modifPatientSecre = new ModifPatient(clinic, clinic.getListOfPatients().get(table.getSelectedRow()), table);
                         ControlFields.fillTableDentist(modifPatientSecre.getDentistTable(), clinic);
                         modifPatientSecre.setVisible(true);
-                        modifPatientSecre.setLocation(150, 200);
+                        modifPatientSecre.setLocationRelativeTo(null);
                         modifPatientSecre.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
                 	}
                 	else {
                 		ModifPatient modifPatientDent = new ModifPatient(clinic, clinic.getListOfPatients().get(table.getSelectedRow()), table);
                         ControlFields.fillTableDentist(modifPatientDent.getDentistTable(), clinic);
                         modifPatientDent.setVisible(true);
-                        modifPatientDent.setLocation(800, 220);
+                        modifPatientDent.setLocationRelativeTo(null);
                         modifPatientDent.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
                 	}
                 }

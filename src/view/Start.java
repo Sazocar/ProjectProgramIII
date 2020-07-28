@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import controller.ControlFields;
+
 import java.awt.Color;
 import java.awt.CardLayout;
 import java.awt.Cursor;
@@ -54,10 +56,12 @@ public class Start extends JFrame {
     public Start() {
     	
         DaoDentistXML.allDentist(clinic.getListOfStaff());
-//        DaoAppointmentsXML.allAppointments(clinic.getListOfAppointments());
+        DaoAppointmentsXML.allAppointments(clinic.getListOfAppointments());
+        ControlFields.crateAppointmentLists(clinic);        
+        ControlFields.assingAppointmentsDentist(clinic);
         
         //Test
-        Appointment apo = new Appointment( (Dentist) clinic.getListOfStaff().get(0),"22/12/2000", "9 AM", "Murision",0);
+        Appointment apo = new Appointment(clinic.getListOfStaff().get(1),"22/12/2000", "10 AM", "Murision",0);
         Patient test = new Patient("Gral Kenobi", 234, 30, "M", "Hello There", 2345, (Dentist) clinic.getListOfStaff().get(0), apo, null, null);
         Patient test2 = new Patient("Anakin", 235, 30, "M", "Hello There", 2345, (Dentist) clinic.getListOfStaff().get(0), apo, null, null);
         Patient test3 = new Patient("Gral Greivous", 237, 30, "M", "Hello There", 2345, (Dentist) clinic.getListOfStaff().get(0), apo, null, null);
@@ -80,10 +84,11 @@ public class Start extends JFrame {
         JButton btnDentist = new JButton("");
         btnDentist.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		DentistPrin dentistFrame = new DentistPrin(clinic);
+        		SelectDentist select = new SelectDentist(clinic);
         		setVisible(false);
-        		dentistFrame.setLocation(100, 220);
-        		dentistFrame.setVisible(true);
+        		ControlFields.fillTableDentist(select.getDentistTable(), clinic);
+        		select.setLocationRelativeTo(null);
+        		select.setVisible(true);
         	}
         });
         btnDentist.setIcon(new ImageIcon(Start.class.getResource("/Icons/Odon.jpg")));
@@ -99,8 +104,9 @@ public class Start extends JFrame {
             public void actionPerformed(ActionEvent arg0) {
                 SecretaryPrin secretaryFrame = new SecretaryPrin(clinic);
                 setVisible(false);
-                secretaryFrame.setLocation(700, 200);
+                secretaryFrame.setLocationRelativeTo(null);
                 secretaryFrame.setVisible(true);
+                ControlFields.fillTableDentist(secretaryFrame.getAppointmentPanel().getDentistTable(), clinic);
             }
         });
         btnSecretary.setIcon(new ImageIcon(Start.class.getResource("/Icons/Secretaris.jpg")));
