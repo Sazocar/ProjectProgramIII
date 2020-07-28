@@ -226,7 +226,7 @@ public class Search extends JPanel {
             ArrayList<Patient> filler = new ArrayList<Patient>();
             for (Patient patient : clinic.getListOfPatients()) {
                 if (cbmSearch.getSelectedIndex() == 1) {
-                    if (searchTxt.getText().equals(patient.getName())) {
+                    if (searchTxt.getText().equalsIgnoreCase(patient.getName())) {
                         filler.add(patient);
                     }
                 } else if (searchTxt.getText().equals(String.valueOf(patient.getId()))) {

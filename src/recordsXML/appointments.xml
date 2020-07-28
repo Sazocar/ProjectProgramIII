@@ -3,7 +3,6 @@
 <appointments>
     <Appointment>
         <dentist>
-            <Dentist>
                 <name>Carlitos PRO</name>
                 <id>1234</id>
                 <age>22</age>
@@ -12,7 +11,6 @@
                 <phoneNumber>9128312</phoneNumber>
                 <speciality>Odontologo pro</speciality>
                 <shift>manana</shift>
-            </Dentist>
         </dentist>
         <date>19/12/2000</date>
         <hour>9 AM</hour>

@@ -53,7 +53,7 @@ public class Start extends JFrame {
     public Start() {
 
         DaoDentistXML.allDentist(clinic.getListOfStaff());
-        DaoAppointmentsXML.allAppointments(clinic.getListOfAppointments());
+//        DaoAppointmentsXML.allAppointments(clinic.getListOfAppointments());
         
         //Test
         Appointment apo = new Appointment( (Dentist) clinic.getListOfStaff().get(0),"22/12/2000", "9 AM", "Murision",0);
