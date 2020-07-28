@@ -1,23 +1,23 @@
 package model;
 
 public class Appointment {
-    
+
     private Dentist dentist;
     private String date;
     private String hour;
-    private String notes; 
+    private String notes;
     private int patientId;
-    
+
     public Appointment() {
-    	
+
     }
-    
+
     public Appointment(Dentist dentist, String date, String hour, String notes, int patientId) {
-    	this.dentist = dentist;
-    	this.date = date;
-    	this.hour = hour;
-    	this.notes = notes;
-    	this.patientId = patientId;
+        this.dentist = dentist;
+        this.date = date;
+        this.hour = hour;
+        this.notes = notes;
+        this.patientId = patientId;
     }
 
     public Dentist getDentist() {
@@ -52,13 +52,12 @@ public class Appointment {
         this.notes = notes;
     }
 
-	public int getPatientId() {
-		return patientId;
-	}
+    public int getPatientId() {
+        return patientId;
+    }
 
-	public void setPatientId(int patientId) {
-		this.patientId = patientId;
-	}
-    
-    
+    public void setPatientId(int patientId) {
+        this.patientId = patientId;
+    }
+
 }

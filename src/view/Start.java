@@ -20,6 +20,7 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import persistence.DaoAppointmentsXML;
 
 public class Start extends JFrame {
 
@@ -28,6 +29,7 @@ public class Start extends JFrame {
     Clinic clinic = new Clinic();
     Inventory inventory = new Inventory();
     DaoDentistXML dataDentist = new DaoDentistXML();
+    DaoAppointmentsXML dataAppointment = new DaoAppointmentsXML();
 
     /**
      * Launch the application.
@@ -51,6 +53,7 @@ public class Start extends JFrame {
     public Start() {
 
         DaoDentistXML.allDentist(clinic.getListOfStaff());
+        DaoAppointmentsXML.allAppointments(clinic.getListOfAppointments());
         
         //Test
         Appointment apo = new Appointment( (Dentist) clinic.getListOfStaff().get(0),"22/12/2000", "9 AM", "Murision",0);

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<utensils>
+    <Object>
+        <nameOfProduct>Guantes</nameOfProduct>
+        <use>Pa las manos pa q mas</use>
+        <typeOfProduct>higiene</typeOfProduct>
+        <quantity>10</quantity>
+    </Object>
+</utensils>
