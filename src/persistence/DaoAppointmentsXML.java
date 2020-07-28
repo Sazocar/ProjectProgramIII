@@ -66,7 +66,21 @@ public class DaoAppointmentsXML {
         Appointment.addContent(patientId);
         return Appointment;
     }
-
+    
+    
+  /*       
+            Este es el metodo que da error
+            Intente hacer eso de "(Dentist) (Object) element.getChild("dentist")" 
+            a ver si me convertía el elemento a un objeto
+            y luego a un dentista y al parecer lo hace, pero luego dice 
+            que el element no puede ser casteado a un Dentista (fuck logic)
+            no sé que se te ocurre my friend.
+            si necesitas un appointment pa verificar algo, hazlo manual sin 
+            necesidad de los archivos y esto dejarlo de ultimo.
+    
+            Que la fuerza te acompane... 
+            (Mucho texto)
+    */
     public static Appointment AppointmentToObject(Element element) throws ParseException {
         Appointment nAppointment = new Appointment((Dentist) (Object) element.getChildText("dentist"), element.getChildText("date"), element.getChildText("hours"), 
                 element.getChildText("notes"), Integer.parseInt(element.getChildText("patientId")));
