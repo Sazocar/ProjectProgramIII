@@ -213,6 +213,20 @@ public class CreateApointment extends JPanel {
         add(btnCancel);
         
         placeholder = new PlaceHolder(dateTxt, "dd/mm/aaaa");
+        
+        JLabel lblOk = new JLabel("OK");
+        lblOk.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+        lblOk.setForeground(new Color(0, 0, 0));
+        lblOk.setHorizontalAlignment(SwingConstants.CENTER);
+        lblOk.setBounds(160, 400, 61, 16);
+        add(lblOk);
+        
+        JLabel lblNewLabel = new JLabel("ATRAS");
+        lblNewLabel.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+        lblNewLabel.setForeground(new Color(0, 0, 0));
+        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        lblNewLabel.setBounds(47, 400, 61, 16);
+        add(lblNewLabel);
     }
 
     public JTable getDentistTable() {

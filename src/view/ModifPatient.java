@@ -134,7 +134,9 @@ public class ModifPatient extends JFrame {
         	}
         ));
         scrollPane.setViewportView(dentistTable);
-        dentistTable.setDragEnabled(false);
+        dentistTable.getTableHeader().setReorderingAllowed(false); // prevent user to drag column
+        dentistTable.getTableHeader().setEnabled(false);		  // tableHeader not resizable
+        dentistTable.setDefaultEditor(Object.class, null);		  // column not editable
 
         JLabel lblAviliable = new JLabel("Odontologos Disponibles");
         lblAviliable.setBounds(285, 177, 202, 35);

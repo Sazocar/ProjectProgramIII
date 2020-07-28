@@ -84,19 +84,20 @@ public class MoreInfoDent extends JFrame {
 		displayAge.setHorizontalAlignment(SwingConstants.LEFT);
 		displayAge.setBounds(129, 170, 33, 14);
 		contentPane.add(displayAge);
-		JButton done = new JButton("");
-		done.addActionListener(new ActionListener() {
+		
+		JButton btnOk = new JButton("");
+		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 			}
 		});
-		done.setBorder(new IconHelper(10));
-		done.setForeground(new Color(176, 224, 230));
-		done.setBackground(new Color(176, 224, 230));
-		done.setIcon(new ImageIcon(MoreInfoSecre.class.getResource("/Icons/check2.jpg")));
-		done.setBounds(109, 267, 55, 55);
-		done.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		contentPane.add(done);
+		btnOk.setBorder(new IconHelper(10));
+		btnOk.setForeground(new Color(176, 224, 230));
+		btnOk.setBackground(new Color(176, 224, 230));
+		btnOk.setIcon(new ImageIcon(MoreInfoSecre.class.getResource("/Icons/check2.jpg")));
+		btnOk.setBounds(109, 267, 55, 55);
+		btnOk.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		contentPane.add(btnOk);
 		
 		JLabel lbldone = new JLabel("Listo");
 		lbldone.setHorizontalAlignment(SwingConstants.CENTER);
@@ -159,26 +160,28 @@ public class MoreInfoDent extends JFrame {
 		lblPic.setBounds(281, 11, 160, 138);
 		contentPane.add(lblPic);
 		
-		JButton hist = new JButton("");
-		hist.setIcon(new ImageIcon(MoreInfoDent.class.getResource("/icons/Play-Books-icon.jpg")));
-		hist.setForeground(new Color(176, 224, 230));
-		hist.setBorder(new IconHelper(10));
-		hist.setBackground(new Color(176, 224, 230));
-		hist.setBounds(206, 267, 55, 55);
-		contentPane.add(hist);
+		JButton btnHist = new JButton("");
+		btnHist.setIcon(new ImageIcon(MoreInfoDent.class.getResource("/icons/Play-Books-icon.jpg")));
+		btnHist.setForeground(new Color(176, 224, 230));
+		btnHist.setBorder(new IconHelper(10));
+		btnHist.setBackground(new Color(176, 224, 230));
+		btnHist.setBounds(206, 267, 55, 55);
+		btnHist.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		contentPane.add(btnHist);
 		
 		JLabel lblHist = new JLabel("Historia");
 		lblHist.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHist.setBounds(208, 326, 50, 14);
 		contentPane.add(lblHist);
 		
-		JButton recipe = new JButton("");
-		recipe.setIcon(new ImageIcon(MoreInfoDent.class.getResource("/icons/documents-icon.png")));
-		recipe.setForeground(new Color(176, 224, 230));
-		recipe.setBorder(new IconHelper(110));
-		recipe.setBackground(new Color(176, 224, 230));
-		recipe.setBounds(293, 267, 55, 55);
-		contentPane.add(recipe);
+		JButton btnRecipe = new JButton("");
+		btnRecipe.setIcon(new ImageIcon(MoreInfoDent.class.getResource("/icons/documents-icon.png")));
+		btnRecipe.setForeground(new Color(176, 224, 230));
+		btnRecipe.setBorder(new IconHelper(110));
+		btnRecipe.setBackground(new Color(176, 224, 230));
+		btnRecipe.setBounds(293, 267, 55, 55);
+		btnRecipe.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		contentPane.add(btnRecipe);
 		
 		JLabel lblRecipe = new JLabel("Recipe");
 		lblRecipe.setHorizontalAlignment(SwingConstants.CENTER);

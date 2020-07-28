@@ -35,12 +35,12 @@ public class SecretaryPrin extends JFrame {
         contentPane.setLayout(null);
 
         CreateApointment appointmentPanel = new CreateApointment(clinic);
-        appointmentPanel.setBounds(143, 0, 540, 424);
+        appointmentPanel.setBounds(143, 0, 540, 440);
         contentPane.add(appointmentPanel);
         appointmentPanel.setVisible(true);
 
         Search searchPanel = new Search(clinic, false);
-        searchPanel.setBounds(143, 0, 540, 424);
+        searchPanel.setBounds(143, 0, 540, 440);
         contentPane.add(searchPanel);
         searchPanel.setVisible(false);
 
@@ -55,7 +55,7 @@ public class SecretaryPrin extends JFrame {
         btnAppointment.setIcon(new ImageIcon(SecretaryPrin.class.getResource("/Icons/Calendar-icon.jpg")));
         btnAppointment.setForeground(new Color(176, 224, 230));
         btnAppointment.setBackground(new Color(176, 224, 230));
-        btnAppointment.setBounds(0, 26, 144, 123);
+        btnAppointment.setBounds(0, 25, 144, 123);
         btnAppointment.setBorder(new IconHelper(260));
         btnAppointment.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         contentPane.add(btnAppointment);
@@ -72,7 +72,7 @@ public class SecretaryPrin extends JFrame {
         btnPatients.setForeground(new Color(176, 224, 230));
         btnPatients.setBorder(new IconHelper(260));
         btnPatients.setBackground(new Color(176, 224, 230));
-        btnPatients.setBounds(0, 171, 144, 132);
+        btnPatients.setBounds(0, 172, 144, 132);
         btnPatients.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         contentPane.add(btnPatients);
         
@@ -80,15 +80,16 @@ public class SecretaryPrin extends JFrame {
         btnLogOut.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		setVisible(false);
-        		Start reset = new Start();
-        		reset.setVisible(true);
+        		Start logInFrame = new Start();
+        		logInFrame.setLocationRelativeTo(null);
+        		logInFrame.setVisible(true);
         	}
         });
         btnLogOut.setForeground(new Color(176, 224, 230));
         btnLogOut.setBackground(new Color(176, 224, 230));
         btnLogOut.setBorder(new IconHelper(260));
         btnLogOut.setIcon(new ImageIcon(SecretaryPrin.class.getResource("/icons/Arrow-inside-icon.png")));
-        btnLogOut.setBounds(56, 309, 36, 36);
+        btnLogOut.setBounds(52, 315, 36, 36);
         btnLogOut.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         contentPane.add(btnLogOut);
         
@@ -103,19 +104,19 @@ public class SecretaryPrin extends JFrame {
         contentPane.add(lblVerListaDe);
         
         JLabel lblCambiar = new JLabel("Cambiar Usuario");
-        lblCambiar.setBounds(0, 340, 144, 25);
+        lblCambiar.setBounds(0, 349, 144, 25);
         contentPane.add(lblCambiar);
         lblCambiar.setHorizontalAlignment(SwingConstants.CENTER);
         
         JButton btnClose = new JButton("");
-        btnClose.setBounds(54, 365, 36, 35);
+        btnClose.setBounds(52, 378, 39, 35);
         contentPane.add(btnClose);
         btnClose.setForeground(new Color(176, 224, 230));
         btnClose.setBackground(new Color(176, 224, 230));
         btnClose.setBorder(new IconHelper(260));
         btnClose.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
-        		int option = JOptionPane.showConfirmDialog(null, "Seguro que desea salir?", "Cancelar", JOptionPane.YES_NO_OPTION);
+        		int option = JOptionPane.showConfirmDialog(null, "Seguro que desea salir?", "Exit", JOptionPane.YES_NO_OPTION);
         		if (option != 1)
         			System.exit(0);
         	}
@@ -124,7 +125,7 @@ public class SecretaryPrin extends JFrame {
         btnClose.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         
         JLabel lblSalir = new JLabel("Salir");
-        lblSalir.setBounds(52, 400, 41, 16);
+        lblSalir.setBounds(0, 418, 144, 16);
         contentPane.add(lblSalir);
         lblSalir.setHorizontalAlignment(SwingConstants.CENTER);
     }

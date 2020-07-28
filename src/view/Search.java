@@ -72,10 +72,12 @@ public class Search extends JPanel {
                 	if (!SorD) {
 	                    MoreInfoSecre more = new MoreInfoSecre(clinic.getListOfPatients().get(table.getSelectedRow()));
 	                    more.setVisible(true);
+	                    more.setLocation(206, 200);
                 	}
                 	else {
                 		MoreInfoDent more = new MoreInfoDent(clinic.getListOfPatients().get(table.getSelectedRow()));
-	                    more.setVisible(true);
+	                    more.setLocation(790, 220);
+                		more.setVisible(true);
                 	}
                 }
             }
@@ -96,6 +98,7 @@ public class Search extends JPanel {
                 else {
                     ControlFields.deletePatient(clinic, table);
                     ControlFields.fillTablePatient(table, clinic.getListOfPatients());
+                    JOptionPane.showMessageDialog(null, "Paciente eliminado\nsatisfactoriamente!");
                 }
             }
         });
@@ -175,13 +178,23 @@ public class Search extends JPanel {
         JButton btnModif = new JButton("");
         btnModif.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                if (table.getSelectedRow() == -1) 
-                    Validations.errorMessage("Seleccione un paciente\npara modificar");
-                else {
-                    ModifPatient modifPatient = new ModifPatient(clinic, clinic.getListOfPatients().get(table.getSelectedRow()), table);
-                    ControlFields.fillTableDentist(modifPatient.getDentistTable(), clinic);
-                    modifPatient.setVisible(true);
-                    modifPatient.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
+            	if (table.getSelectedRow() == -1) {
+                    Validations.errorMessage("Seleccione un paciente\npara mostrar mas informacion");
+                } else {
+                	if (!SorD) {
+                		ModifPatient modifPatientSecre = new ModifPatient(clinic, clinic.getListOfPatients().get(table.getSelectedRow()), table);
+                        ControlFields.fillTableDentist(modifPatientSecre.getDentistTable(), clinic);
+                        modifPatientSecre.setVisible(true);
+                        modifPatientSecre.setLocation(150, 200);
+                        modifPatientSecre.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
+                	}
+                	else {
+                		ModifPatient modifPatientDent = new ModifPatient(clinic, clinic.getListOfPatients().get(table.getSelectedRow()), table);
+                        ControlFields.fillTableDentist(modifPatientDent.getDentistTable(), clinic);
+                        modifPatientDent.setVisible(true);
+                        modifPatientDent.setLocation(800, 220);
+                        modifPatientDent.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
+                	}
                 }
             }
         });

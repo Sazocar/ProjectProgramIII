@@ -38,8 +38,9 @@ public class Start extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Start frame = new Start();
-                    frame.setVisible(true);
+                    Start logInFrame = new Start();
+                    logInFrame.setLocationRelativeTo(null);
+                    logInFrame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -51,7 +52,7 @@ public class Start extends JFrame {
      * Create the frame.
      */
     public Start() {
-
+    	
         DaoDentistXML.allDentist(clinic.getListOfStaff());
 //        DaoAppointmentsXML.allAppointments(clinic.getListOfAppointments());
         
@@ -80,6 +81,8 @@ public class Start extends JFrame {
         btnDentist.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		DentistPrin dentistFrame = new DentistPrin(clinic);
+        		setVisible(false);
+        		dentistFrame.setLocation(100, 220);
         		dentistFrame.setVisible(true);
         	}
         });
@@ -96,6 +99,7 @@ public class Start extends JFrame {
             public void actionPerformed(ActionEvent arg0) {
                 SecretaryPrin secretaryFrame = new SecretaryPrin(clinic);
                 setVisible(false);
+                secretaryFrame.setLocation(700, 200);
                 secretaryFrame.setVisible(true);
             }
         });
