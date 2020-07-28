@@ -54,7 +54,6 @@ public class DaoAppointmentsXML {
 
         
         Element dentist = DaoDentistXML.DentistXmlElement(nAppointment.getDentist());
-     //   dentist.setContent(DaoDentistXML.DentistXmlElement(nAppointment.getDentist())); 
         Element date = new Element("date");
         date.setText(nAppointment.getDate());
         Element hour =new Element("hour");

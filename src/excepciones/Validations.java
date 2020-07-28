@@ -35,6 +35,11 @@ public final class Validations {
     public static void errorMessage(String message) {
     	JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
     }
+    
+    public static void warningMessage(String message, Dentist dentist) {
+    	if (dentist.getListOfAppointments().isEmpty())
+			JOptionPane.showMessageDialog(null, message, "Aviso", JOptionPane.WARNING_MESSAGE);
+    }
 
     public static void errorMessage(JTextField nombreTxt, String message) {
         JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
@@ -46,6 +51,8 @@ public final class Validations {
         JOptionPane.showMessageDialog(null, message, "Error", JOptionPane.ERROR_MESSAGE);
         nombreTxt.requestFocus();
     }
+    
+    
 
     public static boolean validateName(JTextField name) {
         Pattern pat = Pattern.compile("^[a-zA-ZÃ¡Ã�Ã©Ã‰Ã­Ã�Ã³Ã“ÃºÃšÃ± ]+${1,40}");

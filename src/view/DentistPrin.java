@@ -10,9 +10,11 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import controller.ControlFields;
+import excepciones.Validations;
 import model.Clinic;
 import model.Dentist;
 import model.IconHelper;
+import model.Patient;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -21,6 +23,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class DentistPrin extends JFrame {
@@ -29,7 +32,7 @@ public class DentistPrin extends JFrame {
 	private ViewAppointments appointments;
 	private Search PatientsList;
 
-	public DentistPrin(Clinic clinic, Dentist dentist) {
+	public DentistPrin(Clinic clinic, Dentist dentist, ArrayList<Patient> patients) {
 		    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setBounds(100, 100, 683, 452);
 	        contentPane = new JPanel();
@@ -40,7 +43,7 @@ public class DentistPrin extends JFrame {
 	        
 	       
 	        
-	        appointments = new ViewAppointments(clinic);
+	        appointments = new ViewAppointments(clinic, patients, dentist);
 	        appointments.setBackground(new Color(176, 224, 230));
 	        appointments.setBounds(131, 0, 552, 413);
 	        contentPane.add(appointments);
@@ -59,7 +62,8 @@ public class DentistPrin extends JFrame {
 	        	public void actionPerformed(ActionEvent e) {
 	        		PatientsList.setVisible(false);
 	        		appointments.setVisible(true);
-	        		ControlFields.fillTableAppointments(appointments.getTable(), clinic.getListOfPatients(), dentist);
+	        		ControlFields.fillTableAppointments(appointments.getTable(), patients);
+	        		Validations.warningMessage("No hay citas asignadas", dentist);
 	        	}
 	        });
 	        btnAppointments.setIcon(new ImageIcon(DentistPrin.class.getResource("/icons/Files-2-icon.png")));

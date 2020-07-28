@@ -84,7 +84,7 @@ public final class ControlFields {
     	}
     }
     
-    public static void fillTableAppointments(JTable tableDentist, ArrayList<Patient> patients, Dentist dentist) {
+    public static void firstFillTableAppointments(JTable tableDentist, ArrayList<Patient> patients, Dentist dentist, ArrayList<Patient> patientsInAppointments) {
         String[] column = {"Nombre", "Cedula", "Fecha", "Hora", "Motivo"};
         DefaultTableModel dtm = new DefaultTableModel(null, column);
         for (Appointment appointments : dentist.getListOfAppointments()) {
@@ -92,7 +92,8 @@ public final class ControlFields {
             	if (appointments.getPatientId() == patient.getId()) {
             		String[] fila = {patient.getName(), String.valueOf(patient.getId()), appointments.getDate(), appointments.getHour(), appointments.getNotes() };
             		dtm.addRow(fila);
-            	}
+            		patientsInAppointments.add(patient);
+            	}	
         }
         tableDentist.setModel(dtm);
         tableDentist.getColumnModel().getColumn(0).setPreferredWidth(60);
@@ -102,4 +103,22 @@ public final class ControlFields {
         tableDentist.getColumnModel().getColumn(4).setPreferredWidth(80);
     }
     
+    public static void fillTableAppointments(JTable tableDentist, ArrayList<Patient> patientsInAppointments) {
+        String[] column = {"Nombre", "Cedula", "Fecha", "Hora", "Motivo"};
+        DefaultTableModel dtm = new DefaultTableModel(null, column);
+        for (Patient patient : patientsInAppointments) {
+            		String[] fila = {patient.getName(), String.valueOf(patient.getId()), patient.getAppointment().getDate(), patient.getAppointment().getHour(), patient.getAppointment().getNotes() };
+            		dtm.addRow(fila);
+            	}
+    
+        tableDentist.setModel(dtm);
+        tableDentist.getColumnModel().getColumn(0).setPreferredWidth(60);
+        tableDentist.getColumnModel().getColumn(1).setPreferredWidth(60);
+        tableDentist.getColumnModel().getColumn(2).setPreferredWidth(60);
+        tableDentist.getColumnModel().getColumn(3).setPreferredWidth(40);
+        tableDentist.getColumnModel().getColumn(4).setPreferredWidth(80);
+    }
+    
+    
 }
+

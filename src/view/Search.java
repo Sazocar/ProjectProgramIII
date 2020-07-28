@@ -108,6 +108,8 @@ public class Search extends JPanel {
         btnDelete.setBounds(395, 285, 72, 72);
         btnDelete.setBorder(new IconHelper(260));
         btnDelete.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        if (SorD)
+        	btnDelete.setVisible(false);
         add(btnDelete);
 
         JLabel lblHome = new JLabel("Home");
@@ -116,17 +118,19 @@ public class Search extends JPanel {
         lblHome.setBounds(37, 367, 62, 17);
         add(lblHome);
 
-        JLabel lblMas = new JLabel("Mas");
-        lblMas.setHorizontalAlignment(SwingConstants.CENTER);
-        lblMas.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        lblMas.setBounds(291, 369, 62, 17);
-        add(lblMas);
+        JLabel lblMore = new JLabel("Mas");
+        lblMore.setHorizontalAlignment(SwingConstants.CENTER);
+        lblMore.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblMore.setBounds(291, 369, 62, 17);
+        add(lblMore);
 
-        JLabel lblEliminar = new JLabel("Eliminar");
-        lblEliminar.setHorizontalAlignment(SwingConstants.CENTER);
-        lblEliminar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        lblEliminar.setBounds(402, 367, 62, 17);
-        add(lblEliminar);
+        JLabel lblDelete = new JLabel("Eliminar");
+        lblDelete.setHorizontalAlignment(SwingConstants.CENTER);
+        lblDelete.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        lblDelete.setBounds(402, 367, 62, 17);
+        if (SorD)
+        	lblDelete.setVisible(false);
+        add(lblDelete);
 
         JComboBox cbmSearch = new JComboBox();
         cbmSearch.setModel(new DefaultComboBoxModel(new String[]{" ", "Nombre", "Cedula"}));
@@ -181,21 +185,12 @@ public class Search extends JPanel {
             	if (table.getSelectedRow() == -1) {
                     Validations.errorMessage("Seleccione un paciente\npara mostrar mas informacion");
                 } else {
-                	if (!SorD) {
-                		ModifPatient modifPatientSecre = new ModifPatient(clinic, clinic.getListOfPatients().get(table.getSelectedRow()), table);
-                        ControlFields.fillTableDentist(modifPatientSecre.getDentistTable(), clinic);
-                        modifPatientSecre.setVisible(true);
-                        modifPatientSecre.setLocationRelativeTo(null);
-                        modifPatientSecre.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
+                		ModifPatient modifPatient = new ModifPatient(clinic, clinic.getListOfPatients().get(table.getSelectedRow()), table);
+                        ControlFields.fillTableDentist(modifPatient.getDentistTable(), clinic);
+                        modifPatient.setVisible(true);
+                        modifPatient.setLocationRelativeTo(null);
+                        modifPatient.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
                 	}
-                	else {
-                		ModifPatient modifPatientDent = new ModifPatient(clinic, clinic.getListOfPatients().get(table.getSelectedRow()), table);
-                        ControlFields.fillTableDentist(modifPatientDent.getDentistTable(), clinic);
-                        modifPatientDent.setVisible(true);
-                        modifPatientDent.setLocationRelativeTo(null);
-                        modifPatientDent.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
-                	}
-                }
             }
         });
         btnModif.setIcon(new ImageIcon(Search.class.getResource("/icons/Pencil.jpg")));

@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.JPanel;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,9 +18,12 @@ import javax.swing.event.DocumentListener;
 import controller.ControlFields;
 import excepciones.Validations;
 import model.Clinic;
+import model.Dentist;
+import model.IconHelper;
 import model.Patient;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -29,7 +33,7 @@ public class ViewAppointments extends JPanel {
 	private JTextField searchTxt;
 
 	
-	public ViewAppointments(Clinic clinic) {
+	public ViewAppointments(Clinic clinic, ArrayList<Patient> patients, Dentist dentist) {
 		setBackground(new Color(176, 224, 230));
 		setLayout(null);
 		
@@ -42,10 +46,6 @@ public class ViewAppointments extends JPanel {
         table.setFont(new Font("Tahoma", Font.PLAIN, 13));
         table.setBackground(new Color(255, 255, 255));
         scrollPane.setViewportView(table);
-        
-        JButton btnNewButton = new JButton("New button");
-        btnNewButton.setBounds(221, 274, 89, 75);
-        add(btnNewButton);
         table.getTableHeader().setReorderingAllowed(false); // prevent user to drag column
         table.getTableHeader().setEnabled(false);		  // tableHeader not resizable
         table.setDefaultEditor(Object.class, null);		  // column not editable
@@ -106,6 +106,60 @@ public class ViewAppointments extends JPanel {
         });
         btnSearch.setBounds(382, 236, 89, 23);
         add(btnSearch);
+        
+        JButton btnModif = new JButton("");
+        btnModif.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+            	if (table.getSelectedRow() == -1) {
+                    Validations.errorMessage("Seleccione un paciente\npara mostrar mas informacion");
+                } else {
+                		ModifPatientDent modifPatient = new ModifPatientDent(clinic, patients.get(table.getSelectedRow()), table,patients);
+                        ControlFields.fillTableDentist(modifPatient.getDentistTable(), clinic);
+                        modifPatient.setVisible(true);
+                        modifPatient.setLocationRelativeTo(null);
+                        modifPatient.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
+                }
+            }
+        });
+        btnModif.setIcon(new ImageIcon(Search.class.getResource("/icons/Pencil.jpg")));
+        btnModif.setForeground(new Color(176, 224, 230));
+        btnModif.setBorder(new IconHelper(260));
+        btnModif.setBackground(new Color(176, 224, 230));
+        btnModif.setBounds(144, 283, 72, 72);
+        btnModif.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        add(btnModif);
+        
+        JButton btnMore = new JButton("");
+        btnMore.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (table.getSelectedRow() == -1) {
+                    Validations.errorMessage("Seleccione un paciente\npara mostrar mas informacion");
+                } else {
+                		MoreInfoDent more = new MoreInfoDent(patients.get(table.getSelectedRow()));
+	                    more.setLocationRelativeTo(null);
+                		more.setVisible(true);
+                }
+            }
+        });
+        btnMore.setForeground(new Color(176, 224, 230));
+        btnMore.setBackground(new Color(176, 224, 230));
+        btnMore.setIcon(new ImageIcon(Search.class.getResource("/Icons/mas.jpg")));
+        btnMore.setBounds(287, 286, 72, 72);
+        btnMore.setBorder(new IconHelper(260));
+        btnMore.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        add(btnMore);
+        
+        JLabel lblModif = new JLabel("Modificar");
+        lblModif.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        lblModif.setHorizontalAlignment(SwingConstants.CENTER);
+        lblModif.setBounds(147, 366, 72, 20);
+        add(lblModif);
+        
+        JLabel lblMore = new JLabel("Mas");
+        lblMore.setHorizontalAlignment(SwingConstants.CENTER);
+        lblMore.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        lblMore.setBounds(287, 366, 72, 20);
+        add(lblMore);
 	}
 	
 	public void searchAction(JComboBox cbmSearch, Clinic clinic) {

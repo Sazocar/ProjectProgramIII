@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,6 +20,7 @@ import excepciones.Validations;
 import model.Clinic;
 import model.Dentist;
 import model.IconHelper;
+import model.Patient;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -37,8 +39,10 @@ public class SelectDentist extends JFrame {
 
 	public SelectDentist(Clinic clinic ) {
 		
+		ArrayList<Patient> patientsInAppointments = new ArrayList<Patient>();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 357, 278);
+		setBounds(100, 100, 357, 255);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(176, 224, 230));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -60,40 +64,44 @@ public class SelectDentist extends JFrame {
         scrollPane.setViewportView(dentistTable);
         dentistTable.getTableHeader().setReorderingAllowed(false); // prevent user to drag column
         dentistTable.getTableHeader().setEnabled(false);		  // tableHeader not resizable
-        dentistTable.setDefaultEditor(Object.class, null);		  // column not editable
+        dentistTable.setDefaultEditor(Object.class, null);
         
-        JButton btnConfirm = new JButton("");
+        JButton btnConfirm = new JButton("Aceptar");
+        btnConfirm.setBounds(10, 183, 89, 23);
         btnConfirm.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		DentistPrin dentistFrame = new DentistPrin(clinic,(Dentist) clinic.getListOfStaff().get(dentistTable.getSelectedRow()));
-        		dentistFrame.setLocationRelativeTo(null);
-        		dentistFrame.setVisible(true);
-        		setVisible(false);
-        		if (clinic.getListOfStaff().get(dentistTable.getSelectedRow()).getListOfAppointments().isEmpty()) {
-        			dentistFrame.getAppointments().setVisible(false);
-        			dentistFrame.getPatientsList().setVisible(true);
-        			ControlFields.fillTablePatient(dentistFrame.getPatientsList().getTable(), clinic.getListOfPatients());
+        		if (dentistTable.getSelectedRow() == -1) {
+        			Validations.errorMessage("Debe seleccionar un odontologo para poder continuar");
         		}
         		else {
-        			ControlFields.fillTableAppointments(dentistFrame.getAppointments().getTable(), clinic.getListOfPatients(), clinic.getListOfStaff().get(dentistTable.getSelectedRow()));
-        		}
+	        		DentistPrin dentistFrame = new DentistPrin(clinic,(Dentist) clinic.getListOfStaff().get(dentistTable.getSelectedRow()), patientsInAppointments);
+	        		dentistFrame.setLocationRelativeTo(null);
+	        		dentistFrame.setVisible(true);
+	        		setVisible(false);
+	        		if (clinic.getListOfStaff().get(dentistTable.getSelectedRow()).getListOfAppointments().isEmpty()) {
+	        			dentistFrame.getAppointments().setVisible(false);
+	        			dentistFrame.getPatientsList().setVisible(true);
+	        			ControlFields.fillTablePatient(dentistFrame.getPatientsList().getTable(), clinic.getListOfPatients());
+	        		}
+	        		else {
+	        			ControlFields.firstFillTableAppointments(dentistFrame.getAppointments().getTable(), clinic.getListOfPatients(), clinic.getListOfStaff().get(dentistTable.getSelectedRow()), patientsInAppointments);
+	        		}
+        	}
         	}
         });
-        btnConfirm.setForeground(new Color(176, 224, 230));
-        btnConfirm.setBackground(new Color(176, 224, 230));
-        btnConfirm.setBorder(new IconHelper(260));
-        btnConfirm.setIcon(new ImageIcon(CreateApointment.class.getResource("/Icons/check.jpg")));
-        btnConfirm.setBounds(75, 129, 72, 72);
-        btnConfirm.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         contentPane.add(btnConfirm);
         
-        JLabel lblAcept = new JLabel("Aceptar");
-        lblAcept.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        lblAcept.setHorizontalAlignment(SwingConstants.CENTER);
-        lblAcept.setBounds(75, 212, 72, 16);
-        contentPane.add(lblAcept);
+        JLabel lblInfo = new JLabel("Seleccione o cree un nuevo Odontologo");
+        lblInfo.setHorizontalAlignment(SwingConstants.CENTER);
+        lblInfo.setBounds(21, 131, 300, 14);
+        contentPane.add(lblInfo);
         
-        JButton btnBack = new JButton("");
+        JButton btnNew = new JButton("Nuevo");
+        btnNew.setBounds(122, 183, 89, 23);
+        contentPane.add(btnNew);
+        
+        JButton btnBack = new JButton("Atras");
+        btnBack.setBounds(242, 183, 89, 23);
         btnBack.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		setVisible(false);
@@ -103,18 +111,8 @@ public class SelectDentist extends JFrame {
         		
         	}
         });
-        btnBack.setIcon(new ImageIcon(SelectDentist.class.getResource("/icons/back.jpg")));
-        btnBack.setForeground(new Color(176, 224, 230));
-        btnBack.setBorder(new IconHelper(260));
-        btnBack.setBackground(new Color(176, 224, 230));
-        btnBack.setBounds(195, 129, 72, 72);
         contentPane.add(btnBack);
         
-        JLabel lblBack = new JLabel("Volver");
-        lblBack.setHorizontalAlignment(SwingConstants.CENTER);
-        lblBack.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        lblBack.setBounds(195, 212, 82, 16);
-        contentPane.add(lblBack);
 	}
 
 
@@ -126,7 +124,6 @@ public class SelectDentist extends JFrame {
 	public void setDentistTable(JTable dentistTable) {
 		this.dentistTable = dentistTable;
 	}
-	
 	
 }
 	

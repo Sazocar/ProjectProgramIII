@@ -30,7 +30,7 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
-public class ModifPatient extends JFrame {
+public class ModifPatientDent extends JFrame {
 
     private JTextField nameTxt;
     private JTextField idTxt;
@@ -44,7 +44,7 @@ public class ModifPatient extends JFrame {
     PlaceHolder placeholder;
     
   
-    public ModifPatient(Clinic clinic, Patient patient, JTable table) {
+    public ModifPatientDent(Clinic clinic, Patient patient, JTable table, ArrayList<Patient> patientsInAppointments) {
     	getContentPane().setBackground(new Color(176, 224, 230));   
     	setBounds(100, 100, 543, 452);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -242,7 +242,7 @@ public class ModifPatient extends JFrame {
                     patient.getAppointment().setNotes(notesTxt.getText());
                 	JOptionPane.showMessageDialog(null, "Datos actualizados exitosamente");
                     ControlFields.clearFieldsSecretary(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dateTxt, hourBox, notesTxt);
-                    ControlFields.fillTablePatient(table, clinic.getListOfPatients());
+                    ControlFields.fillTableAppointments(table, patientsInAppointments);
                     setVisible(false);
                 }
             }
