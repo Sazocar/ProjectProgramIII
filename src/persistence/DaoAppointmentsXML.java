@@ -40,7 +40,7 @@ public class DaoAppointmentsXML {
         }
     }
 
-    private static Element AppointmentXmlElement(Appointment nAppointment) {
+    public static Element AppointmentXmlElement(Appointment nAppointment) {
         /*
 		 * Aqui lleno todo el contexto que le voy a insertar al archivo, es decir el
 		 * nodo proncipal que es Estudiante con los atributos que le corresponden, los
