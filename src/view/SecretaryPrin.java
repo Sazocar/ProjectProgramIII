@@ -27,7 +27,7 @@ public class SecretaryPrin extends JFrame {
 
     public SecretaryPrin(Clinic clinic) {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 683, 446);
+        setBounds(100, 100, 683, 462);
         contentPane = new JPanel();
         contentPane.setBackground(new Color(176, 224, 230));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -37,7 +37,7 @@ public class SecretaryPrin extends JFrame {
         CreateApointment appointmentPanel = new CreateApointment(clinic);
         appointmentPanel.setBounds(143, 0, 540, 424);
         contentPane.add(appointmentPanel);
-        appointmentPanel.setVisible(false);
+        appointmentPanel.setVisible(true);
 
         Search searchPanel = new Search(clinic);
         searchPanel.setBounds(143, 0, 540, 424);
@@ -108,7 +108,7 @@ public class SecretaryPrin extends JFrame {
         lblCambiar.setHorizontalAlignment(SwingConstants.CENTER);
         
         JButton btnClose = new JButton("");
-        btnClose.setBounds(57, 365, 36, 35);
+        btnClose.setBounds(54, 365, 36, 35);
         contentPane.add(btnClose);
         btnClose.setForeground(new Color(176, 224, 230));
         btnClose.setBackground(new Color(176, 224, 230));
@@ -124,7 +124,7 @@ public class SecretaryPrin extends JFrame {
         btnClose.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         
         JLabel lblSalir = new JLabel("Salir");
-        lblSalir.setBounds(56, 400, 41, 16);
+        lblSalir.setBounds(52, 400, 41, 16);
         contentPane.add(lblSalir);
         lblSalir.setHorizontalAlignment(SwingConstants.CENTER);
     }
