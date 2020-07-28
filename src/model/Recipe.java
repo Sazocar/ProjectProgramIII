@@ -9,8 +9,8 @@ public class Recipe extends Document {
         this.medicines = "";
     }
 
-    public Recipe(String name, int age, String sex, String notes, String medicines, int patientId) {
-        super(name, age, sex, notes, patientId);
+    public Recipe(int patientId) {
+        super(patientId);
         this.medicines = medicines;
     }
 

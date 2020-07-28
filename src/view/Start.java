@@ -77,6 +77,12 @@ public class Start extends JFrame {
         contentPane.setLayout(null);
 
         JButton btnDentist = new JButton("");
+        btnDentist.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		DentistPrin dentistFrame = new DentistPrin(clinic);
+        		dentistFrame.setVisible(true);
+        	}
+        });
         btnDentist.setIcon(new ImageIcon(Start.class.getResource("/Icons/Odon.jpg")));
         btnDentist.setForeground(new Color(176, 224, 230));
         btnDentist.setBackground(new Color(176, 224, 230));

@@ -29,6 +29,7 @@ import java.util.ResourceBundle.Control;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.ComboBoxEditor;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
@@ -37,7 +38,7 @@ public class Search extends JPanel {
     private JTable table;
     private JTextField searchTxt;
 
-    public Search(Clinic clinic) {
+    public Search(Clinic clinic, boolean SorD) {
         setBackground(new Color(176, 224, 230));
         setLayout(null);
 
@@ -68,8 +69,14 @@ public class Search extends JPanel {
                 if (table.getSelectedRow() == -1) {
                     Validations.errorMessage("Seleccione un paciente\npara mostrar mas informacion");
                 } else {
-                    MoreInfoSecre more = new MoreInfoSecre(clinic.getListOfPatients().get(table.getSelectedRow()));
-                    more.setVisible(true);
+                	if (!SorD) {
+	                    MoreInfoSecre more = new MoreInfoSecre(clinic.getListOfPatients().get(table.getSelectedRow()));
+	                    more.setVisible(true);
+                	}
+                	else {
+                		MoreInfoDent more = new MoreInfoDent(clinic.getListOfPatients().get(table.getSelectedRow()));
+	                    more.setVisible(true);
+                	}
                 }
             }
         });
@@ -127,25 +134,7 @@ public class Search extends JPanel {
         searchTxt = new JTextField();
         searchTxt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                if (cbmSearch.getSelectedIndex() == 0) {
-                    Validations.errorMessage("Indique que metodo quiere usar para buscar (Nombre o Cedula)");
-                } else {
-                    ArrayList<Patient> filler = new ArrayList<Patient>();
-                    for (Patient patient : clinic.getListOfPatients()) {
-                        if (cbmSearch.getSelectedIndex() == 1) {
-                            if (searchTxt.getText().equals(patient.getName())) {
-                                filler.add(patient);
-                            }
-                        } else if (searchTxt.getText().equals(String.valueOf(patient.getId()))) {
-                            filler.add(patient);
-                        }
-                    }
-                    if (filler.isEmpty()) {
-                        Validations.errorMessage("Persona no Encontrada");
-                    } else {
-                        ControlFields.fillTablePatient(table, filler);
-                    }
-                }
+                searchAction(cbmSearch, clinic);
             }
         });
         searchTxt.getDocument().addDocumentListener(new DocumentListener() {
@@ -209,7 +198,18 @@ public class Search extends JPanel {
         lblModif.setFont(new Font("Tahoma", Font.PLAIN, 14));
         lblModif.setBounds(190, 367, 62, 17);
         add(lblModif);
+        
+        JButton btnSearch = new JButton("Buscar");
+        btnSearch.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		searchAction(cbmSearch, clinic);
+        	}
+        });
+        btnSearch.setBounds(382, 236, 89, 23);
+        add(btnSearch);
     }
+    
+    
 
     public JTable getTable() {
         return table;
@@ -218,5 +218,26 @@ public class Search extends JPanel {
     public void setTable(JTable table) {
         this.table = table;
     }
-
+    
+    public void searchAction(JComboBox cbmSearch, Clinic clinic) {
+    	if (cbmSearch.getSelectedIndex() == 0) {
+            Validations.errorMessage("Indique que metodo quiere usar para buscar (Nombre o Cedula)");
+        } else {
+            ArrayList<Patient> filler = new ArrayList<Patient>();
+            for (Patient patient : clinic.getListOfPatients()) {
+                if (cbmSearch.getSelectedIndex() == 1) {
+                    if (searchTxt.getText().equals(patient.getName())) {
+                        filler.add(patient);
+                    }
+                } else if (searchTxt.getText().equals(String.valueOf(patient.getId()))) {
+                    filler.add(patient);
+                }
+            }
+            if (filler.isEmpty()) {
+                Validations.errorMessage("Persona no Encontrada");
+            } else {
+                ControlFields.fillTablePatient(table, filler);
+            }
+        }
+    }
 }
