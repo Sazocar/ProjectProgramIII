@@ -54,7 +54,7 @@ public class ViewAppointments extends JPanel {
         JComboBox cbmSearch = new JComboBox();
         cbmSearch.setModel(new DefaultComboBoxModel(new String[]{" ", "Nombre", "Cedula"}));
         cbmSearch.setMaximumRowCount(3);
-        cbmSearch.setBounds(265, 236, 79, 20);
+        cbmSearch.setBounds(265, 236, 105, 20);
         add(cbmSearch);
 
         searchTxt = new JTextField();
@@ -82,7 +82,7 @@ public class ViewAppointments extends JPanel {
 
             public void updater() {
                 if (searchTxt.getText().isEmpty()) {
-                    
+                	ControlFields.fillTableAppointments(table, patients);
                 }
             }
         });
@@ -115,9 +115,8 @@ public class ViewAppointments extends JPanel {
                 } else {
                 		ModifPatientDent modifPatient = new ModifPatientDent(clinic, patients.get(table.getSelectedRow()), table,patients);
                         ControlFields.fillTableDentist(modifPatient.getDentistTable(), clinic);
-                        modifPatient.setVisible(true);
                         modifPatient.setLocationRelativeTo(null);
-                       // modifPatient.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
+                        modifPatient.setVisible(true);
                 }
             }
         });
@@ -178,6 +177,8 @@ public class ViewAppointments extends JPanel {
             }
             if (filler.isEmpty()) {
                 Validations.errorMessage("Persona no Encontrada");
+            } else {
+                ControlFields.fillTablePatient(table, filler);
             }
         }
 	}

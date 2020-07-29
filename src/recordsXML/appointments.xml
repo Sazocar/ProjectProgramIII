@@ -63,4 +63,20 @@
     <notes>Muela</notes>
     <patientId>512341</patientId>
   </Appointment>
+  <Appointment>
+    <Dentist>
+      <name>Alejandro</name>
+      <id>25151231</id>
+      <sex>M</sex>
+      <address>Bello Monte</address>
+      <age>26</age>
+      <phoneNumber>5123152</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <date>20/12/2020</date>
+    <hour>11 AM</hour>
+    <notes>Limpieza</notes>
+    <patientId>5125123</patientId>
+  </Appointment>
 </Appointment>

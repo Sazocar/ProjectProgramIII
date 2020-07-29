@@ -94,6 +94,7 @@ public class DentistPrin extends JFrame {
 	        JButton btnInv = new JButton("");
 	        btnInv.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
+	        		JOptionPane.showMessageDialog(null, "Work in progress...", "Aviso", JOptionPane.WARNING_MESSAGE);
 	        	}
 	        });
 	        btnInv.setIcon(new ImageIcon(DentistPrin.class.getResource("/icons/Close-icon.png")));

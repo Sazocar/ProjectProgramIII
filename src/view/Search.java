@@ -123,7 +123,7 @@ public class Search extends JPanel {
         JComboBox cbmSearch = new JComboBox();
         cbmSearch.setModel(new DefaultComboBoxModel(new String[]{" ", "Nombre", "Cedula"}));
         cbmSearch.setMaximumRowCount(3);
-        cbmSearch.setBounds(265, 236, 79, 20);
+        cbmSearch.setBounds(265, 236, 106, 20);
         add(cbmSearch);
 
         searchTxt = new JTextField();

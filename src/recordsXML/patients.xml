@@ -135,4 +135,38 @@
       <patientId>512341</patientId>
     </Appointment>
   </Patient>
+  <Patient>
+    <name>Miriam</name>
+    <id>5125123</id>
+    <sex>F</sex>
+    <address>Altamira</address>
+    <age>25</age>
+    <phoneNumber>123412</phoneNumber>
+    <Dentist>
+      <name>Alejandro</name>
+      <id>25151231</id>
+      <sex>M</sex>
+      <address>Bello Monte</address>
+      <age>26</age>
+      <phoneNumber>5123152</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Alejandro</name>
+        <id>25151231</id>
+        <sex>M</sex>
+        <address>Bello Monte</address>
+        <age>26</age>
+        <phoneNumber>5123152</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>20/12/2020</date>
+      <hour>11 AM</hour>
+      <notes>Limpieza</notes>
+      <patientId>5125123</patientId>
+    </Appointment>
+  </Patient>
 </patients>
