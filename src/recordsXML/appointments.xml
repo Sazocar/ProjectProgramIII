@@ -1,18 +1,50 @@
-<appointments>
+<Appointment>
   <Appointment>
     <Dentist>
-      <name>Carlitos PRO</name>
-      <id>1234</id>
-      <age>22</age>
+      <name>diosdi</name>
+      <id>456</id>
       <sex>M</sex>
-      <address>Mi casa</address>
-      <phoneNumber>9128312</phoneNumber>
-      <speciality>Odontologo pro</speciality>
-      <shift>manana</shift>
+      <address>fdghjk</address>
+      <age>55</age>
+      <phoneNumber>56789</phoneNumber>
+      <speciality>Ser dealer</speciality>
+      <shift>Tarde</shift>
     </Dentist>
-    <date>19/12/2000</date>
-    <hour>9 AM</hour>
-    <notes>motivo</notes>
-    <patientId>235</patientId>
+    <date>22/11/2111</date>
+    <hour>3 PM</hour>
+    <notes>e</notes>
+    <patientId>9876543</patientId>
   </Appointment>
-</appointments>
+  <Appointment>
+    <Dentist>
+      <name>diosdi</name>
+      <id>456</id>
+      <sex>M</sex>
+      <address>fdghjk</address>
+      <age>55</age>
+      <phoneNumber>56789</phoneNumber>
+      <speciality>Ser dealer</speciality>
+      <shift>Tarde</shift>
+    </Dentist>
+    <date>22/11/2111</date>
+    <hour>11 AM</hour>
+    <notes>ewrt</notes>
+    <patientId>66588</patientId>
+  </Appointment>
+  <Appointment>
+    <Dentist>
+      <name>diosdi</name>
+      <id>456</id>
+      <sex>M</sex>
+      <address>fdghjk</address>
+      <age>55</age>
+      <phoneNumber>56789</phoneNumber>
+      <speciality>Ser dealer</speciality>
+      <shift>Tarde</shift>
+    </Dentist>
+    <date />
+    <hour />
+    <notes />
+    <patientId>44444</patientId>
+  </Appointment>
+</Appointment>

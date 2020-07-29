@@ -10,9 +10,8 @@ public class Clinic {
     private ArrayList<Inventory> inventory = new ArrayList<Inventory>();
     
     public Clinic () {
-    	Dentist dummie = new Dentist("Simon", 4123, 22, "M", "Mi casa", 9123, "Odontologo pro", "tarde", null); // el ulitmo parametero es un arrayList
-    	listOfStaff = new ArrayList<Dentist>();
-    	listOfStaff.add(dummie);
+    	//Dentist dummie = new Dentist("Simon", 4123, 22, "M", "Mi casa", 9123, "Odontologo pro", "tarde", null); // el ulitmo parametero es un arrayList
+    	//listOfStaff.add(dummie);
         
     }
 

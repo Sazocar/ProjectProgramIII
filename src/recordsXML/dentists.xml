@@ -1,15 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <dentists>
-    <Dentist>
-        <name>Carlitos PRO</name>
-        <id>1234</id>
-        <age>22</age>
-        <sex>M</sex>
-        <address>Mi casa</address>
-        <phoneNumber>912435</phoneNumber>
-        <speciality>Odontologo pro</speciality>
-        <shift>manana</shift>
-    </Dentist>
-
+  <Dentist>
+    <name>Chavez</name>
+    <id>455</id>
+    <sex>M</sex>
+    <address>fwghf</address>
+    <age>44</age>
+    <phoneNumber>456</phoneNumber>
+    <speciality>expropiar</speciality>
+    <shift>Manana</shift>
+  </Dentist>
+  <Dentist>
+    <name>diosdi</name>
+    <id>456</id>
+    <sex>M</sex>
+    <address>fdghjk</address>
+    <age>55</age>
+    <phoneNumber>56789</phoneNumber>
+    <speciality>Ser dealer</speciality>
+    <shift>Tarde</shift>
+  </Dentist>
 </dentists>

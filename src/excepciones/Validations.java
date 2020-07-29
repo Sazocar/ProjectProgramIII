@@ -188,4 +188,12 @@ public final class Validations {
         return true;
     }
     
+    public static boolean validateTable(int row) {
+    	if (row == -1) {
+            errorMessage("Seleccione un Odontologo para continuar");
+            return false;
+    	}
+    	return true;
+    
+    }
 }

@@ -3,6 +3,7 @@ package view;
 import java.awt.BorderLayout;
 import model.*;
 import persistence.DaoDentistXML;
+import persistence.DaoPatientXML;
 
 import java.awt.EventQueue;
 
@@ -11,12 +12,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import controller.ControlFields;
+import excepciones.Validations;
 
 import java.awt.Color;
 import java.awt.CardLayout;
 import java.awt.Cursor;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.ImageIcon;
@@ -32,24 +35,12 @@ public class Start extends JFrame {
     Inventory inventory = new Inventory();
     DaoDentistXML dataDentist = new DaoDentistXML();
     DaoAppointmentsXML dataAppointment = new DaoAppointmentsXML();
-
+    DaoPatientXML dataPatient = new DaoPatientXML();
+    
     /**
      * Launch the application.
      */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    Start logInFrame = new Start();
-                    logInFrame.setLocationRelativeTo(null);
-                    logInFrame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
+  
     /**
      * Create the frame.
      */
@@ -57,21 +48,10 @@ public class Start extends JFrame {
     	
         DaoDentistXML.allDentist(clinic.getListOfStaff());
         DaoAppointmentsXML.allAppointments(clinic.getListOfAppointments());
-        ControlFields.crateAppointmentLists(clinic);        
+        DaoPatientXML.allPatients(clinic.getListOfPatients());      
         ControlFields.assingAppointmentsDentist(clinic);
         
-        //Test
-        Appointment apo = new Appointment(clinic.getListOfStaff().get(1),"22/12/2000", "10 AM", "Murision",0);
-        Patient test = new Patient("Gral Kenobi", 234, 30, "M", "Hello There", 2345, (Dentist) clinic.getListOfStaff().get(0), apo, null, null);
-        Patient test2 = new Patient("Anakin", 235, 30, "M", "Hello There", 2345, (Dentist) clinic.getListOfStaff().get(1), null, null, null);
-        Patient test3 = new Patient("Gral Greivous", 237, 30, "M", "Hello There", 2345, (Dentist) clinic.getListOfStaff().get(0), apo, null, null);
-        test.getAppointment().setPatientId(test.getId());
-        test3.getAppointment().setPatientId(test3.getId());
-        clinic.getListOfPatients().add(test);
-        clinic.getListOfPatients().add(test2);
-        clinic.getListOfPatients().add(test3);
-        test2.setAppointment(clinic.getListOfStaff().get(1).getListOfAppointments().get(0));
-        //end of test
+
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 344);
@@ -107,6 +87,8 @@ public class Start extends JFrame {
                 secretaryFrame.setLocationRelativeTo(null);
                 secretaryFrame.setVisible(true);
                 ControlFields.fillTableDentist(secretaryFrame.getAppointmentPanel().getDentistTable(), clinic);
+                if (clinic.getListOfStaff().isEmpty())
+                	JOptionPane.showMessageDialog(null, "No hay oontologos guardados\nNo podra crear citas", "Aviso", JOptionPane.WARNING_MESSAGE);
             }
         });
         btnSecretary.setIcon(new ImageIcon(Start.class.getResource("/Icons/Secretaris.jpg")));

@@ -42,7 +42,7 @@ public class SelectDentist extends JFrame {
 		ArrayList<Patient> patientsInAppointments = new ArrayList<Patient>();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 357, 255);
+		setBounds(100, 100, 357, 236);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(176, 224, 230));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -67,7 +67,7 @@ public class SelectDentist extends JFrame {
         dentistTable.setDefaultEditor(Object.class, null);
         
         JButton btnConfirm = new JButton("Aceptar");
-        btnConfirm.setBounds(10, 183, 89, 23);
+        btnConfirm.setBounds(10, 167, 89, 23);
         btnConfirm.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		if (dentistTable.getSelectedRow() == -1) {
@@ -89,6 +89,7 @@ public class SelectDentist extends JFrame {
         	}
         	}
         });
+        btnConfirm.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         contentPane.add(btnConfirm);
         
         JLabel lblInfo = new JLabel("Seleccione o cree un nuevo Odontologo");
@@ -97,11 +98,19 @@ public class SelectDentist extends JFrame {
         contentPane.add(lblInfo);
         
         JButton btnNew = new JButton("Nuevo");
-        btnNew.setBounds(122, 183, 89, 23);
+        btnNew.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		AddDentist add = new AddDentist(clinic, dentistTable);
+        		add.setVisible(true);
+        		add.setLocationRelativeTo(null);
+        	}
+        });
+        btnNew.setBounds(122, 167, 89, 23);
+        btnNew.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         contentPane.add(btnNew);
         
         JButton btnBack = new JButton("Atras");
-        btnBack.setBounds(242, 183, 89, 23);
+        btnBack.setBounds(242, 167, 89, 23);
         btnBack.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent arg0) {
         		setVisible(false);
@@ -111,6 +120,7 @@ public class SelectDentist extends JFrame {
         		
         	}
         });
+        btnBack.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         contentPane.add(btnBack);
         
 	}

@@ -18,6 +18,8 @@ import javax.swing.table.DefaultTableModel;
 import controller.*;
 import java.awt.Cursor;
 import model.*;
+import persistence.DaoAppointmentsXML;
+import persistence.DaoPatientXML;
 import excepciones.*;
 
 import javax.swing.JScrollPane;
@@ -243,6 +245,10 @@ public class ModifPatientDent extends JFrame {
                 	JOptionPane.showMessageDialog(null, "Datos actualizados exitosamente");
                     ControlFields.clearFieldsSecretary(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dateTxt, hourBox, notesTxt);
                     ControlFields.fillTableAppointments(table, patientsInAppointments);
+                    DaoPatientXML.deletePatient(patient.getId());
+                    DaoPatientXML.updatePatient(patient);
+                    DaoAppointmentsXML.deleteAppointment(patient.getId());
+                    DaoAppointmentsXML.updateAppointment(patient.getAppointment());
                     setVisible(false);
                 }
             }

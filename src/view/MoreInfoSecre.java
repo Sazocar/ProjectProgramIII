@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import model.*;
+import persistence.DaoAppointmentsXML;
+import persistence.DaoPatientXML;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -24,7 +26,7 @@ public class MoreInfoSecre extends JFrame {
 
 	private JPanel contentPane;
             
-	public MoreInfoSecre(Patient patient ) {
+	public MoreInfoSecre(Patient patient, Clinic clinic) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 485, 382);
 		contentPane = new JPanel();
@@ -162,9 +164,18 @@ public class MoreInfoSecre extends JFrame {
 		JButton btnCancelAppointment = new JButton("");
 		btnCancelAppointment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				patient.getAppointment().setDate("");
-				patient.getAppointment().setHour("0");
+				for (Dentist dentist : clinic.getListOfStaff()) {
+					if (patient.getDentist().getId() == dentist.getId())
+						dentist.getListOfAppointments().remove(patient.getAppointment());
+				}
+				clinic.getListOfAppointments().remove(patient.getAppointment());				
+				patient.getAppointment().setDate("");;
+				patient.getAppointment().setHour("");
 				patient.getAppointment().setNotes("");
+				DaoPatientXML.deletePatient(patient.getId());
+				DaoPatientXML.updatePatient(patient);
+				DaoAppointmentsXML.deleteAppointment(patient.getId());
+				DaoAppointmentsXML.updateAppointment(patient.getAppointment());
 				displayDate.setText(patient.getAppointment().getDate());
 				displayHour.setText(patient.getAppointment().getHour());
 				displayNotes.setText(patient.getAppointment().getNotes());

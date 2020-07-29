@@ -63,6 +63,7 @@ public class DaoAppointmentsXML {
         Element patientId = new Element("patientId");
         patientId.setText(Integer.toString(nAppointment.getPatientId()));
         Appointment.addContent(dentist);
+        Appointment.addContent(date);
         Appointment.addContent(hour);
         Appointment.addContent(notes);
         Appointment.addContent(patientId);
@@ -125,7 +126,7 @@ public class DaoAppointmentsXML {
         Element aux = new Element("Appointment");
         List Appointments = root.getChildren("Appointment");
         while (aux != null) {
-            aux = DaoDentistXML.search(Appointments, Integer.toString(patientId));
+            aux = DaoAppointmentsXML.search(Appointments, Integer.toString(patientId));
             if (aux != null) {
                 Appointments.remove(aux);
                 updateDocument();

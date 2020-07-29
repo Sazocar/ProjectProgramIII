@@ -1,38 +1,70 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <patients>
-    <Patient>
-        <name>Carlitos Ortega</name>
-        <id>235</id>
-        <age>22</age>
+  <Patient>
+    <name>scdfghjm</name>
+    <id>9876543</id>
+    <sex>M</sex>
+    <address>dfghj</address>
+    <age>44</age>
+    <phoneNumber>567</phoneNumber>
+    <Dentist>
+      <name>diosdi</name>
+      <id>456</id>
+      <sex>M</sex>
+      <address>fdghjk</address>
+      <age>55</age>
+      <phoneNumber>56789</phoneNumber>
+      <speciality>Ser dealer</speciality>
+      <shift>Tarde</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>diosdi</name>
+        <id>456</id>
         <sex>M</sex>
-        <address>Su casa</address>
-        <phoneNumber>9128312</phoneNumber>
-        <Dentist>
-            <name>Juan carlosss</name>
-            <id>1234</id>
-            <age>42</age>
-            <sex>M</sex>
-            <address>Mi casa</address>
-            <phoneNumber>1241</phoneNumber>
-            <speciality>Odontologo pro</speciality>
-            <shift>manana</shift>
-        </Dentist>
-        <Appointment>
-            <Dentist>
-                <name>Carlitos PRO</name>
-                <id>1234</id>
-                <age>22</age>
-                <sex>M</sex>
-                <address>Mi casa</address>
-                <phoneNumber>9128312</phoneNumber>
-                <speciality>Odontologo pro</speciality>
-                <shift>manana</shift>
-            </Dentist>
-            <date>19/12/2000</date>
-            <hour>9 AM</hour>
-            <notes>motivo</notes>
-            <patientId>235</patientId>
-        </Appointment>
-    </Patient>
+        <address>fdghjk</address>
+        <age>55</age>
+        <phoneNumber>56789</phoneNumber>
+        <speciality>Ser dealer</speciality>
+        <shift>Tarde</shift>
+      </Dentist>
+      <date>22/11/2111</date>
+      <hour>3 PM</hour>
+      <notes>e</notes>
+      <patientId>9876543</patientId>
+    </Appointment>
+  </Patient>
+  <Patient>
+    <name>asdfdsff</name>
+    <id>44444</id>
+    <sex>M</sex>
+    <address>44</address>
+    <age>44</age>
+    <phoneNumber>44</phoneNumber>
+    <Dentist>
+      <name>diosdi</name>
+      <id>456</id>
+      <sex>M</sex>
+      <address>fdghjk</address>
+      <age>55</age>
+      <phoneNumber>56789</phoneNumber>
+      <speciality>Ser dealer</speciality>
+      <shift>Tarde</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>diosdi</name>
+        <id>456</id>
+        <sex>M</sex>
+        <address>fdghjk</address>
+        <age>55</age>
+        <phoneNumber>56789</phoneNumber>
+        <speciality>Ser dealer</speciality>
+        <shift>Tarde</shift>
+      </Dentist>
+      <date />
+      <hour />
+      <notes />
+      <patientId>44444</patientId>
+    </Appointment>
+  </Patient>
 </patients>

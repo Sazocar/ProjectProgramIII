@@ -179,7 +179,6 @@ public class CreateApointment extends JPanel {
                         && (Validations.validateNotes(notesTxt))) {
                     ControlSecretary.createAppointment(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dentistTable, dateTxt, hourBox, notesTxt, clinic.getListOfStaff(), clinic.getListOfAppointments(), clinic.getListOfPatients());
                     JOptionPane.showMessageDialog(null, "Cita creada exitosamente");
-                    System.out.println("Cantidad de appointments: " + clinic.getListOfAppointments().size());
                     ControlFields.clearFieldsSecretary(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dateTxt, hourBox, notesTxt);
                     dentistTable.clearSelection();
                 }

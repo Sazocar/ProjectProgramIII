@@ -64,6 +64,8 @@ public class DaoDentistXML {
         phoneNumber.setText(Integer.toString(nDentist.getPhoneNumber()));
         Element speciality = new Element("speciality");
         speciality.setText(nDentist.getSpecialty());
+        Element shift = new Element("shift");
+        shift.setText(nDentist.getShift());
         Dentist.addContent(name);
         Dentist.addContent(id);
         Dentist.addContent(sex);
@@ -71,6 +73,7 @@ public class DaoDentistXML {
         Dentist.addContent(age);
         Dentist.addContent(phoneNumber);
         Dentist.addContent(speciality);
+        Dentist.addContent(shift);
         return Dentist;
     }
 
@@ -156,6 +159,10 @@ public class DaoDentistXML {
             Element xmlElem = (Element) it;
             try {
                 listOfStaff.add(DentistToObject(xmlElem));
+                for (int i = 0 ; i <= listOfStaff.size()-1 ; i++) {
+                	ArrayList<Appointment> listOfAppointments = new ArrayList<Appointment>();
+                	listOfStaff.get(i).setListOfAppointments(listOfAppointments);
+                }
             } catch (ParseException ex) {
                 System.out.println(ex.getMessage());
             }

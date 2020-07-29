@@ -7,10 +7,9 @@ import java.awt.Color;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-import model.Clinic;
-import model.IconHelper;
-import model.Patient;
-import model.Person;
+import model.*;
+import persistence.DaoAppointmentsXML;
+import persistence.DaoPatientXML;
 
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
@@ -25,6 +24,7 @@ import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.ResourceBundle.Control;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
@@ -54,15 +54,6 @@ public class Search extends JPanel {
         table.getTableHeader().setEnabled(false);		  // tableHeader not resizable
         table.setDefaultEditor(Object.class, null);		  // column not editable
 
-        JButton btnHome = new JButton("");
-        btnHome.setBackground(new Color(176, 224, 230));
-        btnHome.setForeground(new Color(176, 224, 230));
-        btnHome.setIcon(new ImageIcon(Search.class.getResource("/Icons/home2.jpg")));
-        btnHome.setBounds(30, 285, 72, 72);
-        btnHome.setBorder(new IconHelper(260));
-        btnHome.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        add(btnHome);
-
         JButton btnMore = new JButton("");
         btnMore.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -70,10 +61,10 @@ public class Search extends JPanel {
                     Validations.errorMessage("Seleccione un paciente\npara mostrar mas informacion");
                 } else {
                 	if (!SorD) {
-	                    MoreInfoSecre more = new MoreInfoSecre(clinic.getListOfPatients().get(table.getSelectedRow()));
+	                    MoreInfoSecre more = new MoreInfoSecre(clinic.getListOfPatients().get(table.getSelectedRow()), clinic);
 	                    more.setVisible(true);
 	                    more.setLocationRelativeTo(null);
-                	}
+	                }
                 	else {
                 		MoreInfoDent more = new MoreInfoDent(clinic.getListOfPatients().get(table.getSelectedRow()));
 	                    more.setLocationRelativeTo(null);
@@ -96,9 +87,12 @@ public class Search extends JPanel {
                 if (table.getSelectedRow() == -1) 
                     Validations.errorMessage("Seleccione un paciente\npara eliminar");
                 else {
-                    ControlFields.deletePatient(clinic, table);
-                    ControlFields.fillTablePatient(table, clinic.getListOfPatients());
-                    JOptionPane.showMessageDialog(null, "Paciente eliminado\nsatisfactoriamente!");
+                	try {
+	                	delete(clinic);
+                	}
+                	catch (ConcurrentModificationException weirdExeption) {
+                		delete(clinic);
+                	}
                 }
             }
         });
@@ -111,12 +105,6 @@ public class Search extends JPanel {
         if (SorD)
         	btnDelete.setVisible(false);
         add(btnDelete);
-
-        JLabel lblHome = new JLabel("Home");
-        lblHome.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        lblHome.setHorizontalAlignment(SwingConstants.CENTER);
-        lblHome.setBounds(37, 367, 62, 17);
-        add(lblHome);
 
         JLabel lblMore = new JLabel("Mas");
         lblMore.setHorizontalAlignment(SwingConstants.CENTER);
@@ -189,7 +177,7 @@ public class Search extends JPanel {
                         ControlFields.fillTableDentist(modifPatient.getDentistTable(), clinic);
                         modifPatient.setVisible(true);
                         modifPatient.setLocationRelativeTo(null);
-                        modifPatient.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
+                      //  modifPatient.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
                 	}
             }
         });
@@ -248,4 +236,23 @@ public class Search extends JPanel {
             }
         }
     }
+    
+    public void delete(Clinic clinic) {
+    	for (Dentist dentist : clinic.getListOfStaff()) {
+        	if (clinic.getListOfPatients().get(table.getSelectedRow()).getAppointment().getDentist().getId() == dentist.getId()) {
+        		dentist.getListOfAppointments().remove(clinic.getListOfPatients().get(table.getSelectedRow()).getAppointment());
+        	}
+    	}
+    	for (Appointment appointment : clinic.getListOfAppointments()) {
+    		if (clinic.getListOfPatients().get(table.getSelectedRow()).getId() == appointment.getPatientId()) {
+    			clinic.getListOfAppointments().remove(appointment);
+    			DaoAppointmentsXML.deleteAppointment(clinic.getListOfPatients().get(table.getSelectedRow()).getId());
+    		}
+    	}   
+    	
+    	DaoPatientXML.deletePatient(clinic.getListOfPatients().get(table.getSelectedRow()).getId());
+        ControlFields.deletePatient(clinic, table);
+        ControlFields.fillTablePatient(table, clinic.getListOfPatients());
+        JOptionPane.showMessageDialog(null, "Paciente eliminado\nsatisfactoriamente!");
+    	}
 }

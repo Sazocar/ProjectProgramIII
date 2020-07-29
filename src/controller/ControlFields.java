@@ -29,6 +29,19 @@ public final class ControlFields {
         notes.setText("");
     }
     
+    public static void clearFieldsDentist(JTextField name, JTextField id, JTextField age, JComboBox sex,  JTextField address, 
+            JTextField phoneNumber, JTextField speciality, JComboBox shift) {
+        
+        name.setText("");
+        id.setText("");
+        age.setText("");
+        sex.setSelectedIndex(0);
+        address.setText("");
+        phoneNumber.setText("");
+        speciality.setText("");
+        shift.setSelectedIndex(0);
+    }
+    
     public static void fillTableDentist(JTable tableDentist, Clinic clinic) {
         String[] column = {"Nombre", "Especialidad"};
         DefaultTableModel dtm = new DefaultTableModel(null, column);
@@ -67,12 +80,6 @@ public final class ControlFields {
         model.removeRow(table.getSelectedRow());
     }
     
-    public static void crateAppointmentLists(Clinic clinic) {
-    	for (Dentist dentist : clinic.getListOfStaff()) {
-    		ArrayList<Appointment> listOfAppointments = new ArrayList<Appointment>();
-    		dentist.setListOfAppointments(listOfAppointments);
-    	}
-    }
     
     public static void assingAppointmentsDentist(Clinic clinic) {
     	for (Appointment appointments : clinic.getListOfAppointments()) {

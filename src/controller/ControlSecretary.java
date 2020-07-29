@@ -8,6 +8,8 @@ import javax.swing.JTextField;
 import org.w3c.dom.ls.LSInput;
 
 import model.*;
+import persistence.DaoAppointmentsXML;
+import persistence.DaoPatientXML;
 
 public final class ControlSecretary {
 
@@ -53,6 +55,8 @@ public final class ControlSecretary {
         
         listOfPatients.add(patient);
         listOfAppointments.add(appointment);
+        DaoPatientXML.updatePatient(patient);
+        DaoAppointmentsXML.updateAppointment(appointment);
     }
 
 }

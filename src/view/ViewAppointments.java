@@ -117,7 +117,7 @@ public class ViewAppointments extends JPanel {
                         ControlFields.fillTableDentist(modifPatient.getDentistTable(), clinic);
                         modifPatient.setVisible(true);
                         modifPatient.setLocationRelativeTo(null);
-                        modifPatient.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
+                       // modifPatient.getDentistTable().setRowSelectionInterval(clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()), clinic.getListOfStaff().indexOf(clinic.getListOfPatients().get(table.getSelectedRow()).getDentist()));
                 }
             }
         });

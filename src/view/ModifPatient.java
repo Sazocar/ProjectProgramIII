@@ -18,6 +18,8 @@ import javax.swing.table.DefaultTableModel;
 import controller.*;
 import java.awt.Cursor;
 import model.*;
+import persistence.DaoAppointmentsXML;
+import persistence.DaoPatientXML;
 import excepciones.*;
 
 import javax.swing.JScrollPane;
@@ -149,19 +151,28 @@ public class ModifPatient extends JFrame {
         lblDate.setHorizontalAlignment(SwingConstants.RIGHT);
         lblDate.setFont(new Font("Tahoma", Font.PLAIN, 14));
         getContentPane().add(lblDate);
-
-        dateTxt = new JTextField(patient.getAppointment().getDate());
-        dateTxt.setBounds(344, 232, 114, 20);
-        getContentPane().add(dateTxt);
-        dateTxt.setColumns(10);
+        
+        JLabel lblNotes = new JLabel("Motivo:");
+        lblNotes.setBounds(245, 312, 89, 20);
+        lblNotes.setHorizontalAlignment(SwingConstants.RIGHT);
+        lblNotes.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        getContentPane().add(lblNotes);
 
         JLabel lblHour = new JLabel("Hora:");
         lblHour.setBounds(275, 269, 59, 20);
         lblHour.setHorizontalAlignment(SwingConstants.RIGHT);
         lblHour.setFont(new Font("Tahoma", Font.PLAIN, 14));
         getContentPane().add(lblHour);
-
+        
         JComboBox hourBox = new JComboBox();
+        
+        try {
+        dateTxt = new JTextField(patient.getAppointment().getDate());
+        dateTxt.setBounds(344, 232, 114, 20);
+        getContentPane().add(dateTxt);
+        dateTxt.setColumns(10);
+        
+        
         hourBox.setBounds(344, 271, 104, 20);
         hourBox.setModel(new DefaultComboBoxModel(new String[]{"", "9 AM", "10 AM", "11 AM", "2 PM", "3 PM", "4 PM", "5 PM"}));
         if (patient.getAppointment().getHour().equals("9 AM"))
@@ -188,16 +199,16 @@ public class ModifPatient extends JFrame {
         							hourBox.setSelectedIndex(0);
         getContentPane().add(hourBox);
 
-        JLabel lblNotes = new JLabel("Motivo:");
-        lblNotes.setBounds(245, 312, 89, 20);
-        lblNotes.setHorizontalAlignment(SwingConstants.RIGHT);
-        lblNotes.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        getContentPane().add(lblNotes);
 
         notesTxt = new JTextField(patient.getAppointment().getNotes());
         notesTxt.setBounds(344, 314, 153, 20);
         notesTxt.setColumns(10);
         getContentPane().add(notesTxt);
+        }
+        catch (NullPointerException e) {
+
+		}
+        
 
         JButton btnConfirm = new JButton("");
         btnConfirm.setBounds(153, 328, 72, 72);
@@ -206,7 +217,7 @@ public class ModifPatient extends JFrame {
                 if ((Validations.validateName(nameTxt)) && (Validations.validateId(idTxt)) && (Validations.validateAge(ageTxt))
                         && (Validations.validateAddress(addressTxt)) && (Validations.validatePhoneNumber(phoneNumberTxt))
                         && (Validations.validateDate(dateTxt)) && (Validations.validateHour(hourBox))
-                        && (Validations.validateNotes(notesTxt))) {
+                        && (Validations.validateNotes(notesTxt) && (Validations.validateTable(dentistTable.getSelectedRow())))) {
                     patient.setName(nameTxt.getText());
                     patient.setId(Integer.parseInt(idTxt.getText()));
                     patient.setAddress(addressTxt.getText());
@@ -219,31 +230,16 @@ public class ModifPatient extends JFrame {
                     patient.setDentist( (Dentist) clinic.getListOfStaff().get(dentistTable.getSelectedRow()));
                     patient.getAppointment().setDentist((Dentist) clinic.getListOfStaff().get(dentistTable.getSelectedRow()));
                     patient.getAppointment().setDate(dateTxt.getText());
-                    if (hourBox.getSelectedIndex() == 1)
-                    	patient.getAppointment().setHour("9 AM");
-                    else
-                    	if (hourBox.getSelectedIndex() == 2)
-                        	patient.getAppointment().setHour("10 AM");
-                    	else
-                    		if (hourBox.getSelectedIndex() == 3)
-                            	patient.getAppointment().setHour("11 AM");
-                    		else
-                    			if (hourBox.getSelectedIndex() == 4)
-                                	patient.getAppointment().setHour("2 PM");
-                    			else 
-                    				if (hourBox.getSelectedIndex() == 5)
-                                    	patient.getAppointment().setHour("3 PM");
-                    				else
-                    					if (hourBox.getSelectedIndex() == 6)
-                                        	patient.getAppointment().setHour("4 PM");
-                    					else
-                    						if (hourBox.getSelectedIndex() == 7)
-                                            	patient.getAppointment().setHour("5 PM");
+                    patient.getAppointment().setHour(hourBox.getSelectedItem().toString());
                     patient.getAppointment().setNotes(notesTxt.getText());
                 	JOptionPane.showMessageDialog(null, "Datos actualizados exitosamente");
                     ControlFields.clearFieldsSecretary(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dateTxt, hourBox, notesTxt);
                     ControlFields.fillTablePatient(table, clinic.getListOfPatients());
                     setVisible(false);
+                    DaoPatientXML.deletePatient(patient.getId());
+                    DaoPatientXML.updatePatient(patient);
+                    DaoAppointmentsXML.deleteAppointment(patient.getId());
+                    DaoAppointmentsXML.updateAppointment(patient.getAppointment());
                 }
             }
         });
