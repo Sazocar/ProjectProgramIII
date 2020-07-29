@@ -1,70 +1,138 @@
 <patients>
   <Patient>
-    <name>scdfghjm</name>
-    <id>9876543</id>
+    <name>Simon</name>
+    <id>26250543</id>
     <sex>M</sex>
-    <address>dfghj</address>
-    <age>44</age>
-    <phoneNumber>567</phoneNumber>
+    <address>La California</address>
+    <age>22</age>
+    <phoneNumber>8231412</phoneNumber>
     <Dentist>
-      <name>diosdi</name>
-      <id>456</id>
+      <name>Eduardo</name>
+      <id>24123923</id>
       <sex>M</sex>
-      <address>fdghjk</address>
-      <age>55</age>
-      <phoneNumber>56789</phoneNumber>
-      <speciality>Ser dealer</speciality>
-      <shift>Tarde</shift>
+      <address>Trinidad</address>
+      <age>40</age>
+      <phoneNumber>212292341</phoneNumber>
+      <speciality>Adultos</speciality>
+      <shift>Manana</shift>
     </Dentist>
     <Appointment>
       <Dentist>
-        <name>diosdi</name>
-        <id>456</id>
+        <name>Eduardo</name>
+        <id>24123923</id>
         <sex>M</sex>
-        <address>fdghjk</address>
-        <age>55</age>
-        <phoneNumber>56789</phoneNumber>
-        <speciality>Ser dealer</speciality>
-        <shift>Tarde</shift>
+        <address>Trinidad</address>
+        <age>40</age>
+        <phoneNumber>212292341</phoneNumber>
+        <speciality>Adultos</speciality>
+        <shift>Manana</shift>
       </Dentist>
-      <date>22/11/2111</date>
-      <hour>3 PM</hour>
-      <notes>e</notes>
-      <patientId>9876543</patientId>
+      <date>12/6/2020</date>
+      <hour>2 PM</hour>
+      <notes>Muela</notes>
+      <patientId>26250543</patientId>
     </Appointment>
   </Patient>
   <Patient>
-    <name>asdfdsff</name>
-    <id>44444</id>
+    <name>Carlos</name>
+    <id>24231241</id>
     <sex>M</sex>
-    <address>44</address>
-    <age>44</age>
-    <phoneNumber>44</phoneNumber>
+    <address>Colinas</address>
+    <age>20</age>
+    <phoneNumber>5123141</phoneNumber>
     <Dentist>
-      <name>diosdi</name>
-      <id>456</id>
+      <name>Eduardo</name>
+      <id>24123923</id>
       <sex>M</sex>
-      <address>fdghjk</address>
-      <age>55</age>
-      <phoneNumber>56789</phoneNumber>
-      <speciality>Ser dealer</speciality>
-      <shift>Tarde</shift>
+      <address>Trinidad</address>
+      <age>40</age>
+      <phoneNumber>212292341</phoneNumber>
+      <speciality>Adultos</speciality>
+      <shift>Manana</shift>
     </Dentist>
     <Appointment>
       <Dentist>
-        <name>diosdi</name>
-        <id>456</id>
+        <name>Eduardo</name>
+        <id>24123923</id>
         <sex>M</sex>
-        <address>fdghjk</address>
-        <age>55</age>
-        <phoneNumber>56789</phoneNumber>
-        <speciality>Ser dealer</speciality>
-        <shift>Tarde</shift>
+        <address>Trinidad</address>
+        <age>40</age>
+        <phoneNumber>212292341</phoneNumber>
+        <speciality>Adultos</speciality>
+        <shift>Manana</shift>
       </Dentist>
-      <date />
-      <hour />
-      <notes />
-      <patientId>44444</patientId>
+      <date>4/9/2020</date>
+      <hour>10 AM</hour>
+      <notes>Limpieza</notes>
+      <patientId>24231241</patientId>
+    </Appointment>
+  </Patient>
+  <Patient>
+    <name>Juan Carlos</name>
+    <id>512315</id>
+    <sex>M</sex>
+    <address>Miranda</address>
+    <age>14</age>
+    <phoneNumber>51231412</phoneNumber>
+    <Dentist>
+      <name>Thaide</name>
+      <id>512341</id>
+      <sex>M</sex>
+      <address>Chacao</address>
+      <age>47</age>
+      <phoneNumber>51231412</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Thaide</name>
+        <id>512341</id>
+        <sex>M</sex>
+        <address>Chacao</address>
+        <age>47</age>
+        <phoneNumber>51231412</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>10/10/2010</date>
+      <hour>10 AM</hour>
+      <notes>Limpieza</notes>
+      <patientId>512315</patientId>
+    </Appointment>
+  </Patient>
+  <Patient>
+    <name>Alfonso</name>
+    <id>512341</id>
+    <sex>M</sex>
+    <address>Ruices</address>
+    <age>10</age>
+    <phoneNumber>1231412</phoneNumber>
+    <Dentist>
+      <name>Alejandro</name>
+      <id>25151231</id>
+      <sex>M</sex>
+      <address>Bello Monte</address>
+      <age>26</age>
+      <phoneNumber>5123152</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Alejandro</name>
+        <id>25151231</id>
+        <sex>M</sex>
+        <address>Bello Monte</address>
+        <age>26</age>
+        <phoneNumber>5123152</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>16/10/2020</date>
+      <hour>10 AM</hour>
+      <notes>Muela</notes>
+      <patientId>512341</patientId>
     </Appointment>
   </Patient>
 </patients>

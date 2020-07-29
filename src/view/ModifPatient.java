@@ -47,6 +47,7 @@ public class ModifPatient extends JFrame {
     
   
     public ModifPatient(Clinic clinic, Patient patient, JTable table) {
+        setLocationRelativeTo(null);
     	getContentPane().setBackground(new Color(176, 224, 230));   
     	setBounds(100, 100, 543, 452);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

@@ -1,22 +1,32 @@
 <dentists>
   <Dentist>
-    <name>Chavez</name>
-    <id>455</id>
+    <name>Eduardo</name>
+    <id>24123923</id>
     <sex>M</sex>
-    <address>fwghf</address>
-    <age>44</age>
-    <phoneNumber>456</phoneNumber>
-    <speciality>expropiar</speciality>
+    <address>Trinidad</address>
+    <age>40</age>
+    <phoneNumber>212292341</phoneNumber>
+    <speciality>Adultos</speciality>
     <shift>Manana</shift>
   </Dentist>
   <Dentist>
-    <name>diosdi</name>
-    <id>456</id>
+    <name>Alejandro</name>
+    <id>25151231</id>
     <sex>M</sex>
-    <address>fdghjk</address>
-    <age>55</age>
-    <phoneNumber>56789</phoneNumber>
-    <speciality>Ser dealer</speciality>
-    <shift>Tarde</shift>
+    <address>Bello Monte</address>
+    <age>26</age>
+    <phoneNumber>5123152</phoneNumber>
+    <speciality>Ninos</speciality>
+    <shift>Manana</shift>
+  </Dentist>
+  <Dentist>
+    <name>Thaide</name>
+    <id>512341</id>
+    <sex>M</sex>
+    <address>Chacao</address>
+    <age>47</age>
+    <phoneNumber>51231412</phoneNumber>
+    <speciality>Ninos</speciality>
+    <shift>Manana</shift>
   </Dentist>
 </dentists>
