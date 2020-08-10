@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Person {
+public class Person {
     
     protected String name;
     protected int id;

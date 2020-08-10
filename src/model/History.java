@@ -1,20 +1,19 @@
 package model;
 
-public class History extends Document {
+public class History{
     
     protected String treatment;
 
     public History() {
-        super();
         this.treatment = "";
     }
 
-    public History(int patientId) {
-        super(patientId);
-        this.treatment = treatment;
+    public History(String hist) {
+    	treatment = hist;
     }
     
-    public String getTreatment() {
+
+	public String getTreatment() {
         return treatment;
     }
 

@@ -12,6 +12,7 @@ import java.util.List;
 
 import model.*;
 
+import javax.sound.midi.Track;
 import javax.swing.JTable;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -39,18 +40,30 @@ public class DaoPatientXML {
             System.out.println("Can't inicializate operation: " + ex.getMessage());
         }
     }
+    
+    private static Element recipeXmlElement(Recipe nRecipe) {
+    	
+    	Element Recipe = new Element("Recipe");
+
+    	Element medicine = new Element("medicine");
+    	medicine.setText(nRecipe.getMedicines());
+    	Recipe.addContent(medicine);
+    	return Recipe;
+    }
+    
+    private static Element histXmlElement(History nHist) {
+    	
+    	Element Hist = new Element("History");
+    	
+    	Element treatment = new Element("history");
+    	treatment.setText(nHist.getTreatment());
+    	Hist.addContent(treatment);
+    	return Hist;
+    }
 
     private static Element PatientXmlElement(Patient nPatient) {
-        /*
-		 * Aqui lleno todo el contexto que le voy a insertar al archivo, es decir el
-		 * nodo proncipal que es Estudiante con los atributos que le corresponden, los
-		 * cuales seria cedula,nombre y apellido,etc. Debes ser muuuuy preciso en este
-		 * llenado, es decir, indicar los atributos con pelos y señales exactamente como
-		 * están en la Clase, de lo contrario la tabla XML no se generará y no se
-		 * produzca ningún error que te advierta que falta un acento, un espacio u otro
-		 * símbolo
-         */
-        Element Patient = new Element("Patient");// nombre de la Clase
+      
+        Element Patient = new Element("Patient");
         
         Element name = new Element("name");
         name.setText(nPatient.getName());
@@ -66,6 +79,8 @@ public class DaoPatientXML {
         phoneNumber.setText(Integer.toString(nPatient.getPhoneNumber()));
         Element dentist = DaoDentistXML.DentistXmlElement(nPatient.getDentist());
         Element appointment = DaoAppointmentsXML.AppointmentXmlElement(nPatient.getAppointment());
+        Element recipe = recipeXmlElement(nPatient.getRecipe());
+        Element hist = histXmlElement(nPatient.getHistory());
         Patient.addContent(name);
         Patient.addContent(id);
         Patient.addContent(sex);
@@ -74,7 +89,19 @@ public class DaoPatientXML {
         Patient.addContent(phoneNumber);
         Patient.addContent(dentist);
         Patient.addContent(appointment);
+        Patient.addContent(recipe);
+        Patient.addContent(hist);
         return Patient;
+    }
+    
+    private static Recipe recipeToObjet(Element element) throws ParseException{
+    	Recipe nRecipe = new Recipe(element.getChildText("medicine"));
+    	return nRecipe;
+    }
+    
+    private static History histToObjet(Element element) throws ParseException{
+    	History nHist = new History(element.getChildText("history"));
+    	return nHist;
     }
     
     
@@ -83,7 +110,8 @@ public class DaoPatientXML {
                 Integer.parseInt(element.getChildText("age")), element.getChildText("sex"),
                 element.getChildText("address"), Integer.parseInt(element.getChildText("phoneNumber")),
                 DaoDentistXML.DentistToObject(element.getChild("Dentist")), 
-                DaoAppointmentsXML.AppointmentToObject(element.getChild("Appointment")), null, null);
+                DaoAppointmentsXML.AppointmentToObject(element.getChild("Appointment")), 
+                recipeToObjet(element.getChild("Recipe")), histToObjet(element.getChild("History")));
         return nPatient;
 
     }

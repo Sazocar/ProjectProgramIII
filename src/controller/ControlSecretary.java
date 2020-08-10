@@ -23,6 +23,8 @@ public final class ControlSecretary {
 
         Patient patient = new Patient();
         Appointment appointment = new Appointment();
+        Recipe recipe = new Recipe();
+        History hist = new History();
         
         patient.setName(name.getText());
         patient.setId(Integer.parseInt(id.getText()));
@@ -50,8 +52,10 @@ public final class ControlSecretary {
         
         patient.setAppointment(appointment);
         patient.getAppointment().setPatientId(patient.getId());
-        patient.setRecipe(null);
-        patient.setHistory(null);
+        recipe.setMedicines("No se ha asignado tratamiento");
+        patient.setRecipe(recipe);
+        hist.setTreatment("No hay Historia clinica");
+        patient.setHistory(hist);
         
         listOfPatients.add(patient);
         listOfAppointments.add(appointment);

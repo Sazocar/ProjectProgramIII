@@ -1,11 +1,11 @@
 <patients>
   <Patient>
-    <name>scdfghjm</name>
-    <id>9876543</id>
+    <name>fg</name>
+    <id>44</id>
     <sex>M</sex>
-    <address>dfghj</address>
+    <address>sasdh</address>
     <age>44</age>
-    <phoneNumber>567</phoneNumber>
+    <phoneNumber>234</phoneNumber>
     <Dentist>
       <name>diosdi</name>
       <id>456</id>
@@ -27,44 +27,16 @@
         <speciality>Ser dealer</speciality>
         <shift>Tarde</shift>
       </Dentist>
-      <date>22/11/2111</date>
-      <hour>3 PM</hour>
-      <notes>e</notes>
-      <patientId>9876543</patientId>
+      <date>22/11/2012</date>
+      <hour>11 AM</hour>
+      <notes>egh</notes>
+      <patientId>44</patientId>
     </Appointment>
-  </Patient>
-  <Patient>
-    <name>asdfdsff</name>
-    <id>44444</id>
-    <sex>M</sex>
-    <address>44</address>
-    <age>44</age>
-    <phoneNumber>44</phoneNumber>
-    <Dentist>
-      <name>diosdi</name>
-      <id>456</id>
-      <sex>M</sex>
-      <address>fdghjk</address>
-      <age>55</age>
-      <phoneNumber>56789</phoneNumber>
-      <speciality>Ser dealer</speciality>
-      <shift>Tarde</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>diosdi</name>
-        <id>456</id>
-        <sex>M</sex>
-        <address>fdghjk</address>
-        <age>55</age>
-        <phoneNumber>56789</phoneNumber>
-        <speciality>Ser dealer</speciality>
-        <shift>Tarde</shift>
-      </Dentist>
-      <date />
-      <hour />
-      <notes />
-      <patientId>44444</patientId>
-    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>No hay Historia clinica</history>
+    </History>
   </Patient>
 </patients>

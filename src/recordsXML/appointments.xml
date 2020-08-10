@@ -10,10 +10,10 @@
       <speciality>Ser dealer</speciality>
       <shift>Tarde</shift>
     </Dentist>
-    <date>22/11/2111</date>
-    <hour>3 PM</hour>
-    <notes>e</notes>
-    <patientId>9876543</patientId>
+    <date>22/11/2101</date>
+    <hour>9 AM</hour>
+    <notes>dfgh</notes>
+    <patientId>345</patientId>
   </Appointment>
   <Appointment>
     <Dentist>
@@ -26,25 +26,41 @@
       <speciality>Ser dealer</speciality>
       <shift>Tarde</shift>
     </Dentist>
-    <date>22/11/2111</date>
+    <date>22/11/2010</date>
+    <hour>2 PM</hour>
+    <notes>thwth</notes>
+    <patientId>3456</patientId>
+  </Appointment>
+  <Appointment>
+    <Dentist>
+      <name>diosdi</name>
+      <id>456</id>
+      <sex>M</sex>
+      <address>fdghjk</address>
+      <age>55</age>
+      <phoneNumber>56789</phoneNumber>
+      <speciality>Ser dealer</speciality>
+      <shift>Tarde</shift>
+    </Dentist>
+    <date>22/11/2101</date>
+    <hour>10 AM</hour>
+    <notes>f</notes>
+    <patientId>5678</patientId>
+  </Appointment>
+  <Appointment>
+    <Dentist>
+      <name>diosdi</name>
+      <id>456</id>
+      <sex>M</sex>
+      <address>fdghjk</address>
+      <age>55</age>
+      <phoneNumber>56789</phoneNumber>
+      <speciality>Ser dealer</speciality>
+      <shift>Tarde</shift>
+    </Dentist>
+    <date>22/11/2012</date>
     <hour>11 AM</hour>
-    <notes>ewrt</notes>
-    <patientId>66588</patientId>
-  </Appointment>
-  <Appointment>
-    <Dentist>
-      <name>diosdi</name>
-      <id>456</id>
-      <sex>M</sex>
-      <address>fdghjk</address>
-      <age>55</age>
-      <phoneNumber>56789</phoneNumber>
-      <speciality>Ser dealer</speciality>
-      <shift>Tarde</shift>
-    </Dentist>
-    <date />
-    <hour />
-    <notes />
-    <patientId>44444</patientId>
+    <notes>egh</notes>
+    <patientId>44</patientId>
   </Appointment>
 </Appointment>

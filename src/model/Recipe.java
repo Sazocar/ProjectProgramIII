@@ -1,6 +1,6 @@
 package model;
 
-public class Recipe extends Document {
+public class Recipe {
     
     private String medicines;
     
@@ -8,11 +8,11 @@ public class Recipe extends Document {
         super();
         this.medicines = "";
     }
-
-    public Recipe(int patientId) {
-        super(patientId);
-        this.medicines = medicines;
+    
+    public Recipe(String meds) {
+    	medicines = meds;
     }
+
 
     public String getMedicines() {
         return medicines;
@@ -21,5 +21,6 @@ public class Recipe extends Document {
     public void setMedicines(String medicines) {
         this.medicines = medicines;
     }
+    
     
 }

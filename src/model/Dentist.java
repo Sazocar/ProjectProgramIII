@@ -8,12 +8,14 @@ public class Dentist extends Person {
     private String shift;
     private ArrayList<Appointment> listOfAppointments;
     
+    
     public Dentist () {
         super();
         this.specialty = "";
         this.shift = "";
         this.listOfAppointments = new ArrayList<Appointment>();
     }
+    
     
     public Dentist (String name, int id, int age, String sex, String address, int phoneNumber, String specialty,
             String shift, ArrayList<Appointment> listOfAppointments) {			// recuerda poner por parametro: , ArrayList<Appointment> listOfAppointments
@@ -22,7 +24,7 @@ public class Dentist extends Person {
         this.shift = shift;
         this.listOfAppointments = listOfAppointments;
     }
-
+    
     public String getSpecialty() {
         return specialty;
     }
