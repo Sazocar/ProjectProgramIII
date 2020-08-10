@@ -208,7 +208,7 @@ public class ModifPatientDent extends JFrame {
                 if ((Validations.validateName(nameTxt)) && (Validations.validateId(idTxt)) && (Validations.validateAge(ageTxt))
                         && (Validations.validateAddress(addressTxt)) && (Validations.validatePhoneNumber(phoneNumberTxt))
                         && (Validations.validateDate(dateTxt)) && (Validations.validateHour(hourBox))
-                        && (Validations.validateNotes(notesTxt))) {
+                        && (Validations.validateNotes(notesTxt))&& (Validations.validateTable(dentistTable.getSelectedRow()))) {
                     patient.setName(nameTxt.getText());
                     patient.setId(Integer.parseInt(idTxt.getText()));
                     patient.setAddress(addressTxt.getText());

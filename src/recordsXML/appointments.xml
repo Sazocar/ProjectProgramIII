@@ -65,12 +65,12 @@
   </Appointment>
   <Appointment>
     <Dentist>
-      <name>Alejandro</name>
-      <id>25151231</id>
-      <sex>M</sex>
-      <address>Bello Monte</address>
-      <age>26</age>
-      <phoneNumber>5123152</phoneNumber>
+      <name>Thaide</name>
+      <id>512341</id>
+      <sex>F</sex>
+      <address>Chacao</address>
+      <age>47</age>
+      <phoneNumber>51231412</phoneNumber>
       <speciality>Ninos</speciality>
       <shift>Manana</shift>
     </Dentist>
