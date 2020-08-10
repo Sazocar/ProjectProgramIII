@@ -39,4 +39,6 @@ public final class ControllerDentist {
 		listOfStaff.add(dentist);
 		DaoDentistXML.addDentist(dentist);
 	}
+	
+	
 }

@@ -195,6 +195,7 @@ public class AddDentist extends JFrame {
         btnWipe.setBorder(new IconHelper(260));
         btnWipe.setBackground(new Color(176, 224, 230));
         btnWipe.setBounds(338, 161, 72, 72);
+        btnWipe.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         contentPane.add(btnWipe);
         
         JLabel lblWipe = new JLabel("Limpiar Campos");

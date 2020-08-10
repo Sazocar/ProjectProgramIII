@@ -1,36 +1,36 @@
 <patients>
   <Patient>
-    <name>fg</name>
-    <id>44</id>
+    <name>rehber</name>
+    <id>456</id>
     <sex>M</sex>
-    <address>sasdh</address>
-    <age>44</age>
-    <phoneNumber>234</phoneNumber>
+    <address>fsgtdhfg</address>
+    <age>22</age>
+    <phoneNumber>345</phoneNumber>
     <Dentist>
-      <name>diosdi</name>
-      <id>456</id>
-      <sex>M</sex>
-      <address>fdghjk</address>
-      <age>55</age>
-      <phoneNumber>56789</phoneNumber>
-      <speciality>Ser dealer</speciality>
-      <shift>Tarde</shift>
+      <name>Thaide</name>
+      <id>512341</id>
+      <sex>F</sex>
+      <address>Chacao</address>
+      <age>47</age>
+      <phoneNumber>51231412</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
     </Dentist>
     <Appointment>
       <Dentist>
-        <name>diosdi</name>
-        <id>456</id>
-        <sex>M</sex>
-        <address>fdghjk</address>
-        <age>55</age>
-        <phoneNumber>56789</phoneNumber>
-        <speciality>Ser dealer</speciality>
-        <shift>Tarde</shift>
+        <name>Thaide</name>
+        <id>512341</id>
+        <sex>F</sex>
+        <address>Chacao</address>
+        <age>47</age>
+        <phoneNumber>51231412</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
       </Dentist>
-      <date>22/11/2012</date>
-      <hour>11 AM</hour>
-      <notes>egh</notes>
-      <patientId>44</patientId>
+      <date>22/11/2010</date>
+      <hour>10 AM</hour>
+      <notes>dfgg</notes>
+      <patientId>456</patientId>
     </Appointment>
     <Recipe>
       <medicine>No se ha asignado tratamiento</medicine>

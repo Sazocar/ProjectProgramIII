@@ -161,6 +161,11 @@ public class MoreInfoDent extends JFrame {
 		contentPane.add(lblPic);
 		
 		JButton btnHist = new JButton("");
+		btnHist.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Work in progress...", "Aviso", JOptionPane.WARNING_MESSAGE);
+			}
+		});
 		btnHist.setIcon(new ImageIcon(MoreInfoDent.class.getResource("/icons/Play-Books-icon.jpg")));
 		btnHist.setForeground(new Color(176, 224, 230));
 		btnHist.setBorder(new IconHelper(10));
@@ -175,6 +180,11 @@ public class MoreInfoDent extends JFrame {
 		contentPane.add(lblHist);
 		
 		JButton btnRecipe = new JButton("");
+		btnRecipe.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Work in progress...", "Aviso", JOptionPane.WARNING_MESSAGE);
+			}
+		});
 		btnRecipe.setIcon(new ImageIcon(MoreInfoDent.class.getResource("/icons/documents-icon.png")));
 		btnRecipe.setForeground(new Color(176, 224, 230));
 		btnRecipe.setBorder(new IconHelper(110));
