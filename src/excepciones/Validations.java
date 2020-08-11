@@ -196,4 +196,20 @@ public final class Validations {
     	return true;
     
     }
+    
+    public static boolean validateAvailability(Dentist dentist, JTextField fechaTxt, JComboBox hourBox, int patientId) {
+        for (int i = 0; i<dentist.getListOfAppointments().size(); i++) {
+            if (dentist.getListOfAppointments().get(i).getDate().equalsIgnoreCase(fechaTxt.getText()) && 
+                    dentist.getListOfAppointments().get(i).getHour().equalsIgnoreCase(hourBox.getSelectedItem().toString())) {
+                if (dentist.getListOfAppointments().get(i).getPatientId() == patientId)
+                    return true;
+                else {
+                    errorMessage("Odontologo no disponible\nSeleccione otra hora o fecha.");
+                    return false;
+                }  
+            }           
+        }
+        return true;
+    }
+    
 }

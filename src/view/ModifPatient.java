@@ -52,6 +52,7 @@ public class ModifPatient extends JFrame {
     	setBounds(100, 100, 543, 452);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBackground(new Color(176, 224, 230));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         JLabel lblName = new JLabel("Nombre: ");
@@ -218,7 +219,9 @@ public class ModifPatient extends JFrame {
                 if ((Validations.validateName(nameTxt)) && (Validations.validateId(idTxt)) && (Validations.validateAge(ageTxt))
                         && (Validations.validateAddress(addressTxt)) && (Validations.validatePhoneNumber(phoneNumberTxt))
                         && (Validations.validateDate(dateTxt)) && (Validations.validateHour(hourBox))
-                        && (Validations.validateNotes(notesTxt) && (Validations.validateTable(dentistTable.getSelectedRow())))) {
+                        && (Validations.validateTable(dentistTable.getSelectedRow()))
+                        && (Validations.validateAvailability(clinic.getListOfStaff().get(dentistTable.getSelectedRow()), dateTxt, hourBox, Integer.parseInt(idTxt.getText())))
+                        && (Validations.validateNotes(notesTxt))) {
                     patient.setName(nameTxt.getText());
                     patient.setId(Integer.parseInt(idTxt.getText()));
                     patient.setAddress(addressTxt.getText());
@@ -233,7 +236,7 @@ public class ModifPatient extends JFrame {
                     patient.getAppointment().setDate(dateTxt.getText());
                     patient.getAppointment().setHour(hourBox.getSelectedItem().toString());
                     patient.getAppointment().setNotes(notesTxt.getText());
-                	JOptionPane.showMessageDialog(null, "Datos actualizados exitosamente");
+                	   JOptionPane.showMessageDialog(null, "Datos actualizados exitosamente");
                     ControlFields.clearFieldsSecretary(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dateTxt, hourBox, notesTxt);
                     ControlFields.fillTablePatient(table, clinic.getListOfPatients());
                     setVisible(false);

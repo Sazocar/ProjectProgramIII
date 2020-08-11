@@ -49,6 +49,7 @@ public class ModifPatientDent extends JFrame {
     public ModifPatientDent(Clinic clinic, Patient patient, JTable table, ArrayList<Patient> patientsInAppointments) {
     	getContentPane().setBackground(new Color(176, 224, 230));   
     	setBounds(100, 100, 543, 452);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setBackground(new Color(176, 224, 230));
         getContentPane().setLayout(null);
@@ -205,10 +206,16 @@ public class ModifPatientDent extends JFrame {
         btnConfirm.setBounds(153, 328, 72, 72);
         btnConfirm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if ((Validations.validateName(nameTxt)) && (Validations.validateId(idTxt)) && (Validations.validateAge(ageTxt))
+                for (int i = 0; i<clinic.getListOfStaff().get(dentistTable.getSelectedRow()).getListOfAppointments().size(); i++) {
+                    if (clinic.getListOfStaff().get(dentistTable.getSelectedRow()).getListOfAppointments().get(i).getPatientId() == patient.getId())
+                        clinic.getListOfStaff().get(dentistTable.getSelectedRow()).getListOfAppointments().get(i).setDate("");
+            }
+                if ( (Validations.validateName(nameTxt)) && (Validations.validateId(idTxt)) && (Validations.validateAge(ageTxt))
                         && (Validations.validateAddress(addressTxt)) && (Validations.validatePhoneNumber(phoneNumberTxt))
                         && (Validations.validateDate(dateTxt)) && (Validations.validateHour(hourBox))
-                        && (Validations.validateNotes(notesTxt))&& (Validations.validateTable(dentistTable.getSelectedRow()))) {
+                        && (Validations.validateTable(dentistTable.getSelectedRow())
+                        && (Validations.validateAvailability(clinic.getListOfStaff().get(dentistTable.getSelectedRow()), dateTxt, hourBox, Integer.parseInt(idTxt.getText())))
+                        && (Validations.validateNotes(notesTxt))))  {
                     patient.setName(nameTxt.getText());
                     patient.setId(Integer.parseInt(idTxt.getText()));
                     patient.setAddress(addressTxt.getText());

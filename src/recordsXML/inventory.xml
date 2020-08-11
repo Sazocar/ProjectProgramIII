@@ -1,28 +1,28 @@
 <Inventory>
   <inventory>
     <rollos>6</rollos>
-    <gasas>0</gasas>
-    <resina_fotocurada>0</resina_fotocurada>
-    <cemento_de_vidrio_ionomerico>3</cemento_de_vidrio_ionomerico>
-    <cemento_de_base_de_hidroxido_de_calcio>0</cemento_de_base_de_hidroxido_de_calcio>
+    <gasas>12</gasas>
+    <resina_fotocurada>1</resina_fotocurada>
+    <cemento_de_vidrio_ionomerico>12</cemento_de_vidrio_ionomerico>
+    <cemento_de_base_de_hidroxido_de_calcio>7</cemento_de_base_de_hidroxido_de_calcio>
     <conos_de_goma>5</conos_de_goma>
-    <pasta>2</pasta>
-    <fluor>0</fluor>
-    <diques_de_goma>0</diques_de_goma>
-    <conos_de_gutabercha>0</conos_de_gutabercha>
-    <conos_de_papel_absorbente>0</conos_de_papel_absorbente>
-    <suturas>0</suturas>
-    <oxido_de_zinc>0</oxido_de_zinc>
-    <eugenol>0</eugenol>
-    <formocresol>0</formocresol>
-    <barberos_desechables>0</barberos_desechables>
-    <batas_desechables>0</batas_desechables>
-    <gerdex>0</gerdex>
-    <cloro>2</cloro>
-    <guantes_de_examen>0</guantes_de_examen>
-    <tapabocas>0</tapabocas>
-    <gorros_desechables>2</gorros_desechables>
-    <batas_de_cirugia>0</batas_de_cirugia>
-    <guantes_esteriles>0</guantes_esteriles>
+    <pasta>10</pasta>
+    <fluor>3</fluor>
+    <diques_de_goma>10</diques_de_goma>
+    <conos_de_gutabercha>10</conos_de_gutabercha>
+    <conos_de_papel_absorbente>7</conos_de_papel_absorbente>
+    <suturas>1</suturas>
+    <oxido_de_zinc>9</oxido_de_zinc>
+    <eugenol>10</eugenol>
+    <formocresol>2</formocresol>
+    <barberos_desechables>10</barberos_desechables>
+    <batas_desechables>12</batas_desechables>
+    <gerdex>10</gerdex>
+    <cloro>14</cloro>
+    <guantes_de_examen>20</guantes_de_examen>
+    <tapabocas>20</tapabocas>
+    <gorros_desechables>42</gorros_desechables>
+    <batas_de_cirugia>5</batas_de_cirugia>
+    <guantes_esteriles>15</guantes_esteriles>
   </inventory>
 </Inventory>

@@ -49,7 +49,7 @@ public class Start extends JFrame {
         Inventory inv = DaoInventoryXML.createInv();
         clinic.setInventory(inv);
 
-        
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 344);
         contentPane = new JPanel();

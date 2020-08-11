@@ -176,6 +176,7 @@ public class CreateApointment extends JPanel {
                 if ((Validations.validateName(nameTxt)) && (Validations.validateId(idTxt)) && (Validations.validateAge(ageTxt))
                         && (Validations.validateAddress(addressTxt)) && (Validations.validatePhoneNumber(phoneNumberTxt))
                         && (Validations.validateDentist(dentistTable)) && (Validations.validateDate(dateTxt)) && (Validations.validateHour(hourBox))
+                        && (Validations.validateAvailability(clinic.getListOfStaff().get(dentistTable.getSelectedRow()), dateTxt, hourBox, Integer.parseInt(idTxt.getText())))
                         && (Validations.validateNotes(notesTxt))) {
                     ControlSecretary.createAppointment(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dentistTable, dateTxt, hourBox, notesTxt, clinic.getListOfStaff(), clinic.getListOfAppointments(), clinic.getListOfPatients());
                     JOptionPane.showMessageDialog(null, "Cita creada exitosamente");

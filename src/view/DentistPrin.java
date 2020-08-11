@@ -35,6 +35,7 @@ public class DentistPrin extends JFrame {
 	public DentistPrin(Clinic clinic, Dentist dentist, ArrayList<Patient> patients) {
 		    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setBounds(100, 100, 725, 477);
+                          setResizable(false);
 	        contentPane = new JPanel();
 	        contentPane.setBackground(new Color(176, 224, 230));
 	        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
