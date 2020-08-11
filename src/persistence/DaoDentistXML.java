@@ -39,17 +39,8 @@ public class DaoDentistXML {
     }
 
     public static Element DentistXmlElement(Dentist nDentist) {
-        /*
-		 * Aqui lleno todo el contexto que le voy a insertar al archivo, es decir el
-		 * nodo proncipal que es Estudiante con los atributos que le corresponden, los
-		 * cuales seria cedula,nombre y apellido,etc. Debes ser muuuuy preciso en este
-		 * llenado, es decir, indicar los atributos con pelos y señales exactamente como
-		 * están en la Clase, de lo contrario la tabla XML no se generará y no se
-		 * produzca ningún error que te advierta que falta un acento, un espacio u otro
-		 * símbolo
-         */
-        Element Dentist = new Element("Dentist");// nombre de la Clase
-
+    
+        Element Dentist = new Element("Dentist");
         Element name = new Element("name");
         name.setText(nDentist.getName());
         Element id = new Element("id");
@@ -150,11 +141,6 @@ public class DaoDentistXML {
     }
 
     public static void allDentist(ArrayList<Dentist> listOfStaff) {
-        /*
-		 * Para obtener todas las Personas registradas
-		 * 
-		 * @return ArrayList con todos los objetos Dentist
-         */
         for (Object it : root.getChildren()) {
             Element xmlElem = (Element) it;
             try {

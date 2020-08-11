@@ -41,16 +41,8 @@ public class DaoAppointmentsXML {
     }
 
     public static Element AppointmentXmlElement(Appointment nAppointment) {
-        /*
-		 * Aqui lleno todo el contexto que le voy a insertar al archivo, es decir el
-		 * nodo proncipal que es Estudiante con los atributos que le corresponden, los
-		 * cuales seria cedula,nombre y apellido,etc. Debes ser muuuuy preciso en este
-		 * llenado, es decir, indicar los atributos con pelos y señales exactamente como
-		 * están en la Clase, de lo contrario la tabla XML no se generará y no se
-		 * produzca ningún error que te advierta que falta un acento, un espacio u otro
-		 * símbolo
-         */
-        Element Appointment = new Element("Appointment");// nombre de la Clase
+       
+        Element Appointment = new Element("Appointment");
 
         
         Element dentist = DaoDentistXML.DentistXmlElement(nAppointment.getDentist());
@@ -70,23 +62,7 @@ public class DaoAppointmentsXML {
         return Appointment;
     }
     
-    
-  /*       
-            Este es el metodo que da error
-            Intente hacer eso de "(Dentist) (Object) element.getChild("dentist")" 
-            a ver si me convertía el elemento a un objeto
-            y luego a un dentista y al parecer lo hace, pero luego dice 
-            que el element no puede ser casteado a un Dentista (fuck logic)
-            no sé que se te ocurre my friend.
-            si necesitas un appointment pa verificar algo, hazlo manual sin 
-            necesidad de los archivos y esto dejarlo de ultimo.
-    
-            Que la fuerza te acompane... 
-            (Mucho texto)
-            
-            La fuerza es intensa en ti joven padawan pero aun te falta mucho por entender xd
-            (Hello there)
-    */
+
     public static Appointment AppointmentToObject(Element element) throws ParseException {
         Appointment nAppointment = new Appointment(DaoDentistXML.DentistToObject(element.getChild("Dentist")), element.getChildText("date"), element.getChildText("hour"), 
                 element.getChildText("notes"), Integer.parseInt(element.getChildText("patientId")));
@@ -151,11 +127,7 @@ public class DaoAppointmentsXML {
     }
 
     public static void allAppointments(ArrayList<Appointment> listOfAppointments) {
-        /*
-		 * Para obtener todas las Personas registradas
-		 * 
-		 * @return ArrayList con todos los objetos Dentist
-         */
+        
         for (Object it : root.getChildren()) {
             Element xmlElem = (Element) it;
             try {

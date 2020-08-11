@@ -34,7 +34,7 @@ public class DentistPrin extends JFrame {
 
 	public DentistPrin(Clinic clinic, Dentist dentist, ArrayList<Patient> patients) {
 		    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        setBounds(100, 100, 683, 452);
+	        setBounds(100, 100, 725, 477);
 	        contentPane = new JPanel();
 	        contentPane.setBackground(new Color(176, 224, 230));
 	        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -50,8 +50,15 @@ public class DentistPrin extends JFrame {
 	        appointments.setLayout(null);
 	        appointments.setVisible(true);
 	        
-	        PatientsList = new Search(clinic, true);		  // Perro explicame que este search
-	        PatientsList.setBackground(new Color(176, 224, 230)); // y xq no es un JTable
+	        InventoryPanel invPanel = new InventoryPanel(clinic.getInventory());
+	        invPanel.setBackground(new Color(176, 224, 230));
+	        invPanel.setBounds(131, 0, 552, 413);
+	        contentPane.add(invPanel);
+	        invPanel.setLayout(null);
+	        invPanel.setVisible(false);
+	        
+	        PatientsList = new Search(clinic, true);		  
+	        PatientsList.setBackground(new Color(176, 224, 230)); 
 	        PatientsList.setBounds(131, 0, 552, 413);
 	        contentPane.add(PatientsList);
 	        PatientsList.setLayout(null);
@@ -61,6 +68,7 @@ public class DentistPrin extends JFrame {
 	        btnAppointments.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
 	        		PatientsList.setVisible(false);
+	        		invPanel.setVisible(false);
 	        		appointments.setVisible(true);
 	        		ControlFields.fillTableAppointments(appointments.getTable(), patients);
 	        		Validations.warningMessage("No hay citas asignadas", dentist);
@@ -79,6 +87,7 @@ public class DentistPrin extends JFrame {
 	        btnPatients.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
 	        		appointments.setVisible(false);
+	        		invPanel.setVisible(false);
 	        		PatientsList.setVisible(true);
 	        		ControlFields.fillTablePatient(PatientsList.getTable(), clinic.getListOfPatients());
 	        	}
@@ -94,7 +103,9 @@ public class DentistPrin extends JFrame {
 	        JButton btnInv = new JButton("");
 	        btnInv.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
-	        		JOptionPane.showMessageDialog(null, "Work in progress...", "Aviso", JOptionPane.WARNING_MESSAGE);
+	        		appointments.setVisible(false);
+	        		PatientsList.setVisible(false);
+	        		invPanel.setVisible(true);
 	        	}
 	        });
 	        btnInv.setIcon(new ImageIcon(DentistPrin.class.getResource("/icons/Close-icon.png")));

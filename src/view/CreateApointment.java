@@ -116,7 +116,7 @@ public class CreateApointment extends JPanel {
         add(phoneNumberTxt);
 
         JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(285, 22, 212, 145);
+        scrollPane.setBounds(296, 223, 212, 145);
         add(scrollPane);
 
         dentistTable = new JTable();
@@ -134,40 +134,40 @@ public class CreateApointment extends JPanel {
         JLabel lblAviliable = new JLabel("Odontologos Disponibles");
         lblAviliable.setFont(new Font("Tahoma", Font.PLAIN, 15));
         lblAviliable.setHorizontalAlignment(SwingConstants.CENTER);
-        lblAviliable.setBounds(285, 177, 202, 35);
+        lblAviliable.setBounds(296, 177, 202, 35);
         add(lblAviliable);
 
         JLabel lblDate = new JLabel("Fecha:");
         lblDate.setHorizontalAlignment(SwingConstants.RIGHT);
         lblDate.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        lblDate.setBounds(285, 230, 49, 20);
+        lblDate.setBounds(311, 34, 49, 20);
         add(lblDate);
 
         dateTxt = new JTextField();
-        dateTxt.setBounds(344, 232, 89, 20);
+        dateTxt.setBounds(370, 36, 89, 20);
         add(dateTxt);
         dateTxt.setColumns(10);
 
         JLabel lblHour = new JLabel("Hora:");
         lblHour.setHorizontalAlignment(SwingConstants.RIGHT);
         lblHour.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        lblHour.setBounds(275, 269, 59, 20);
+        lblHour.setBounds(296, 89, 59, 20);
         add(lblHour);
 
         JComboBox hourBox = new JComboBox();
         hourBox.setModel(new DefaultComboBoxModel(new String[]{"", "9 AM", "10 AM", "11 AM", "2 PM", "3 PM", "4 PM", "5 PM"}));
-        hourBox.setBounds(344, 271, 104, 20);
+        hourBox.setBounds(365, 91, 104, 20);
         add(hourBox);
 
         JLabel lblNotes = new JLabel("Motivo:");
         lblNotes.setHorizontalAlignment(SwingConstants.RIGHT);
         lblNotes.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        lblNotes.setBounds(245, 312, 89, 20);
+        lblNotes.setBounds(256, 135, 89, 20);
         add(lblNotes);
 
         notesTxt = new JTextField();
         notesTxt.setColumns(10);
-        notesTxt.setBounds(344, 314, 153, 20);
+        notesTxt.setBounds(355, 137, 153, 20);
         add(notesTxt);
 
         JButton btnConfirm = new JButton("");

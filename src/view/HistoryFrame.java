@@ -33,7 +33,7 @@ public class HistoryFrame extends JFrame {
 	public HistoryFrame(Patient patient) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 545, 695);
+		setBounds(100, 100, 545, 669);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setBackground(new Color(176, 224, 230));
@@ -116,7 +116,7 @@ public class HistoryFrame extends JFrame {
 		btnBack.setForeground(new Color(176, 224, 230));
 		btnBack.setBorder(new IconHelper(260));
 		btnBack.setBackground(new Color(176, 224, 230));
-		btnBack.setBounds(331, 618, 59, 51);
+		btnBack.setBounds(321, 571, 59, 51);
 		btnBack.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		contentPane.add(btnBack);
 		
@@ -131,7 +131,7 @@ public class HistoryFrame extends JFrame {
 		scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);	
 		scrollPane.getViewport().setBackground(new Color(176, 224, 230));
-		scrollPane.setBounds(37, 253, 473, 353);		
+		scrollPane.setBounds(37, 253, 473, 307);		
 		
 		this.txtDisplayHistory = new JTextPane();
 		this.txtDisplayHistory.setFont(new Font("Hiragino Sans", Font.PLAIN, 15));
@@ -157,16 +157,16 @@ public class HistoryFrame extends JFrame {
 		btnAddHistory.setForeground(new Color(176, 224, 230));
 		btnAddHistory.setBorder(new IconHelper(260));
 		btnAddHistory.setBackground(new Color(176, 224, 230));
-		btnAddHistory.setBounds(85, 618, 59, 51);
+		btnAddHistory.setBounds(75, 571, 59, 51);
 		btnAddHistory.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		contentPane.add(btnAddHistory);
 		
 		JLabel lblAddHistory = new JLabel("Agregar a la Historia");
-		lblAddHistory.setBounds(148, 634, 134, 16);
+		lblAddHistory.setBounds(138, 587, 134, 16);
 		contentPane.add(lblAddHistory);
 		
 		JLabel lblAtras = new JLabel("Atras");
-		lblAtras.setBounds(396, 634, 59, 16);
+		lblAtras.setBounds(386, 587, 59, 16);
 		contentPane.add(lblAtras);
 		
 		

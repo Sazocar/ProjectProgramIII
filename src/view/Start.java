@@ -3,6 +3,7 @@ package view;
 import java.awt.BorderLayout;
 import model.*;
 import persistence.DaoDentistXML;
+import persistence.DaoInventoryXML;
 import persistence.DaoPatientXML;
 
 import java.awt.EventQueue;
@@ -32,25 +33,21 @@ public class Start extends JFrame {
     private JPanel contentPane;
 
     Clinic clinic = new Clinic();
-    Inventory inventory = new Inventory();
     DaoDentistXML dataDentist = new DaoDentistXML();
     DaoAppointmentsXML dataAppointment = new DaoAppointmentsXML();
     DaoPatientXML dataPatient = new DaoPatientXML();
+    DaoInventoryXML dataInv = new DaoInventoryXML();    
     
-    /**
-     * Launch the application.
-     */
-  
-    /**
-     * Create the frame.
-     */
+
+    
     public Start() {
     	
         DaoDentistXML.allDentist(clinic.getListOfStaff());
         DaoAppointmentsXML.allAppointments(clinic.getListOfAppointments());
         DaoPatientXML.allPatients(clinic.getListOfPatients());      
         ControlFields.assingAppointmentsDentist(clinic);
-        
+        Inventory inv = DaoInventoryXML.createInv();
+        clinic.setInventory(inv);
 
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -53,6 +53,41 @@ public class Inventory {
 	   batasDeCirugia = 0;
 	   guantesEsteriles = 0;
    }
+   
+   
+
+public Inventory(int rollosDeAlgodon, int gasas, int resinaFotocurada, int cementoDeVidrioIonomerico,
+				 int cementoDeBaseDeHidroxidoDeCalcio, int conosDeGoma, int pastaProfilactica, int fluor, int diquesDeGoma,
+				 int conosDeGutabercha, int conosDePapelAbsorbente, int suturas, int oxidoDeZinc, int eugenol, int formocresol,
+				 int barberosDesechables, int batasDesechables, int gerdex, int cloro, int guantesDeExamen, int tapabocas,
+				 int gorrosDesechables, int batasDeCirugia, int guantesEsteriles) {
+	this.rollosDeAlgodon = rollosDeAlgodon;
+	this.gasas = gasas;
+	this.resinaFotocurada = resinaFotocurada;
+	this.cementoDeVidrioIonomerico = cementoDeVidrioIonomerico;
+	this.cementoDeBaseDeHidroxidoDeCalcio = cementoDeBaseDeHidroxidoDeCalcio;
+	this.conosDeGoma = conosDeGoma;
+	this.pastaProfilactica = pastaProfilactica;
+	this.fluor = fluor;
+	this.diquesDeGoma = diquesDeGoma;
+	this.conosDeGutabercha = conosDeGutabercha;
+	this.conosDePapelAbsorbente = conosDePapelAbsorbente;
+	this.suturas = suturas;
+	this.oxidoDeZinc = oxidoDeZinc;
+	this.eugenol = eugenol;
+	this.formocresol = formocresol;
+	this.barberosDesechables = barberosDesechables;
+	this.batasDesechables = batasDesechables;
+	this.gerdex = gerdex;
+	this.cloro = cloro;
+	this.guantesDeExamen = guantesDeExamen;
+	this.tapabocas = tapabocas;
+	this.gorrosDesechables = gorrosDesechables;
+	this.batasDeCirugia = batasDeCirugia;
+	this.guantesEsteriles = guantesEsteriles;
+}
+
+
 
 public int getRollosDeAlgodon() {
 	return rollosDeAlgodon;

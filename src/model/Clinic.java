@@ -7,13 +7,13 @@ public class Clinic {
     private ArrayList<Dentist> listOfStaff = new ArrayList<Dentist>();
     private ArrayList<Patient> listOfPatients = new ArrayList<Patient>();
     private ArrayList<Appointment> listOfAppointments =new ArrayList<Appointment>();
-    private ArrayList<Inventory> inventory = new ArrayList<Inventory>();
+    private Inventory inventory ;
     
     public Clinic () {
     }
 
     public Clinic(ArrayList<Dentist> listOfStaff, ArrayList<Patient> listOfPatients, ArrayList<Appointment> listOfAppointments, 
-            ArrayList<Inventory> inventory) {
+            Inventory inventory) {
         this.listOfStaff = listOfStaff;
         this.listOfPatients = listOfPatients;
         this.listOfAppointments = listOfAppointments;
@@ -44,11 +44,11 @@ public class Clinic {
         this.listOfAppointments = listOfAppointments;
     }
 
-    public ArrayList<Inventory> getInventory() {
+    public Inventory getInventory() {
         return inventory;
     }
 
-    public void setInventory(ArrayList<Inventory> inventory) {
+    public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
     

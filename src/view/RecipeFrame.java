@@ -48,7 +48,7 @@ public class RecipeFrame extends JFrame {
 	public RecipeFrame(Patient patient) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 680, 420);
+		setBounds(100, 100, 680, 443);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setBackground(new Color(176, 224, 230));
