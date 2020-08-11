@@ -24,17 +24,18 @@ import model.IconHelper;
 import persistence.DaoPatientXML;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 
-public class CreateRecipe extends JFrame {
+public class AddHistory extends JFrame {
 
 	private JPanel contentPane;
 
 	/**
 	 * Create the frame.
 	 */
-	public CreateRecipe(Patient patient, JTextPane txtDisplayRecipe) {
+	public AddHistory(Patient patient, JTextPane txtDisplayHistory) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE	);
 		setBounds(100, 100, 540, 420);
@@ -70,10 +71,22 @@ public class CreateRecipe extends JFrame {
 		JButton btnConfirm = new JButton("");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				patient.getRecipe().setMedicines(textArea.getText());
-				txtDisplayRecipe.setText(textArea.getText() + "\n\n   Odontologo: " + patient.getDentist().getName());
-				txtDisplayRecipe.setCaretPosition(0);
-                setVisible(false);
+				if (textArea.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Para agregar contenido al historial \neste campo no puede estar vacio.");
+				}else {
+					int option = JOptionPane.showConfirmDialog(null, "Seguro que agregar \neste contenido al historial?", "Cancelar", JOptionPane.YES_NO_OPTION);
+	                if (option != 1) {
+	                	if (patient.getHistory().getTreatment().equalsIgnoreCase("Este paciente no contiene historial medico aun."))
+	                		txtDisplayHistory.setText(textArea.getText());
+	                	else 
+	                		txtDisplayHistory.setText(txtDisplayHistory.getText() + "\n" + textArea.getText());
+	                    patient.getHistory().setTreatment(txtDisplayHistory.getText());
+	                    DaoPatientXML.deletePatient(patient.getId());
+	                    DaoPatientXML.updatePatient(patient);
+	                    JOptionPane.showMessageDialog(null, "Contenido agregado\nal historial exitosamente.");
+	                    setVisible(false);
+	                }
+				}
 			}
 		});
 		btnConfirm.setIcon(new ImageIcon(CreateRecipe.class.getResource("/icons/check2.jpg")));

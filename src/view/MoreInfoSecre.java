@@ -157,7 +157,10 @@ public class MoreInfoSecre extends JFrame {
 		
 		JLabel lblPic = new JLabel("");
 		lblPic.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPic.setIcon(new ImageIcon(MoreInfoSecre.class.getResource("/icons/imgAgregar.jpg")));
+		if (patient.getSex().equalsIgnoreCase("m")) 
+			lblPic.setIcon(new ImageIcon(MoreInfoSecre.class.getResource("/icons/Man-1-icon.png")));
+		else if (patient.getSex().equalsIgnoreCase("f"))
+			lblPic.setIcon(new ImageIcon(MoreInfoSecre.class.getResource("/icons/Woman-9-icon.png")));
 		lblPic.setBounds(281, 11, 160, 138);
 		contentPane.add(lblPic);
 		

@@ -46,6 +46,7 @@ public class RecipeFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public RecipeFrame(Patient patient) {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 680, 420);
 		contentPane = new JPanel();
@@ -54,13 +55,13 @@ public class RecipeFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblCancelar = new JLabel("Cancelar");
-		lblCancelar.setBounds(395, 369, 70, 20);
-		lblCancelar.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCancelar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		contentPane.add(lblCancelar);
+		JLabel lblAtras = new JLabel("Atras");
+		lblAtras.setBounds(395, 369, 70, 20);
+		lblAtras.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAtras.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		contentPane.add(lblAtras);
 		
-		JLabel lblName = new JLabel("Nombre: ");
+		JLabel lblName = new JLabel("Paciente:");
 		lblName.setBounds(169, 15, 59, 23);
 		lblName.setHorizontalAlignment(SwingConstants.RIGHT);
 		contentPane.add(lblName);
@@ -152,9 +153,7 @@ public class RecipeFrame extends JFrame {
 		JButton btnCancel = new JButton("");
 		btnCancel.setBounds(403, 312, 58, 54);
 		btnCancel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				int option = JOptionPane.showConfirmDialog(null, "Seguro que desea cancelar la operacion?", "Cancelar", JOptionPane.YES_NO_OPTION);
-                if (option != 1) {
+			public void actionPerformed(ActionEvent e) {{
                     setVisible(false);
                 }
 			}

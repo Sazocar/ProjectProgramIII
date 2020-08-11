@@ -25,6 +25,7 @@ public class MoreInfoDent extends JFrame {
 
 	
 	public MoreInfoDent(Patient patient) {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 485, 382);
 		contentPane = new JPanel();
@@ -156,14 +157,18 @@ public class MoreInfoDent extends JFrame {
 		
 		JLabel lblPic = new JLabel("");
 		lblPic.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPic.setIcon(new ImageIcon(MoreInfoSecre.class.getResource("/icons/imgAgregar.jpg")));
+		if (patient.getSex().equalsIgnoreCase("m")) 
+			lblPic.setIcon(new ImageIcon(MoreInfoSecre.class.getResource("/icons/Man-1-icon.png")));
+		else if (patient.getSex().equalsIgnoreCase("f"))
+			lblPic.setIcon(new ImageIcon(MoreInfoSecre.class.getResource("/icons/Woman-9-icon.png")));
 		lblPic.setBounds(281, 11, 160, 138);
 		contentPane.add(lblPic);
 		
 		JButton btnHist = new JButton("");
 		btnHist.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Work in progress...", "Aviso", JOptionPane.WARNING_MESSAGE);
+				HistoryFrame historyFrame = new HistoryFrame(patient);
+				historyFrame.setVisible(true);
 			}
 		});
 		btnHist.setIcon(new ImageIcon(MoreInfoDent.class.getResource("/icons/Play-Books-icon.jpg")));

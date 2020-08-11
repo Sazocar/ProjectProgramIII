@@ -195,11 +195,10 @@ public class CreateApointment extends JPanel {
         JButton btnCancel = new JButton("");
         btnCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                int option = JOptionPane.showConfirmDialog(null, "Seguro que desea volver a la pagina inicial?", "Cancelar", JOptionPane.YES_NO_OPTION);
+                int option = JOptionPane.showConfirmDialog(null, "Seguro que desea vaciar\todos los campos?", "Cancelar", JOptionPane.YES_NO_OPTION);
                 if (option != 1) {
                     ControlFields.clearFieldsSecretary(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dateTxt, hourBox, notesTxt);
                     dentistTable.clearSelection();
-                    setVisible(false);
                 }
             }
         });
@@ -220,12 +219,12 @@ public class CreateApointment extends JPanel {
         lblOk.setBounds(160, 400, 61, 16);
         add(lblOk);
         
-        JLabel lblNewLabel = new JLabel("ATRAS");
-        lblNewLabel.setFont(new Font("Lucida Grande", Font.BOLD, 13));
-        lblNewLabel.setForeground(new Color(0, 0, 0));
-        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel.setBounds(47, 400, 61, 16);
-        add(lblNewLabel);
+        JLabel lblClear = new JLabel("CLEAR");
+        lblClear.setFont(new Font("Lucida Grande", Font.BOLD, 13));
+        lblClear.setForeground(new Color(0, 0, 0));
+        lblClear.setHorizontalAlignment(SwingConstants.CENTER);
+        lblClear.setBounds(47, 400, 61, 16);
+        add(lblClear);
     }
 
     public JTable getDentistTable() {

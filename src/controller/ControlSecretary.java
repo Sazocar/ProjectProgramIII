@@ -54,7 +54,7 @@ public final class ControlSecretary {
         patient.getAppointment().setPatientId(patient.getId());
         recipe.setMedicines("No se ha asignado tratamiento");
         patient.setRecipe(recipe);
-        hist.setTreatment("No hay Historia clinica");
+        hist.setTreatment("Este paciente no contiene historial medico aun.");
         patient.setHistory(hist);
         
         listOfPatients.add(patient);

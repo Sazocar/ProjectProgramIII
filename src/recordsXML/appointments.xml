@@ -1,38 +1,6 @@
 <Appointment>
   <Appointment>
     <Dentist>
-      <name>Eduardo</name>
-      <id>24123923</id>
-      <sex>M</sex>
-      <address>Trinidad</address>
-      <age>40</age>
-      <phoneNumber>212292341</phoneNumber>
-      <speciality>Adultos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <date>4/9/2020</date>
-    <hour>10 AM</hour>
-    <notes>Limpieza</notes>
-    <patientId>24231241</patientId>
-  </Appointment>
-  <Appointment>
-    <Dentist>
-      <name>Thaide</name>
-      <id>512341</id>
-      <sex>M</sex>
-      <address>Chacao</address>
-      <age>47</age>
-      <phoneNumber>51231412</phoneNumber>
-      <speciality>Ninos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <date>10/10/2010</date>
-    <hour>10 AM</hour>
-    <notes>Limpieza</notes>
-    <patientId>512315</patientId>
-  </Appointment>
-  <Appointment>
-    <Dentist>
       <name>Alejandro</name>
       <id>25151231</id>
       <sex>M</sex>
@@ -78,5 +46,85 @@
     <hour>2 PM</hour>
     <notes>Muela</notes>
     <patientId>26250543</patientId>
+  </Appointment>
+  <Appointment>
+    <Dentist>
+      <name>Thaide</name>
+      <id>512341</id>
+      <sex>F</sex>
+      <address>Chacao</address>
+      <age>47</age>
+      <phoneNumber>51231412</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <date>20/10/2023</date>
+    <hour>10 AM</hour>
+    <notes>Limpieza</notes>
+    <patientId>812341</patientId>
+  </Appointment>
+  <Appointment>
+    <Dentist>
+      <name>Eduardo</name>
+      <id>24123923</id>
+      <sex>M</sex>
+      <address>Trinidad</address>
+      <age>40</age>
+      <phoneNumber>212292341</phoneNumber>
+      <speciality>Adultos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <date>12/12/2020</date>
+    <hour>4 PM</hour>
+    <notes>Dolor</notes>
+    <patientId>1925123</patientId>
+  </Appointment>
+  <Appointment>
+    <Dentist>
+      <name>Thaide</name>
+      <id>512341</id>
+      <sex>F</sex>
+      <address>Chacao</address>
+      <age>47</age>
+      <phoneNumber>51231412</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <date>10/10/2020</date>
+    <hour>10 AM</hour>
+    <notes>Limpieza</notes>
+    <patientId>512315</patientId>
+  </Appointment>
+  <Appointment>
+    <Dentist>
+      <name>Eduardo</name>
+      <id>24123923</id>
+      <sex>M</sex>
+      <address>Trinidad</address>
+      <age>40</age>
+      <phoneNumber>212292341</phoneNumber>
+      <speciality>Adultos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <date>4/9/2020</date>
+    <hour>10 AM</hour>
+    <notes>Limpieza</notes>
+    <patientId>24231241</patientId>
+  </Appointment>
+  <Appointment>
+    <Dentist>
+      <name>Thaide</name>
+      <id>512341</id>
+      <sex>F</sex>
+      <address>Chacao</address>
+      <age>47</age>
+      <phoneNumber>51231412</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <date>20/10/2020</date>
+    <hour>2 PM</hour>
+    <notes>Limpieza</notes>
+    <patientId>812351</patientId>
   </Appointment>
 </Appointment>
