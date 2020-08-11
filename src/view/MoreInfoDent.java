@@ -182,7 +182,9 @@ public class MoreInfoDent extends JFrame {
 		JButton btnRecipe = new JButton("");
 		btnRecipe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Work in progress...", "Aviso", JOptionPane.WARNING_MESSAGE);
+//				JOptionPane.showMessageDialog(null, "Work in progress...", "Aviso", JOptionPane.WARNING_MESSAGE);
+				RecipeFrame recipeFrame = new RecipeFrame(patient);
+				recipeFrame.setVisible(true);
 			}
 		});
 		btnRecipe.setIcon(new ImageIcon(MoreInfoDent.class.getResource("/icons/documents-icon.png")));

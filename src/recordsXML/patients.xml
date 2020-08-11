@@ -1,11 +1,91 @@
 <patients>
   <Patient>
-    <name>rehber</name>
-    <id>456</id>
+    <name>Carlos</name>
+    <id>24231241</id>
     <sex>M</sex>
-    <address>fsgtdhfg</address>
-    <age>22</age>
-    <phoneNumber>345</phoneNumber>
+    <address>Colinas</address>
+    <age>20</age>
+    <phoneNumber>5123141</phoneNumber>
+    <Dentist>
+      <name>Eduardo</name>
+      <id>24123923</id>
+      <sex>M</sex>
+      <address>Trinidad</address>
+      <age>40</age>
+      <phoneNumber>212292341</phoneNumber>
+      <speciality>Adultos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Eduardo</name>
+        <id>24123923</id>
+        <sex>M</sex>
+        <address>Trinidad</address>
+        <age>40</age>
+        <phoneNumber>212292341</phoneNumber>
+        <speciality>Adultos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>4/9/2020</date>
+      <hour>10 AM</hour>
+      <notes>Limpieza</notes>
+      <patientId>24231241</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>No hay Historia clinica</history>
+    </History>
+  </Patient>
+  <Patient>
+    <name>Juan Carlos</name>
+    <id>512315</id>
+    <sex>M</sex>
+    <address>Miranda</address>
+    <age>14</age>
+    <phoneNumber>51231412</phoneNumber>
+    <Dentist>
+      <name>Thaide</name>
+      <id>512341</id>
+      <sex>M</sex>
+      <address>Chacao</address>
+      <age>47</age>
+      <phoneNumber>51231412</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Thaide</name>
+        <id>512341</id>
+        <sex>M</sex>
+        <address>Chacao</address>
+        <age>47</age>
+        <phoneNumber>51231412</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>10/10/2010</date>
+      <hour>10 AM</hour>
+      <notes>Limpieza</notes>
+      <patientId>512315</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>No hay Historia clinica</history>
+    </History>
+  </Patient>
+  <Patient>
+    <name>Miriam</name>
+    <id>5125123</id>
+    <sex>F</sex>
+    <address>Altamira</address>
+    <age>25</age>
+    <phoneNumber>123412</phoneNumber>
     <Dentist>
       <name>Thaide</name>
       <id>512341</id>
@@ -27,13 +107,93 @@
         <speciality>Ninos</speciality>
         <shift>Manana</shift>
       </Dentist>
-      <date>22/11/2010</date>
-      <hour>10 AM</hour>
-      <notes>dfgg</notes>
-      <patientId>456</patientId>
+      <date>20/12/2020</date>
+      <hour>11 AM</hour>
+      <notes>Limpieza</notes>
+      <patientId>5125123</patientId>
     </Appointment>
     <Recipe>
       <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>No hay Historia clinica</history>
+    </History>
+  </Patient>
+  <Patient>
+    <name>Alfonso</name>
+    <id>512341</id>
+    <sex>M</sex>
+    <address>Ruices</address>
+    <age>10</age>
+    <phoneNumber>1231412</phoneNumber>
+    <Dentist>
+      <name>Alejandro</name>
+      <id>25151231</id>
+      <sex>M</sex>
+      <address>Bello Monte</address>
+      <age>26</age>
+      <phoneNumber>5123152</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Alejandro</name>
+        <id>25151231</id>
+        <sex>M</sex>
+        <address>Bello Monte</address>
+        <age>26</age>
+        <phoneNumber>5123152</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>16/10/2020</date>
+      <hour>10 AM</hour>
+      <notes>Muela</notes>
+      <patientId>512341</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</medicine>
+    </Recipe>
+    <History>
+      <history>No hay Historia clinica</history>
+    </History>
+  </Patient>
+  <Patient>
+    <name>Simon</name>
+    <id>26250543</id>
+    <sex>M</sex>
+    <address>La California</address>
+    <age>22</age>
+    <phoneNumber>8231412</phoneNumber>
+    <Dentist>
+      <name>Eduardo</name>
+      <id>24123923</id>
+      <sex>M</sex>
+      <address>Trinidad</address>
+      <age>40</age>
+      <phoneNumber>212292341</phoneNumber>
+      <speciality>Adultos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Eduardo</name>
+        <id>24123923</id>
+        <sex>M</sex>
+        <address>Trinidad</address>
+        <age>40</age>
+        <phoneNumber>212292341</phoneNumber>
+        <speciality>Adultos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>12/6/2020</date>
+      <hour>2 PM</hour>
+      <notes>Muela</notes>
+      <patientId>26250543</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</medicine>
     </Recipe>
     <History>
       <history>No hay Historia clinica</history>
