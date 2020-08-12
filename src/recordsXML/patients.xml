@@ -491,4 +491,86 @@
     </History>
     <listId>3</listId>
   </Patient>
+  <Patient>
+    <name>Miguel</name>
+    <id>27607945</id>
+    <sex>M</sex>
+    <address>Barquisimeto</address>
+    <age>23</age>
+    <phoneNumber>42413298</phoneNumber>
+    <Dentist>
+      <name>Eduardo</name>
+      <id>24123923</id>
+      <sex>M</sex>
+      <address>Trinidad</address>
+      <age>40</age>
+      <phoneNumber>212292341</phoneNumber>
+      <speciality>Adultos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Eduardo</name>
+        <id>24123923</id>
+        <sex>M</sex>
+        <address>Trinidad</address>
+        <age>40</age>
+        <phoneNumber>212292341</phoneNumber>
+        <speciality>Adultos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>11/10/2020</date>
+      <hour>4 PM</hour>
+      <notes>Control</notes>
+      <patientId>27607945</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>12</listId>
+  </Patient>
+  <Patient>
+    <name>Angel</name>
+    <id>24512</id>
+    <sex>M</sex>
+    <address>Los Teques</address>
+    <age>14</age>
+    <phoneNumber>473625</phoneNumber>
+    <Dentist>
+      <name>Alejandro</name>
+      <id>25151231</id>
+      <sex>M</sex>
+      <address>Bello Monte</address>
+      <age>26</age>
+      <phoneNumber>5123152</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Alejandro</name>
+        <id>25151231</id>
+        <sex>M</sex>
+        <address>Bello Monte</address>
+        <age>26</age>
+        <phoneNumber>5123152</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>10/09/2020</date>
+      <hour>11 AM</hour>
+      <notes>Caries</notes>
+      <patientId>24512</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>13</listId>
+  </Patient>
 </patients>

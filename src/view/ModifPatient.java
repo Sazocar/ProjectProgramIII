@@ -246,6 +246,8 @@ public class ModifPatient extends JFrame {
                     DaoAppointmentsXML.updateAppointment(patient.getAppointment());
                     clinic.setListOfPatients(ControlFields.order(clinic.getListOfPatients()));
                     Search.clearTxt();
+                    ArrayList<Patient> temp = ControlFields.order(clinic.getListOfPatients());
+                    clinic.setListOfPatients(temp);
                 }
             }
         });

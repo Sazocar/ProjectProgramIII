@@ -191,4 +191,36 @@
     <notes>Limpieza</notes>
     <patientId>51341</patientId>
   </Appointment>
+  <Appointment>
+    <Dentist>
+      <name>Eduardo</name>
+      <id>24123923</id>
+      <sex>M</sex>
+      <address>Trinidad</address>
+      <age>40</age>
+      <phoneNumber>212292341</phoneNumber>
+      <speciality>Adultos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <date>11/10/2020</date>
+    <hour>4 PM</hour>
+    <notes>Control</notes>
+    <patientId>27607945</patientId>
+  </Appointment>
+  <Appointment>
+    <Dentist>
+      <name>Alejandro</name>
+      <id>25151231</id>
+      <sex>M</sex>
+      <address>Bello Monte</address>
+      <age>26</age>
+      <phoneNumber>5123152</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <date>10/09/2020</date>
+    <hour>11 AM</hour>
+    <notes>Caries</notes>
+    <patientId>24512</patientId>
+  </Appointment>
 </Appointment>

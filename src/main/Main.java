@@ -5,7 +5,7 @@ import view.*;
 
 
 public class Main {
-
+	// Ayuda plox esto no es un meme me kiero hace la automurision
 		  public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {

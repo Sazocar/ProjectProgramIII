@@ -65,8 +65,5 @@ public class Patient extends Person {
 
 	public void setListId(int listId) {
 		this.listId = listId;
-	}
-	
-	
-    
+	} 
 }

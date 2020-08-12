@@ -182,6 +182,8 @@ public class CreateApointment extends JPanel {
                     JOptionPane.showMessageDialog(null, "Cita creada exitosamente");
                     ControlFields.clearFieldsSecretary(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dateTxt, hourBox, notesTxt);
                     dentistTable.clearSelection();
+                    ArrayList<Patient> temp = ControlFields.order(clinic.getListOfPatients());
+                    clinic.setListOfPatients(temp);
                 }
             }
         });

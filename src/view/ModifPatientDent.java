@@ -260,6 +260,8 @@ public class ModifPatientDent extends JFrame {
                     setVisible(false);
                     Search.clearTxt();
                     ViewAppointments.clearTxt();
+                    ArrayList<Patient> temp = ControlFields.order(clinic.getListOfPatients());
+                    clinic.setListOfPatients(temp);
                 }
             }
         });

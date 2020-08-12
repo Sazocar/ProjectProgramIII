@@ -64,10 +64,18 @@ public class Search extends JPanel {
                     Validations.errorMessage("Seleccione un paciente\npara mostrar mas informacion");
                 } else {
                     if (!SorD) {
+                    	if (searchTxt.getText().isEmpty()) {
+                    		filler.clear();
+                            fillFiller(filler, clinic.getListOfPatients());
+                    	} 
                         MoreInfoSecre more = new MoreInfoSecre(clinic.getListOfPatients().get(filler.get(table.getSelectedRow()).getListId()), clinic);
                         more.setLocationRelativeTo(null);
                         more.setVisible(true);
                     } else {
+                    	if (searchTxt.getText().isEmpty()) {
+                    		filler.clear();
+                            fillFiller(filler, clinic.getListOfPatients());
+                    	} 
                         MoreInfoDent more = new MoreInfoDent(clinic.getListOfPatients().get(filler.get(table.getSelectedRow()).getListId()));
                         more.setLocationRelativeTo(null);
                         more.setVisible(true);
@@ -89,6 +97,10 @@ public class Search extends JPanel {
                 if (table.getSelectedRow() == -1) {
                     Validations.errorMessage("Seleccione un paciente\npara eliminar");
                 } else {
+                	if (searchTxt.getText().isEmpty()) {
+                		filler.clear();
+                        fillFiller(filler, clinic.getListOfPatients());
+                	}               		
                     try {
                         delete(clinic);
                     } catch (ConcurrentModificationException weirdExeption) {
@@ -178,6 +190,10 @@ public class Search extends JPanel {
                 if (table.getSelectedRow() == -1) {
                     Validations.errorMessage("Seleccione un paciente\npara mostrar mas informacion");
                 } else {
+                	if (searchTxt.getText().isEmpty()) {
+                		filler.clear();
+                        fillFiller(filler, clinic.getListOfPatients());
+                	} 
                     ModifPatient modifPatient = new ModifPatient(clinic, clinic.getListOfPatients().get(filler.get(table.getSelectedRow()).getListId()), table);
                     ControlFields.fillTableDentist(modifPatient.getDentistTable(), clinic);
                     modifPatient.setLocationRelativeTo(null);
