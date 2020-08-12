@@ -245,6 +245,7 @@ public class ModifPatient extends JFrame {
                     DaoAppointmentsXML.deleteAppointment(patient.getId());
                     DaoAppointmentsXML.updateAppointment(patient.getAppointment());
                     clinic.setListOfPatients(ControlFields.order(clinic.getListOfPatients()));
+                    Search.clearTxt();
                 }
             }
         });
@@ -261,6 +262,7 @@ public class ModifPatient extends JFrame {
             public void actionPerformed(ActionEvent e) {
                     ControlFields.clearFieldsSecretary(nameTxt, idTxt, ageTxt, sexBox, addressTxt, phoneNumberTxt, dateTxt, hourBox, notesTxt);
                     setVisible(false);
+                    Search.clearTxt();
             }
         });
         btnCancel.setIcon(new ImageIcon(CreateApointment.class.getResource("/Icons/back.jpg")));

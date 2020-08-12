@@ -1,46 +1,5 @@
 <patients>
   <Patient>
-    <name>Angel</name>
-    <id>232323</id>
-    <sex>M</sex>
-    <address>mikasa</address>
-    <age>22</age>
-    <phoneNumber>34567</phoneNumber>
-    <Dentist>
-      <name>Eduardo</name>
-      <id>24123923</id>
-      <sex>M</sex>
-      <address>Trinidad</address>
-      <age>40</age>
-      <phoneNumber>212292341</phoneNumber>
-      <speciality>Adultos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>Eduardo</name>
-        <id>24123923</id>
-        <sex>M</sex>
-        <address>Trinidad</address>
-        <age>40</age>
-        <phoneNumber>212292341</phoneNumber>
-        <speciality>Adultos</speciality>
-        <shift>Manana</shift>
-      </Dentist>
-      <date>22/11/2010</date>
-      <hour>10 AM</hour>
-      <notes>pikason de qlo</notes>
-      <patientId>232323</patientId>
-    </Appointment>
-    <Recipe>
-      <medicine>No se ha asignado tratamiento</medicine>
-    </Recipe>
-    <History>
-      <history>Este paciente no contiene historial medico aun.</history>
-    </History>
-    <listId>0</listId>
-  </Patient>
-  <Patient>
     <name>sADFHGJ</name>
     <id>345</id>
     <sex>M</sex>
@@ -82,12 +41,12 @@
     <listId>3</listId>
   </Patient>
   <Patient>
-    <name>Saimi</name>
-    <id>242421</id>
+    <name>Angel</name>
+    <id>232323</id>
     <sex>M</sex>
-    <address>dfgh</address>
-    <age>55</age>
-    <phoneNumber>3456</phoneNumber>
+    <address>mikasa</address>
+    <age>26</age>
+    <phoneNumber>34567</phoneNumber>
     <Dentist>
       <name>Eduardo</name>
       <id>24123923</id>
@@ -109,10 +68,10 @@
         <speciality>Adultos</speciality>
         <shift>Manana</shift>
       </Dentist>
-      <date>22/12/2019</date>
-      <hour>3 PM</hour>
-      <notes>idk</notes>
-      <patientId>242421</patientId>
+      <date>22/11/2010</date>
+      <hour>10 AM</hour>
+      <notes>pikason de qlo</notes>
+      <patientId>232323</patientId>
     </Appointment>
     <Recipe>
       <medicine>No se ha asignado tratamiento</medicine>
@@ -120,7 +79,48 @@
     <History>
       <history>Este paciente no contiene historial medico aun.</history>
     </History>
-    <listId>1</listId>
+    <listId>0</listId>
+  </Patient>
+  <Patient>
+    <name>miguel</name>
+    <id>221122</id>
+    <sex>M</sex>
+    <address>dd</address>
+    <age>22</age>
+    <phoneNumber>22222</phoneNumber>
+    <Dentist>
+      <name>Alejandro</name>
+      <id>25151231</id>
+      <sex>M</sex>
+      <address>Bello Monte</address>
+      <age>26</age>
+      <phoneNumber>5123152</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Alejandro</name>
+        <id>25151231</id>
+        <sex>M</sex>
+        <address>Bello Monte</address>
+        <age>26</age>
+        <phoneNumber>5123152</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>22/11/2121</date>
+      <hour>2 PM</hour>
+      <notes>dfgh</notes>
+      <patientId>221122</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>4</listId>
   </Patient>
   <Patient>
     <name>Carlos</name>
@@ -154,6 +154,47 @@
       <hour>5 PM</hour>
       <notes>sdfgh</notes>
       <patientId>4545</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>2</listId>
+  </Patient>
+  <Patient>
+    <name>Saimi</name>
+    <id>242421</id>
+    <sex>M</sex>
+    <address>dfgh</address>
+    <age>56</age>
+    <phoneNumber>3456</phoneNumber>
+    <Dentist>
+      <name>Eduardo</name>
+      <id>24123923</id>
+      <sex>M</sex>
+      <address>Trinidad</address>
+      <age>40</age>
+      <phoneNumber>212292341</phoneNumber>
+      <speciality>Adultos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Eduardo</name>
+        <id>24123923</id>
+        <sex>M</sex>
+        <address>Trinidad</address>
+        <age>40</age>
+        <phoneNumber>212292341</phoneNumber>
+        <speciality>Adultos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>22/12/2019</date>
+      <hour>3 PM</hour>
+      <notes>idk</notes>
+      <patientId>242421</patientId>
     </Appointment>
     <Recipe>
       <medicine>No se ha asignado tratamiento</medicine>

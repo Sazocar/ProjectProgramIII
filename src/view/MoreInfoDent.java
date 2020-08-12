@@ -90,6 +90,8 @@ public class MoreInfoDent extends JFrame {
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
+				Search.clearTxt();
+				ViewAppointments.clearTxt();
 			}
 		});
 		btnOk.setBorder(new IconHelper(10));

@@ -30,7 +30,7 @@ import javax.swing.JLabel;
 
 public class ViewAppointments extends JPanel {
 	private JTable table;
-	private JTextField searchTxt;
+	private static JTextField searchTxt;
 	private ArrayList<Patient> filler = new ArrayList<Patient>();
 
 	
@@ -41,8 +41,6 @@ public class ViewAppointments extends JPanel {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(35, 29, 471, 184);
 		add(scrollPane);
-		
-		Search.fillFiller(filler, patients);
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);	
@@ -201,6 +199,8 @@ public class ViewAppointments extends JPanel {
 		this.table = table;
 	}
 	
-	
+	 public static void clearTxt() {
+	    	searchTxt.setText("");;
+	    }
 	
 }

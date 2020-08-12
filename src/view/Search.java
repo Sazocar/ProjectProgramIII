@@ -36,7 +36,7 @@ import javax.swing.JOptionPane;
 public class Search extends JPanel {
 
     private JTable table;
-    private JTextField searchTxt;
+    private static JTextField searchTxt;
     private ArrayList<Patient> filler = new ArrayList<Patient>();
 
     public Search(Clinic clinic, boolean SorD) {
@@ -261,5 +261,9 @@ public class Search extends JPanel {
     public static void fillFiller(ArrayList<Patient> filler, ArrayList<Patient> patients) {
     	for (int i = 0; i < patients.size(); i++) 
     		filler.add(patients.get(i));  	
+    }
+    
+    public static void clearTxt() {
+    	searchTxt.setText("");;
     }
 }

@@ -10,22 +10,6 @@
       <speciality>Adultos</speciality>
       <shift>Manana</shift>
     </Dentist>
-    <date>22/11/2010</date>
-    <hour>10 AM</hour>
-    <notes>pikason de qlo</notes>
-    <patientId>232323</patientId>
-  </Appointment>
-  <Appointment>
-    <Dentist>
-      <name>Eduardo</name>
-      <id>24123923</id>
-      <sex>M</sex>
-      <address>Trinidad</address>
-      <age>40</age>
-      <phoneNumber>212292341</phoneNumber>
-      <speciality>Adultos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
     <date>11/10/2019</date>
     <hour>2 PM</hour>
     <notes>sdafhyjui</notes>
@@ -42,10 +26,26 @@
       <speciality>Adultos</speciality>
       <shift>Manana</shift>
     </Dentist>
-    <date>22/12/2019</date>
-    <hour>3 PM</hour>
-    <notes>idk</notes>
-    <patientId>242421</patientId>
+    <date>22/11/2010</date>
+    <hour>10 AM</hour>
+    <notes>pikason de qlo</notes>
+    <patientId>232323</patientId>
+  </Appointment>
+  <Appointment>
+    <Dentist>
+      <name>Alejandro</name>
+      <id>25151231</id>
+      <sex>M</sex>
+      <address>Bello Monte</address>
+      <age>26</age>
+      <phoneNumber>5123152</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <date>22/11/2121</date>
+    <hour>2 PM</hour>
+    <notes>dfgh</notes>
+    <patientId>221122</patientId>
   </Appointment>
   <Appointment>
     <Dentist>
@@ -62,5 +62,21 @@
     <hour>5 PM</hour>
     <notes>sdfgh</notes>
     <patientId>4545</patientId>
+  </Appointment>
+  <Appointment>
+    <Dentist>
+      <name>Eduardo</name>
+      <id>24123923</id>
+      <sex>M</sex>
+      <address>Trinidad</address>
+      <age>40</age>
+      <phoneNumber>212292341</phoneNumber>
+      <speciality>Adultos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <date>22/12/2019</date>
+    <hour>3 PM</hour>
+    <notes>idk</notes>
+    <patientId>242421</patientId>
   </Appointment>
 </Appointment>

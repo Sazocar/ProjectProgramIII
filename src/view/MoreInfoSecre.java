@@ -90,6 +90,7 @@ public class MoreInfoSecre extends JFrame {
 		done.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
+				Search.clearTxt();
 			}
 		});
 		done.setBorder(new IconHelper(10));
