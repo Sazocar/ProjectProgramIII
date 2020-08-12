@@ -1,11 +1,11 @@
 <patients>
   <Patient>
-    <name>sADFHGJ</name>
-    <id>345</id>
+    <name>Simon</name>
+    <id>26250543</id>
     <sex>M</sex>
-    <address>werty</address>
-    <age>44</age>
-    <phoneNumber>554</phoneNumber>
+    <address>La California</address>
+    <age>22</age>
+    <phoneNumber>513512</phoneNumber>
     <Dentist>
       <name>Eduardo</name>
       <id>24123923</id>
@@ -27,51 +27,10 @@
         <speciality>Adultos</speciality>
         <shift>Manana</shift>
       </Dentist>
-      <date>11/10/2019</date>
-      <hour>2 PM</hour>
-      <notes>sdafhyjui</notes>
-      <patientId>345</patientId>
-    </Appointment>
-    <Recipe>
-      <medicine>No se ha asignado tratamiento</medicine>
-    </Recipe>
-    <History>
-      <history>Este paciente no contiene historial medico aun.</history>
-    </History>
-    <listId>3</listId>
-  </Patient>
-  <Patient>
-    <name>Angel</name>
-    <id>232323</id>
-    <sex>M</sex>
-    <address>mikasa</address>
-    <age>26</age>
-    <phoneNumber>34567</phoneNumber>
-    <Dentist>
-      <name>Eduardo</name>
-      <id>24123923</id>
-      <sex>M</sex>
-      <address>Trinidad</address>
-      <age>40</age>
-      <phoneNumber>212292341</phoneNumber>
-      <speciality>Adultos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>Eduardo</name>
-        <id>24123923</id>
-        <sex>M</sex>
-        <address>Trinidad</address>
-        <age>40</age>
-        <phoneNumber>212292341</phoneNumber>
-        <speciality>Adultos</speciality>
-        <shift>Manana</shift>
-      </Dentist>
-      <date>22/11/2010</date>
-      <hour>10 AM</hour>
-      <notes>pikason de qlo</notes>
-      <patientId>232323</patientId>
+      <date>12/12/2020</date>
+      <hour>11 AM</hour>
+      <notes>Limpieza</notes>
+      <patientId>26250543</patientId>
     </Appointment>
     <Recipe>
       <medicine>No se ha asignado tratamiento</medicine>
@@ -82,12 +41,12 @@
     <listId>0</listId>
   </Patient>
   <Patient>
-    <name>miguel</name>
-    <id>221122</id>
+    <name>Carlos</name>
+    <id>5121512</id>
     <sex>M</sex>
-    <address>dd</address>
-    <age>22</age>
-    <phoneNumber>22222</phoneNumber>
+    <address>Los Ruices</address>
+    <age>20</age>
+    <phoneNumber>15352141</phoneNumber>
     <Dentist>
       <name>Alejandro</name>
       <id>25151231</id>
@@ -109,10 +68,10 @@
         <speciality>Ninos</speciality>
         <shift>Manana</shift>
       </Dentist>
-      <date>22/11/2121</date>
-      <hour>2 PM</hour>
-      <notes>dfgh</notes>
-      <patientId>221122</patientId>
+      <date>20/10/2020</date>
+      <hour>4 PM</hour>
+      <notes>Dolor de Muela</notes>
+      <patientId>5121512</patientId>
     </Appointment>
     <Recipe>
       <medicine>No se ha asignado tratamiento</medicine>
@@ -120,40 +79,40 @@
     <History>
       <history>Este paciente no contiene historial medico aun.</history>
     </History>
-    <listId>4</listId>
+    <listId>1</listId>
   </Patient>
   <Patient>
-    <name>Carlos</name>
-    <id>4545</id>
-    <sex>M</sex>
-    <address>dfghj</address>
-    <age>44</age>
-    <phoneNumber>456</phoneNumber>
+    <name>Miriam</name>
+    <id>512351</id>
+    <sex>F</sex>
+    <address>Bello Monte</address>
+    <age>12</age>
+    <phoneNumber>51231512</phoneNumber>
     <Dentist>
-      <name>Alejandro</name>
-      <id>25151231</id>
-      <sex>M</sex>
-      <address>Bello Monte</address>
-      <age>26</age>
-      <phoneNumber>5123152</phoneNumber>
+      <name>Thaide</name>
+      <id>512341</id>
+      <sex>F</sex>
+      <address>Chacao</address>
+      <age>47</age>
+      <phoneNumber>51231412</phoneNumber>
       <speciality>Ninos</speciality>
       <shift>Manana</shift>
     </Dentist>
     <Appointment>
       <Dentist>
-        <name>Alejandro</name>
-        <id>25151231</id>
-        <sex>M</sex>
-        <address>Bello Monte</address>
-        <age>26</age>
-        <phoneNumber>5123152</phoneNumber>
+        <name>Thaide</name>
+        <id>512341</id>
+        <sex>F</sex>
+        <address>Chacao</address>
+        <age>47</age>
+        <phoneNumber>51231412</phoneNumber>
         <speciality>Ninos</speciality>
         <shift>Manana</shift>
       </Dentist>
-      <date>22/11/2921</date>
-      <hour>5 PM</hour>
-      <notes>sdfgh</notes>
-      <patientId>4545</patientId>
+      <date>15/02/2020</date>
+      <hour>2 PM</hour>
+      <notes>Limpieza</notes>
+      <patientId>512351</patientId>
     </Appointment>
     <Recipe>
       <medicine>No se ha asignado tratamiento</medicine>
@@ -164,12 +123,135 @@
     <listId>2</listId>
   </Patient>
   <Patient>
-    <name>Saimi</name>
-    <id>242421</id>
+    <name>Alfredo</name>
+    <id>5134134</id>
     <sex>M</sex>
-    <address>dfgh</address>
-    <age>56</age>
-    <phoneNumber>3456</phoneNumber>
+    <address>Petare</address>
+    <age>67</age>
+    <phoneNumber>9185123</phoneNumber>
+    <Dentist>
+      <name>Alejandro</name>
+      <id>25151231</id>
+      <sex>M</sex>
+      <address>Bello Monte</address>
+      <age>26</age>
+      <phoneNumber>5123152</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Alejandro</name>
+        <id>25151231</id>
+        <sex>M</sex>
+        <address>Bello Monte</address>
+        <age>26</age>
+        <phoneNumber>5123152</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>9/10/2020</date>
+      <hour>10 AM</hour>
+      <notes>Limpieza</notes>
+      <patientId>5134134</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>4</listId>
+  </Patient>
+  <Patient>
+    <name>Javier</name>
+    <id>512315</id>
+    <sex>M</sex>
+    <address>Los Naranjos</address>
+    <age>33</age>
+    <phoneNumber>512315</phoneNumber>
+    <Dentist>
+      <name>Alejandro</name>
+      <id>25151231</id>
+      <sex>M</sex>
+      <address>Bello Monte</address>
+      <age>26</age>
+      <phoneNumber>5123152</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Alejandro</name>
+        <id>25151231</id>
+        <sex>M</sex>
+        <address>Bello Monte</address>
+        <age>26</age>
+        <phoneNumber>5123152</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>10/07/2020</date>
+      <hour>2 PM</hour>
+      <notes>Dolor</notes>
+      <patientId>512315</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>5</listId>
+  </Patient>
+  <Patient>
+    <name>Maria</name>
+    <id>5141</id>
+    <sex>F</sex>
+    <address>San Luis</address>
+    <age>25</age>
+    <phoneNumber>812995</phoneNumber>
+    <Dentist>
+      <name>Alejandro</name>
+      <id>25151231</id>
+      <sex>M</sex>
+      <address>Bello Monte</address>
+      <age>26</age>
+      <phoneNumber>5123152</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Alejandro</name>
+        <id>25151231</id>
+        <sex>M</sex>
+        <address>Bello Monte</address>
+        <age>26</age>
+        <phoneNumber>5123152</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>18/08/2020</date>
+      <hour>5 PM</hour>
+      <notes>Consulta</notes>
+      <patientId>5141</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>6</listId>
+  </Patient>
+  <Patient>
+    <name>Josefina</name>
+    <id>613434</id>
+    <sex>F</sex>
+    <address>Cafetal</address>
+    <age>58</age>
+    <phoneNumber>6134</phoneNumber>
     <Dentist>
       <name>Eduardo</name>
       <id>24123923</id>
@@ -191,10 +273,10 @@
         <speciality>Adultos</speciality>
         <shift>Manana</shift>
       </Dentist>
-      <date>22/12/2019</date>
-      <hour>3 PM</hour>
-      <notes>idk</notes>
-      <patientId>242421</patientId>
+      <date>16/05/2020</date>
+      <hour>11 AM</hour>
+      <notes>Control</notes>
+      <patientId>613434</patientId>
     </Appointment>
     <Recipe>
       <medicine>No se ha asignado tratamiento</medicine>
@@ -202,6 +284,211 @@
     <History>
       <history>Este paciente no contiene historial medico aun.</history>
     </History>
-    <listId>2</listId>
+    <listId>7</listId>
+  </Patient>
+  <Patient>
+    <name>Fernanda</name>
+    <id>163461</id>
+    <sex>F</sex>
+    <address>La Castellana</address>
+    <age>12</age>
+    <phoneNumber>1342341</phoneNumber>
+    <Dentist>
+      <name>Thaide</name>
+      <id>512341</id>
+      <sex>F</sex>
+      <address>Chacao</address>
+      <age>47</age>
+      <phoneNumber>51231412</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Thaide</name>
+        <id>512341</id>
+        <sex>F</sex>
+        <address>Chacao</address>
+        <age>47</age>
+        <phoneNumber>51231412</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>20/09/2020</date>
+      <hour>4 PM</hour>
+      <notes>Control</notes>
+      <patientId>163461</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>8</listId>
+  </Patient>
+  <Patient>
+    <name>Luis</name>
+    <id>513412</id>
+    <sex>M</sex>
+    <address>La Hoyada</address>
+    <age>55</age>
+    <phoneNumber>61341</phoneNumber>
+    <Dentist>
+      <name>Eduardo</name>
+      <id>24123923</id>
+      <sex>M</sex>
+      <address>Trinidad</address>
+      <age>40</age>
+      <phoneNumber>212292341</phoneNumber>
+      <speciality>Adultos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Eduardo</name>
+        <id>24123923</id>
+        <sex>M</sex>
+        <address>Trinidad</address>
+        <age>40</age>
+        <phoneNumber>212292341</phoneNumber>
+        <speciality>Adultos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>04/04/2020</date>
+      <hour>9 AM</hour>
+      <notes>Muela</notes>
+      <patientId>513412</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>9</listId>
+  </Patient>
+  <Patient>
+    <name>Carmen</name>
+    <id>2345</id>
+    <sex>F</sex>
+    <address>Palo Verde</address>
+    <age>64</age>
+    <phoneNumber>13451</phoneNumber>
+    <Dentist>
+      <name>Thaide</name>
+      <id>512341</id>
+      <sex>F</sex>
+      <address>Chacao</address>
+      <age>47</age>
+      <phoneNumber>51231412</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Thaide</name>
+        <id>512341</id>
+        <sex>F</sex>
+        <address>Chacao</address>
+        <age>47</age>
+        <phoneNumber>51231412</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>22/01/2020</date>
+      <hour>10 AM</hour>
+      <notes>Consulta</notes>
+      <patientId>2345</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>10</listId>
+  </Patient>
+  <Patient>
+    <name>Albany</name>
+    <id>2345</id>
+    <sex>F</sex>
+    <address>Paraiso</address>
+    <age>55</age>
+    <phoneNumber>51324</phoneNumber>
+    <Dentist>
+      <name>Alejandro</name>
+      <id>25151231</id>
+      <sex>M</sex>
+      <address>Bello Monte</address>
+      <age>26</age>
+      <phoneNumber>5123152</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Alejandro</name>
+        <id>25151231</id>
+        <sex>M</sex>
+        <address>Bello Monte</address>
+        <age>26</age>
+        <phoneNumber>5123152</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>26/05/2020</date>
+      <hour>11 AM</hour>
+      <notes>Dolor</notes>
+      <patientId>2345</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>11</listId>
+  </Patient>
+  <Patient>
+    <name>Alejandra</name>
+    <id>51341</id>
+    <sex>F</sex>
+    <address>Sabana Grande</address>
+    <age>15</age>
+    <phoneNumber>5125125</phoneNumber>
+    <Dentist>
+      <name>Thaide</name>
+      <id>512341</id>
+      <sex>F</sex>
+      <address>Chacao</address>
+      <age>47</age>
+      <phoneNumber>51231412</phoneNumber>
+      <speciality>Ninos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Thaide</name>
+        <id>512341</id>
+        <sex>F</sex>
+        <address>Chacao</address>
+        <age>47</age>
+        <phoneNumber>51231412</phoneNumber>
+        <speciality>Ninos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>26/03/2020</date>
+      <hour>2 PM</hour>
+      <notes>Limpieza</notes>
+      <patientId>51341</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>3</listId>
   </Patient>
 </patients>
