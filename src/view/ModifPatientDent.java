@@ -206,6 +206,7 @@ public class ModifPatientDent extends JFrame {
         btnConfirm.setBounds(153, 328, 72, 72);
         btnConfirm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+            	if (Validations.validateTable(dentistTable.getSelectedRow()))
                 for (int i = 0; i<clinic.getListOfStaff().get(dentistTable.getSelectedRow()).getListOfAppointments().size(); i++) {
                     if (clinic.getListOfStaff().get(dentistTable.getSelectedRow()).getListOfAppointments().get(i).getPatientId() == patient.getId())
                         clinic.getListOfStaff().get(dentistTable.getSelectedRow()).getListOfAppointments().get(i).setDate("");
@@ -213,9 +214,8 @@ public class ModifPatientDent extends JFrame {
                 if ( (Validations.validateName(nameTxt)) && (Validations.validateId(idTxt)) && (Validations.validateAge(ageTxt))
                         && (Validations.validateAddress(addressTxt)) && (Validations.validatePhoneNumber(phoneNumberTxt))
                         && (Validations.validateDate(dateTxt)) && (Validations.validateHour(hourBox))
-                        && (Validations.validateTable(dentistTable.getSelectedRow())
                         && (Validations.validateAvailability(clinic.getListOfStaff().get(dentistTable.getSelectedRow()), dateTxt, hourBox, Integer.parseInt(idTxt.getText())))
-                        && (Validations.validateNotes(notesTxt))))  {
+                        && (Validations.validateNotes(notesTxt)))  {
                     patient.setName(nameTxt.getText());
                     patient.setId(Integer.parseInt(idTxt.getText()));
                     patient.setAddress(addressTxt.getText());
@@ -256,6 +256,7 @@ public class ModifPatientDent extends JFrame {
                     DaoPatientXML.updatePatient(patient);
                     DaoAppointmentsXML.deleteAppointment(patient.getId());
                     DaoAppointmentsXML.updateAppointment(patient.getAppointment());
+                    clinic.setListOfPatients(ControlFields.order(clinic.getListOfPatients()));
                     setVisible(false);
                 }
             }

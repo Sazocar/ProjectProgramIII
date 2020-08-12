@@ -74,10 +74,10 @@ public final class ControlFields {
         tableDentist.getColumnModel().getColumn(5).setPreferredWidth(80);
     }
 
-    public static void deletePatient(Clinic clinic, JTable table) {
-        clinic.getListOfPatients().remove(table.getSelectedRow());
+    public static void deletePatient(Clinic clinic, JTable table, int listId) {
+        clinic.getListOfPatients().remove(listId);
         DefaultTableModel model = (DefaultTableModel) table.getModel();
-        model.removeRow(table.getSelectedRow());
+        model.removeRow(listId);
     }
 
     public static void assingAppointmentsDentist(Clinic clinic) {
@@ -93,11 +93,14 @@ public final class ControlFields {
     public static void firstFillTableAppointments(JTable tableDentist, ArrayList<Patient> patients, Dentist dentist, ArrayList<Patient> patientsInAppointments) {
         String[] column = {"Nombre", "Cedula", "Fecha", "Hora", "Motivo"};
         DefaultTableModel dtm = new DefaultTableModel(null, column);
+        int i = 0;
         for (Appointment appointments : dentist.getListOfAppointments()) {
             for (Patient patient : patients) {
                 if (appointments.getPatientId() == patient.getId()) {
                     String[] fila = {patient.getName(), String.valueOf(patient.getId()), appointments.getDate(), appointments.getHour(), appointments.getNotes()};
                     dtm.addRow(fila);
+                    patient.setListId(i);
+                    i++;
                     patientsInAppointments.add(patient);
                 }
             }
@@ -124,6 +127,18 @@ public final class ControlFields {
         tableDentist.getColumnModel().getColumn(2).setPreferredWidth(60);
         tableDentist.getColumnModel().getColumn(3).setPreferredWidth(40);
         tableDentist.getColumnModel().getColumn(4).setPreferredWidth(80);
+    }
+    
+    public static ArrayList<Patient> order(ArrayList<Patient> desorden){
+    	ArrayList<Patient> ordenado = new ArrayList<Patient>();
+    	for (int i = 0; i < desorden.size(); i++) {
+			for (Patient patient : desorden) {
+				if (patient.getListId() == i) {
+					ordenado.add(patient);
+				}
+			}
+    	}
+    	return ordenado;
     }
 
 }

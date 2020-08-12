@@ -1,55 +1,11 @@
 <patients>
   <Patient>
-    <name>Miriam</name>
-    <id>5125123</id>
-    <sex>F</sex>
-    <address>Altamira</address>
-    <age>25</age>
-    <phoneNumber>123412</phoneNumber>
-    <Dentist>
-      <name>Thaide</name>
-      <id>512341</id>
-      <sex>F</sex>
-      <address>Chacao</address>
-      <age>47</age>
-      <phoneNumber>51231412</phoneNumber>
-      <speciality>Ninos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>Thaide</name>
-        <id>512341</id>
-        <sex>F</sex>
-        <address>Chacao</address>
-        <age>47</age>
-        <phoneNumber>51231412</phoneNumber>
-        <speciality>Ninos</speciality>
-        <shift>Manana</shift>
-      </Dentist>
-      <date>20/12/2020</date>
-      <hour>11 AM</hour>
-      <notes>Limpieza</notes>
-      <patientId>5125123</patientId>
-    </Appointment>
-    <Recipe>
-      <medicine>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</medicine>
-    </Recipe>
-    <History>
-      <history>What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-Why do we use it?
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</history>
-    </History>
-  </Patient>
-  <Patient>
-    <name>Carmen</name>
-    <id>1925123</id>
-    <sex>F</sex>
-    <address>La Castellana</address>
-    <age>60</age>
-    <phoneNumber>5812351</phoneNumber>
+    <name>Angel</name>
+    <id>232323</id>
+    <sex>M</sex>
+    <address>mikasa</address>
+    <age>22</age>
+    <phoneNumber>34567</phoneNumber>
     <Dentist>
       <name>Eduardo</name>
       <id>24123923</id>
@@ -71,10 +27,10 @@ It is a long established fact that a reader will be distracted by the readable c
         <speciality>Adultos</speciality>
         <shift>Manana</shift>
       </Dentist>
-      <date>12/12/2020</date>
-      <hour>4 PM</hour>
-      <notes>Dolor</notes>
-      <patientId>1925123</patientId>
+      <date>22/11/2010</date>
+      <hour>10 AM</hour>
+      <notes>pikason de qlo</notes>
+      <patientId>232323</patientId>
     </Appointment>
     <Recipe>
       <medicine>No se ha asignado tratamiento</medicine>
@@ -82,214 +38,97 @@ It is a long established fact that a reader will be distracted by the readable c
     <History>
       <history>Este paciente no contiene historial medico aun.</history>
     </History>
+    <listId>0</listId>
+  </Patient>
+  <Patient>
+    <name>sADFHGJ</name>
+    <id>345</id>
+    <sex>M</sex>
+    <address>werty</address>
+    <age>44</age>
+    <phoneNumber>554</phoneNumber>
+    <Dentist>
+      <name>Eduardo</name>
+      <id>24123923</id>
+      <sex>M</sex>
+      <address>Trinidad</address>
+      <age>40</age>
+      <phoneNumber>212292341</phoneNumber>
+      <speciality>Adultos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Eduardo</name>
+        <id>24123923</id>
+        <sex>M</sex>
+        <address>Trinidad</address>
+        <age>40</age>
+        <phoneNumber>212292341</phoneNumber>
+        <speciality>Adultos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>11/10/2019</date>
+      <hour>2 PM</hour>
+      <notes>sdafhyjui</notes>
+      <patientId>345</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>3</listId>
+  </Patient>
+  <Patient>
+    <name>Saimi</name>
+    <id>242421</id>
+    <sex>M</sex>
+    <address>dfgh</address>
+    <age>55</age>
+    <phoneNumber>3456</phoneNumber>
+    <Dentist>
+      <name>Eduardo</name>
+      <id>24123923</id>
+      <sex>M</sex>
+      <address>Trinidad</address>
+      <age>40</age>
+      <phoneNumber>212292341</phoneNumber>
+      <speciality>Adultos</speciality>
+      <shift>Manana</shift>
+    </Dentist>
+    <Appointment>
+      <Dentist>
+        <name>Eduardo</name>
+        <id>24123923</id>
+        <sex>M</sex>
+        <address>Trinidad</address>
+        <age>40</age>
+        <phoneNumber>212292341</phoneNumber>
+        <speciality>Adultos</speciality>
+        <shift>Manana</shift>
+      </Dentist>
+      <date>22/12/2019</date>
+      <hour>3 PM</hour>
+      <notes>idk</notes>
+      <patientId>242421</patientId>
+    </Appointment>
+    <Recipe>
+      <medicine>No se ha asignado tratamiento</medicine>
+    </Recipe>
+    <History>
+      <history>Este paciente no contiene historial medico aun.</history>
+    </History>
+    <listId>1</listId>
   </Patient>
   <Patient>
     <name>Carlos</name>
-    <id>24231241</id>
+    <id>4545</id>
     <sex>M</sex>
-    <address>Colinas</address>
-    <age>20</age>
-    <phoneNumber>5123141</phoneNumber>
-    <Dentist>
-      <name>Eduardo</name>
-      <id>24123923</id>
-      <sex>M</sex>
-      <address>Trinidad</address>
-      <age>40</age>
-      <phoneNumber>212292341</phoneNumber>
-      <speciality>Adultos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>Eduardo</name>
-        <id>24123923</id>
-        <sex>M</sex>
-        <address>Trinidad</address>
-        <age>40</age>
-        <phoneNumber>212292341</phoneNumber>
-        <speciality>Adultos</speciality>
-        <shift>Manana</shift>
-      </Dentist>
-      <date>4/9/2020</date>
-      <hour>10 AM</hour>
-      <notes>Limpieza</notes>
-      <patientId>24231241</patientId>
-    </Appointment>
-    <Recipe>
-      <medicine>No se ha asignado tratamiento</medicine>
-    </Recipe>
-    <History>
-      <history>Este paciente no contiene historial medico aun.</history>
-    </History>
-  </Patient>
-  <Patient>
-    <name>Blanca</name>
-    <id>51431</id>
-    <sex>F</sex>
-    <address>Las Mercedes</address>
-    <age>40</age>
-    <phoneNumber>51234</phoneNumber>
-    <Dentist>
-      <name>Eduardo</name>
-      <id>24123923</id>
-      <sex>M</sex>
-      <address>Trinidad</address>
-      <age>40</age>
-      <phoneNumber>212292341</phoneNumber>
-      <speciality>Adultos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>Eduardo</name>
-        <id>24123923</id>
-        <sex>M</sex>
-        <address>Trinidad</address>
-        <age>40</age>
-        <phoneNumber>212292341</phoneNumber>
-        <speciality>Adultos</speciality>
-        <shift>Manana</shift>
-      </Dentist>
-      <date>12/6/2020</date>
-      <hour>11 AM</hour>
-      <notes>Dolor de Muela</notes>
-      <patientId>51431</patientId>
-    </Appointment>
-    <Recipe>
-      <medicine>No se ha asignado tratamiento</medicine>
-    </Recipe>
-    <History>
-      <history>Este paciente no contiene historial medico aun.</history>
-    </History>
-  </Patient>
-  <Patient>
-    <name>Alejandra</name>
-    <id>812341</id>
-    <sex>F</sex>
-    <address>Los Naranjos</address>
-    <age>29</age>
-    <phoneNumber>12935123</phoneNumber>
-    <Dentist>
-      <name>Thaide</name>
-      <id>512341</id>
-      <sex>F</sex>
-      <address>Chacao</address>
-      <age>47</age>
-      <phoneNumber>51231412</phoneNumber>
-      <speciality>Ninos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>Thaide</name>
-        <id>512341</id>
-        <sex>F</sex>
-        <address>Chacao</address>
-        <age>47</age>
-        <phoneNumber>51231412</phoneNumber>
-        <speciality>Ninos</speciality>
-        <shift>Manana</shift>
-      </Dentist>
-      <date>20/10/2023</date>
-      <hour>2 PM</hour>
-      <notes>Limpieza</notes>
-      <patientId>812341</patientId>
-    </Appointment>
-    <Recipe>
-      <medicine>No se ha asignado tratamiento</medicine>
-    </Recipe>
-    <History>
-      <history>Este paciente no contiene historial medico aun.</history>
-    </History>
-  </Patient>
-  <Patient>
-    <name>Maria Jose</name>
-    <id>812351</id>
-    <sex>F</sex>
-    <address>El Llanito</address>
-    <age>22</age>
-    <phoneNumber>815123</phoneNumber>
-    <Dentist>
-      <name>Thaide</name>
-      <id>512341</id>
-      <sex>F</sex>
-      <address>Chacao</address>
-      <age>47</age>
-      <phoneNumber>51231412</phoneNumber>
-      <speciality>Ninos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>Thaide</name>
-        <id>512341</id>
-        <sex>F</sex>
-        <address>Chacao</address>
-        <age>47</age>
-        <phoneNumber>51231412</phoneNumber>
-        <speciality>Ninos</speciality>
-        <shift>Manana</shift>
-      </Dentist>
-      <date>20/10/2020</date>
-      <hour>10 AM</hour>
-      <notes>Limpieza</notes>
-      <patientId>812351</patientId>
-    </Appointment>
-    <Recipe>
-      <medicine>No se ha asignado tratamiento</medicine>
-    </Recipe>
-    <History>
-      <history>Este paciente no contiene historial medico aun.</history>
-    </History>
-  </Patient>
-  <Patient>
-    <name>Juan Carlos</name>
-    <id>512315</id>
-    <sex>M</sex>
-    <address>Miranda</address>
-    <age>14</age>
-    <phoneNumber>51231412</phoneNumber>
-    <Dentist>
-      <name>Thaide</name>
-      <id>512341</id>
-      <sex>F</sex>
-      <address>Chacao</address>
-      <age>47</age>
-      <phoneNumber>51231412</phoneNumber>
-      <speciality>Ninos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>Thaide</name>
-        <id>512341</id>
-        <sex>F</sex>
-        <address>Chacao</address>
-        <age>47</age>
-        <phoneNumber>51231412</phoneNumber>
-        <speciality>Ninos</speciality>
-        <shift>Manana</shift>
-      </Dentist>
-      <date>10/10/2020</date>
-      <hour>10 AM</hour>
-      <notes>Limpieza</notes>
-      <patientId>512315</patientId>
-    </Appointment>
-    <Recipe>
-      <medicine>No se ha asignado tratamiento.</medicine>
-    </Recipe>
-    <History>
-      <history>Nuevo Contenido y mucho texto.</history>
-    </History>
-  </Patient>
-  <Patient>
-    <name>Carolina</name>
-    <id>98123</id>
-    <sex>F</sex>
-    <address>Propatria</address>
-    <age>29</age>
-    <phoneNumber>81823</phoneNumber>
+    <address>dfghj</address>
+    <age>44</age>
+    <phoneNumber>456</phoneNumber>
     <Dentist>
       <name>Alejandro</name>
       <id>25151231</id>
@@ -311,10 +150,10 @@ It is a long established fact that a reader will be distracted by the readable c
         <speciality>Ninos</speciality>
         <shift>Manana</shift>
       </Dentist>
-      <date>19/14/2020</date>
-      <hour>2 PM</hour>
-      <notes>Control</notes>
-      <patientId>98123</patientId>
+      <date>22/11/2921</date>
+      <hour>5 PM</hour>
+      <notes>sdfgh</notes>
+      <patientId>4545</patientId>
     </Appointment>
     <Recipe>
       <medicine>No se ha asignado tratamiento</medicine>
@@ -322,206 +161,6 @@ It is a long established fact that a reader will be distracted by the readable c
     <History>
       <history>Este paciente no contiene historial medico aun.</history>
     </History>
-  </Patient>
-  <Patient>
-    <name>Blanca M</name>
-    <id>514312</id>
-    <sex>F</sex>
-    <address>Las Mercedes</address>
-    <age>40</age>
-    <phoneNumber>51234</phoneNumber>
-    <Dentist>
-      <name>Eduardo</name>
-      <id>24123923</id>
-      <sex>M</sex>
-      <address>Trinidad</address>
-      <age>40</age>
-      <phoneNumber>212292341</phoneNumber>
-      <speciality>Adultos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>Eduardo</name>
-        <id>24123923</id>
-        <sex>M</sex>
-        <address>Trinidad</address>
-        <age>40</age>
-        <phoneNumber>212292341</phoneNumber>
-        <speciality>Adultos</speciality>
-        <shift>Manana</shift>
-      </Dentist>
-      <date>12/6/2020</date>
-      <hour>11 AM</hour>
-      <notes>Dolor de Muela</notes>
-      <patientId>51431</patientId>
-    </Appointment>
-    <Recipe>
-      <medicine>No se ha asignado tratamiento</medicine>
-    </Recipe>
-    <History>
-      <history>Este paciente no contiene historial medico aun.</history>
-    </History>
-  </Patient>
-  <Patient>
-    <name>Josefina C</name>
-    <id>151231</id>
-    <sex>F</sex>
-    <address>Guatire</address>
-    <age>60</age>
-    <phoneNumber>513215</phoneNumber>
-    <Dentist>
-      <name>Eduardo</name>
-      <id>24123923</id>
-      <sex>M</sex>
-      <address>Trinidad</address>
-      <age>40</age>
-      <phoneNumber>212292341</phoneNumber>
-      <speciality>Adultos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>Eduardo</name>
-        <id>24123923</id>
-        <sex>M</sex>
-        <address>Trinidad</address>
-        <age>40</age>
-        <phoneNumber>212292341</phoneNumber>
-        <speciality>Adultos</speciality>
-        <shift>Manana</shift>
-      </Dentist>
-      <date>10/10/2000</date>
-      <hour>11 AM</hour>
-      <notes>Loquesea</notes>
-      <patientId>151231</patientId>
-    </Appointment>
-    <Recipe>
-      <medicine>No se ha asignado tratamiento</medicine>
-    </Recipe>
-    <History>
-      <history>Este paciente no contiene historial medico aun.</history>
-    </History>
-  </Patient>
-  <Patient>
-    <name>Alfonso G</name>
-    <id>5123419</id>
-    <sex>M</sex>
-    <address>Ruicess</address>
-    <age>10</age>
-    <phoneNumber>1231412</phoneNumber>
-    <Dentist>
-      <name>Alejandro</name>
-      <id>25151231</id>
-      <sex>M</sex>
-      <address>Bello Monte</address>
-      <age>26</age>
-      <phoneNumber>5123152</phoneNumber>
-      <speciality>Ninos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>Alejandro</name>
-        <id>25151231</id>
-        <sex>M</sex>
-        <address>Bello Monte</address>
-        <age>26</age>
-        <phoneNumber>5123152</phoneNumber>
-        <speciality>Ninos</speciality>
-        <shift>Manana</shift>
-      </Dentist>
-      <date>16/10/2020</date>
-      <hour>10 AM</hour>
-      <notes>Muela</notes>
-      <patientId>512341</patientId>
-    </Appointment>
-    <Recipe>
-      <medicine>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..</medicine>
-    </Recipe>
-    <History>
-      <history>Nueva historia.
-Mas contenido.</history>
-    </History>
-  </Patient>
-  <Patient>
-    <name>Albany</name>
-    <id>512341</id>
-    <sex>F</sex>
-    <address>San Luis</address>
-    <age>22</age>
-    <phoneNumber>512314</phoneNumber>
-    <Dentist>
-      <name>Alejandro</name>
-      <id>25151231</id>
-      <sex>M</sex>
-      <address>Bello Monte</address>
-      <age>26</age>
-      <phoneNumber>5123152</phoneNumber>
-      <speciality>Ninos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>Alejandro</name>
-        <id>25151231</id>
-        <sex>M</sex>
-        <address>Bello Monte</address>
-        <age>26</age>
-        <phoneNumber>5123152</phoneNumber>
-        <speciality>Ninos</speciality>
-        <shift>Manana</shift>
-      </Dentist>
-      <date>16/10/2021</date>
-      <hour>10 AM</hour>
-      <notes>Limpieza</notes>
-      <patientId>512341</patientId>
-    </Appointment>
-    <Recipe>
-      <medicine>No se ha asignado tratamiento</medicine>
-    </Recipe>
-    <History>
-      <history>Este paciente no contiene historial medico aun.</history>
-    </History>
-  </Patient>
-  <Patient>
-    <name>Simon</name>
-    <id>26250543</id>
-    <sex>F</sex>
-    <address>La California</address>
-    <age>22</age>
-    <phoneNumber>8231412</phoneNumber>
-    <Dentist>
-      <name>Eduardo</name>
-      <id>24123923</id>
-      <sex>M</sex>
-      <address>Trinidad</address>
-      <age>40</age>
-      <phoneNumber>212292341</phoneNumber>
-      <speciality>Adultos</speciality>
-      <shift>Manana</shift>
-    </Dentist>
-    <Appointment>
-      <Dentist>
-        <name>Eduardo</name>
-        <id>24123923</id>
-        <sex>M</sex>
-        <address>Trinidad</address>
-        <age>40</age>
-        <phoneNumber>212292341</phoneNumber>
-        <speciality>Adultos</speciality>
-        <shift>Manana</shift>
-      </Dentist>
-      <date>12/6/2020</date>
-      <hour>2 PM</hour>
-      <notes>Muela</notes>
-      <patientId>26250543</patientId>
-    </Appointment>
-    <Recipe>
-      <medicine>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</medicine>
-    </Recipe>
-    <History>
-      <history>Este paciente no contiene historial medico aun.</history>
-    </History>
+    <listId>2</listId>
   </Patient>
 </patients>

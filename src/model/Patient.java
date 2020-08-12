@@ -6,6 +6,7 @@ public class Patient extends Person {
     private Appointment appointment;
     private Recipe recipe;
     private History history;
+    private int listId;
 
     public Patient() {
         super();
@@ -13,15 +14,17 @@ public class Patient extends Person {
         this.appointment = null;
         this.recipe = null;
         this.history = null;
+        listId = -1;
     }
 
     public Patient(String name, int id, int age, String sex, String address, int phoneNumber,
-            Dentist dentist, Appointment appointment, Recipe recipe, History history) {
+            Dentist dentist, Appointment appointment, Recipe recipe, History history, int listId) {
         super(name, id, age, sex, address, phoneNumber);
         this.dentist = dentist;
         this.appointment = appointment;
         this.recipe = recipe;
-        this.history = history;	
+        this.history = history;
+        this.listId = listId;
     }
 
 	public Dentist getDentist() {
@@ -55,5 +58,15 @@ public class Patient extends Person {
 	public void setHistory(History history) {
 		this.history = history;
 	}
+
+	public int getListId() {
+		return listId;
+	}
+
+	public void setListId(int listId) {
+		this.listId = listId;
+	}
+	
+	
     
 }

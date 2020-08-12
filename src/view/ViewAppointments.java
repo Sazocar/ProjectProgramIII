@@ -31,6 +31,7 @@ import javax.swing.JLabel;
 public class ViewAppointments extends JPanel {
 	private JTable table;
 	private JTextField searchTxt;
+	private ArrayList<Patient> filler = new ArrayList<Patient>();
 
 	
 	public ViewAppointments(Clinic clinic, ArrayList<Patient> patients, Dentist dentist) {
@@ -40,6 +41,8 @@ public class ViewAppointments extends JPanel {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(35, 29, 471, 184);
 		add(scrollPane);
+		
+		Search.fillFiller(filler, patients);
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);	
@@ -58,6 +61,7 @@ public class ViewAppointments extends JPanel {
         add(cbmSearch);
 
         searchTxt = new JTextField();
+        
         searchTxt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 searchAction(cbmSearch, clinic);
@@ -83,6 +87,8 @@ public class ViewAppointments extends JPanel {
             public void updater() {
                 if (searchTxt.getText().isEmpty()) {
                 	ControlFields.fillTableAppointments(table, patients);
+                	filler.clear();
+                	Search.fillFiller(filler, patients);
                 }
             }
         });
@@ -113,7 +119,9 @@ public class ViewAppointments extends JPanel {
             	if (table.getSelectedRow() == -1) {
                     Validations.errorMessage("Seleccione un paciente\npara mostrar mas informacion");
                 } else {
-                		ModifPatientDent modifPatient = new ModifPatientDent(clinic, patients.get(table.getSelectedRow()), table,patients);
+                	if (searchTxt.getText().isEmpty())
+                		Search.fillFiller(filler, patients);
+                		ModifPatientDent modifPatient = new ModifPatientDent(clinic, patients.get(filler.get(table.getSelectedRow()).getListId()), table,patients);
                         ControlFields.fillTableDentist(modifPatient.getDentistTable(), clinic);
                         modifPatient.setLocationRelativeTo(null);
                         modifPatient.setVisible(true);
@@ -134,7 +142,9 @@ public class ViewAppointments extends JPanel {
                 if (table.getSelectedRow() == -1) {
                     Validations.errorMessage("Seleccione un paciente\npara mostrar mas informacion");
                 } else {
-                		MoreInfoDent more = new MoreInfoDent(patients.get(table.getSelectedRow()));
+                	if (searchTxt.getText().isEmpty())
+                		Search.fillFiller(filler, patients);
+                		MoreInfoDent more = new MoreInfoDent(patients.get(filler.get(table.getSelectedRow()).getListId()));
 	                    more.setLocationRelativeTo(null);
                 		more.setVisible(true);
                 }
@@ -165,7 +175,7 @@ public class ViewAppointments extends JPanel {
 		if (cbmSearch.getSelectedIndex() == 0) {
             Validations.errorMessage("Indique que metodo quiere usar para buscar (Nombre o Cedula)");
         } else {
-            ArrayList<Patient> filler = new ArrayList<Patient>();
+            filler.clear();
             for (Patient patient : clinic.getListOfPatients()) {
                 if (cbmSearch.getSelectedIndex() == 1) {
                     if (searchTxt.getText().equalsIgnoreCase(patient.getName())) {
@@ -178,7 +188,7 @@ public class ViewAppointments extends JPanel {
             if (filler.isEmpty()) {
                 Validations.errorMessage("Persona no Encontrada");
             } else {
-                ControlFields.fillTablePatient(table, filler);
+                ControlFields.fillTableAppointments(table, filler);
             }
         }
 	}

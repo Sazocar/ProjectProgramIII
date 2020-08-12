@@ -56,6 +56,7 @@ public final class ControlSecretary {
         patient.setRecipe(recipe);
         hist.setTreatment("Este paciente no contiene historial medico aun.");
         patient.setHistory(hist);
+        patient.setListId(listOfPatients.size());
         
         listOfPatients.add(patient);
         listOfAppointments.add(appointment);

@@ -81,6 +81,8 @@ public class DaoPatientXML {
         Element appointment = DaoAppointmentsXML.AppointmentXmlElement(nPatient.getAppointment());
         Element recipe = recipeXmlElement(nPatient.getRecipe());
         Element hist = histXmlElement(nPatient.getHistory());
+        Element listId = new Element("listId");
+        listId.setText(Integer.toString(nPatient.getListId()));
         Patient.addContent(name);
         Patient.addContent(id);
         Patient.addContent(sex);
@@ -91,6 +93,7 @@ public class DaoPatientXML {
         Patient.addContent(appointment);
         Patient.addContent(recipe);
         Patient.addContent(hist);
+        Patient.addContent(listId);
         return Patient;
     }
     
@@ -111,7 +114,7 @@ public class DaoPatientXML {
                 element.getChildText("address"), Integer.parseInt(element.getChildText("phoneNumber")),
                 DaoDentistXML.DentistToObject(element.getChild("Dentist")), 
                 DaoAppointmentsXML.AppointmentToObject(element.getChild("Appointment")), 
-                recipeToObjet(element.getChild("Recipe")), histToObjet(element.getChild("History")));
+                recipeToObjet(element.getChild("Recipe")), histToObjet(element.getChild("History")), Integer.parseInt(element.getChildText("listId")));
         return nPatient;
 
     }
@@ -173,11 +176,6 @@ public class DaoPatientXML {
     }
 
     public static void allPatients(ArrayList<Patient> listOfPatients) {
-        /*
-		 * Para obtener todas las Personas registradas
-		 * 
-		 * @return ArrayList con todos los objetos Dentist
-         */
         for (Object it : root.getChildren()) {
             Element xmlElem = (Element) it;
             try {

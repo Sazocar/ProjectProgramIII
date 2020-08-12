@@ -244,6 +244,7 @@ public class ModifPatient extends JFrame {
                     DaoPatientXML.updatePatient(patient);
                     DaoAppointmentsXML.deleteAppointment(patient.getId());
                     DaoAppointmentsXML.updateAppointment(patient.getAppointment());
+                    clinic.setListOfPatients(ControlFields.order(clinic.getListOfPatients()));
                 }
             }
         });

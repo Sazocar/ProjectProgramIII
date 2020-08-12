@@ -25,6 +25,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import persistence.DaoAppointmentsXML;
 
@@ -41,10 +42,11 @@ public class Start extends JFrame {
 
     
     public Start() {
-    	
+    	ArrayList<Patient> temp = new ArrayList<Patient>();
         DaoDentistXML.allDentist(clinic.getListOfStaff());
         DaoAppointmentsXML.allAppointments(clinic.getListOfAppointments());
-        DaoPatientXML.allPatients(clinic.getListOfPatients());      
+        DaoPatientXML.allPatients(temp);    
+        clinic.setListOfPatients(ControlFields.order(temp));
         ControlFields.assingAppointmentsDentist(clinic);
         Inventory inv = DaoInventoryXML.createInv();
         clinic.setInventory(inv);

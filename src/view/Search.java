@@ -37,10 +37,13 @@ public class Search extends JPanel {
 
     private JTable table;
     private JTextField searchTxt;
+    private ArrayList<Patient> filler = new ArrayList<Patient>();
 
     public Search(Clinic clinic, boolean SorD) {
         setBackground(new Color(176, 224, 230));
         setLayout(null);
+        
+        fillFiller(filler, clinic.getListOfPatients());
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(37, 22, 460, 203);
@@ -61,11 +64,11 @@ public class Search extends JPanel {
                     Validations.errorMessage("Seleccione un paciente\npara mostrar mas informacion");
                 } else {
                     if (!SorD) {
-                        MoreInfoSecre more = new MoreInfoSecre(clinic.getListOfPatients().get(table.getSelectedRow()), clinic);
+                        MoreInfoSecre more = new MoreInfoSecre(clinic.getListOfPatients().get(filler.get(table.getSelectedRow()).getListId()), clinic);
                         more.setLocationRelativeTo(null);
                         more.setVisible(true);
                     } else {
-                        MoreInfoDent more = new MoreInfoDent(clinic.getListOfPatients().get(table.getSelectedRow()));
+                        MoreInfoDent more = new MoreInfoDent(clinic.getListOfPatients().get(filler.get(table.getSelectedRow()).getListId()));
                         more.setLocationRelativeTo(null);
                         more.setVisible(true);
                     }
@@ -152,6 +155,8 @@ public class Search extends JPanel {
             public void updater() {
                 if (searchTxt.getText().isEmpty()) {
                     ControlFields.fillTablePatient(table, clinic.getListOfPatients());
+                    filler.clear();
+                    fillFiller(filler, clinic.getListOfPatients());
                 }
             }
         });
@@ -173,7 +178,7 @@ public class Search extends JPanel {
                 if (table.getSelectedRow() == -1) {
                     Validations.errorMessage("Seleccione un paciente\npara mostrar mas informacion");
                 } else {
-                    ModifPatient modifPatient = new ModifPatient(clinic, clinic.getListOfPatients().get(table.getSelectedRow()), table);
+                    ModifPatient modifPatient = new ModifPatient(clinic, clinic.getListOfPatients().get(filler.get(table.getSelectedRow()).getListId()), table);
                     ControlFields.fillTableDentist(modifPatient.getDentistTable(), clinic);
                     modifPatient.setLocationRelativeTo(null);
                     modifPatient.setVisible(true);
@@ -216,7 +221,7 @@ public class Search extends JPanel {
         if (cbmSearch.getSelectedIndex() == 0) {
             Validations.errorMessage("Indique que metodo quiere usar para buscar (Nombre o Cedula)");
         } else {
-            ArrayList<Patient> filler = new ArrayList<Patient>();
+            filler.clear();
             for (Patient patient : clinic.getListOfPatients()) {
                 if (cbmSearch.getSelectedIndex() == 1) {
                     if (searchTxt.getText().equalsIgnoreCase(patient.getName())) {
@@ -236,20 +241,25 @@ public class Search extends JPanel {
 
     public void delete(Clinic clinic) {
         for (Dentist dentist : clinic.getListOfStaff()) {
-            if (clinic.getListOfPatients().get(table.getSelectedRow()).getAppointment().getDentist().getId() == dentist.getId()) {
-                dentist.getListOfAppointments().remove(clinic.getListOfPatients().get(table.getSelectedRow()).getAppointment());
+            if (clinic.getListOfPatients().get(filler.get(table.getSelectedRow()).getListId()).getAppointment().getDentist().getId() == dentist.getId()) {
+                dentist.getListOfAppointments().remove(clinic.getListOfPatients().get(filler.get(table.getSelectedRow()).getListId()).getAppointment());
             }
         }
         for (Appointment appointment : clinic.getListOfAppointments()) {
-            if (clinic.getListOfPatients().get(table.getSelectedRow()).getId() == appointment.getPatientId()) {
+            if (clinic.getListOfPatients().get(filler.get(table.getSelectedRow()).getListId()).getId() == appointment.getPatientId()) {
                 clinic.getListOfAppointments().remove(appointment);
-                DaoAppointmentsXML.deleteAppointment(clinic.getListOfPatients().get(table.getSelectedRow()).getId());
+                DaoAppointmentsXML.deleteAppointment(clinic.getListOfPatients().get(filler.get(table.getSelectedRow()).getListId()).getId());
             }
         }
 
-        DaoPatientXML.deletePatient(clinic.getListOfPatients().get(table.getSelectedRow()).getId());
-        ControlFields.deletePatient(clinic, table);
+        DaoPatientXML.deletePatient(clinic.getListOfPatients().get(filler.get(table.getSelectedRow()).getListId()).getId());
+        ControlFields.deletePatient(clinic, table, filler.get(table.getSelectedRow()).getListId());
         ControlFields.fillTablePatient(table, clinic.getListOfPatients());
         JOptionPane.showMessageDialog(null, "Paciente eliminado\nsatisfactoriamente!");
+    }
+    
+    public static void fillFiller(ArrayList<Patient> filler, ArrayList<Patient> patients) {
+    	for (int i = 0; i < patients.size(); i++) 
+    		filler.add(patients.get(i));  	
     }
 }
